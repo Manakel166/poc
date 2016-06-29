@@ -23,7 +23,7 @@ Access to Flight News(AF)
     THEN I can select "Flight News" from HomePage
 
 TC050 - Verify that the user is able to see the default values in the search module
-    [Tags]    KLM
+    [Tags]    KLM    SMOKE
     Given I've started the KLM App
     When I Book A Trip
     Then the Default Search Origin is "Amsterdam"

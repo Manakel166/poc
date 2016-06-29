@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <exec spawn="false" executable="C:\temp\RF_DEV\00_CONSOLE\Pybot_portable.bat">
+    <arg line="--suite Airfrance_KLM"/>
+    <arg line="--include SMOKE"/>
+    <arg line="--exclude NOT_READY"/>
+    <arg line="--variable RunFrom:Maven"/>
+    <arg value="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot"/>
+  </exec>
+</target>
+</project>
