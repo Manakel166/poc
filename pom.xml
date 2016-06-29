@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+<build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.8</version>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <configuration>
+              <target>
+                <exec executable="C:\temp\RF_DEV\00_CONSOLE\Pybot_portable.bat">
+                    <arg value="--Suite Airfrance_KLM" />
+                    <arg value="--include SMOKE" />
+                    <arg value="--exclude NOT_READY" />
+                    <arg value="--variable RunFrom:Maven" />
+                    <arg value="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot" />           
+                    <spawn value="false">
+                </exec>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          <execution>
+            <phase>integration-test</phase>
+            <configuration>
+              <target>
+                <exec executable="C:\temp\RF_DEV\00_CONSOLE\Pybot_portable.bat">
+                    <arg value="--Suite Airfrance_KLM" />
+                    <arg value="--exclude NOT_READY" />
+                    <arg value="--variable RunFrom:Maven" />
+                    <arg value="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot" />           
+                    <spawn value="true">
+                </exec>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+    
+
+    
+    
+</project>
