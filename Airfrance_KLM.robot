@@ -4,8 +4,6 @@ Resource          af.ui.txt    # UI Identifier. may change from Platform to Plat
 Resource          ../../../30_LIBRAIRIES/rf_helpers.txt
 Resource          klm.ui.txt
 Resource          af.pages.txt
-Resource          ../Debug_Accents_Totoro/ui.map.txt
-Resource          ../Debug_Accents_Totoro/ui.languages.txt
 Library           String
 Library           DateTime
 Library           ../../30_LIBRAIRIES/xpath_helpers.py
@@ -14,7 +12,7 @@ Library           ../../30_LIBRAIRIES/AppiumExtension.py
 *** Variables ***
 &{app_AF}         app=../../../../20_AUT/air_france_1.7.2_72.apk    # A dictionnary to provide the parameters of the App under Tests (like path to the apk....)
 &{app_KLM}        app=../../../../20_AUT/KLM_com.afklm.mobile.android.gomobile.klm_7.4.1_12744.apk
-${RunFromQC}      False
+${RunFrom}        RIDE
 
 *** Test Cases ***
 Access to Flight News(AF)
@@ -23,7 +21,7 @@ Access to Flight News(AF)
     THEN I can select "Flight News" from HomePage
 
 TC050 - Verify that the user is able to see the default values in the search module
-    [Tags]    KLM    SMOKE
+    [Tags]    KLM    Smoke
     Given I've started the KLM App
     When I Book A Trip
     Then the Default Search Origin is "Amsterdam"
@@ -31,7 +29,7 @@ TC050 - Verify that the user is able to see the default values in the search mod
     And the Default Search Passenger is "1 adult in Economy Class"
 
 TC0XX - Verify whether the user is able to book a one way flight without login.
-    [Tags]    KLM
+    [Tags]    KLM    Smoke    unfinished
     ${Search_Destination(TextView)_id}    xpath_by_id    search_destination
     Given I've started the KLM App
     And I'm not Logged In
@@ -47,7 +45,7 @@ TC0XX - Verify whether the user is able to book a one way flight without login.
     And I Can Book the First available Flight
 
 TC051 - Verify the message shown, when there are no entries for the given Origin and destination
-    [Tags]    KLM
+    [Tags]    KLM    DEMO
     Given I've started the KLM App
     When I Book A Trip
     And I choose as Origin "Paris"
