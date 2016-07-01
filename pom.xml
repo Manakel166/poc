@@ -24,7 +24,7 @@
         <configuration>
                  <testCasesDirectory>${project.basedir}/</testCasesDirectory>
                  <outputDirectory>${project.basedir}/Execution_Logs</outputDirectory>
-                 <xunitFile>xunit_results.xml</xunitFile>
+                 <xunitFile>${project.basedir}/Execution_Logs/xunit_results.xml</xunitFile>
         </configuration>
         <dependencies>
           <dependency>
