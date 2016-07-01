@@ -18,14 +18,14 @@
             <id> acceptance test campaign with RF plugin</id>
             <goals>
                <goal>run</goal>
-            </goals>
-            <configuration>
-                 <testCasesDirectory>${project.basedir}</testCasesDirectory>
-                 <suites>Airfrance_KLM</suites>
-            </configuration>
-            
+            </goals> 
           </execution>
         </executions>
+        <configuration>
+                 <testCasesDirectory>${project.basedir}/</testCasesDirectory>
+                 <outputDirectory>${project.basedir}/Execution_Logs</outputDirectory>
+                 <xunitFile>xunit_results.xml</xunitFile>
+        </configuration>
         <dependencies>
           <dependency>
             <groupId>org.robotframework</groupId>

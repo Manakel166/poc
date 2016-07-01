@@ -1,108 +1,349 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20160701 14:49:26.677" generator="Robot 3.0 (Python 2.7.5 on win32)">
-<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot" id="s1" name="Airfrance KLM">
-<test id="s1-t1" name="TC050 - Verify that the user is able to see the default values in the search module">
-<kw name="Given I've started the KLM App">
-<kw name="Launch Application on Local Device" library="rf_helpers">
+<robot generator="Robot 2.8.7 (Jython 2.5.3 on java1.8.0_66)" generated="20160701 15:26:19.290">
+<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM" name="UserStoriesForKLM" id="s1">
+<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot" name="Airfrance KLM" id="s1-s1">
+<test name="Access to Flight News(AF)" id="s1-s1-t1">
+<kw type="kw" name="GIVEN I am on AirFrance HomePage">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="af.pages.Open the Airfrance App">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Launch Application on Local Device">
+<doc></doc>
+<arguments>
+<arg>&amp;{app_AF}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20160701 15:26:20.482">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160701 15:26:20.484" starttime="20160701 15:26:20.479" status="FAIL"></status>
+</kw>
+<status endtime="20160701 15:26:20.487" starttime="20160701 15:26:20.433" status="FAIL"></status>
+</kw>
+<status endtime="20160701 15:26:20.492" starttime="20160701 15:26:20.424" status="FAIL"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>AF</tag>
+</tags>
+<status critical="yes" endtime="20160701 15:26:20.495" starttime="20160701 15:26:20.409" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+</test>
+<test name="TC050 - Verify that the user is able to see the default values in the search module" id="s1-s1-t2">
+<kw type="kw" name="Given I've started the KLM App">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Launch Application on Local Device">
+<doc></doc>
 <arguments>
 <arg>&amp;{app_KLM}</arg>
 </arguments>
-<kw name="Get First Connected Device" library="adb">
-<assign>
-<var>&amp;{local_device}</var>
-</assign>
-<msg timestamp="20160701 14:49:29.149" level="INFO">List of devices attached:
-seq	serial  	state
-1	LGH815e4eec017	device</msg>
-<msg timestamp="20160701 14:49:29.150" level="INFO">&amp;{local_device} = { udid=LGH815e4eec017 | deviceName=LGH815e4eec017 | platformName=ANDROID }</msg>
-<status status="PASS" endtime="20160701 14:49:29.150" starttime="20160701 14:49:27.008"></status>
+<msg level="FAIL" timestamp="20160701 15:26:20.553">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160701 15:26:20.555" starttime="20160701 15:26:20.551" status="FAIL"></status>
 </kw>
-<kw name="Get Device Language" library="adb">
-<assign>
-<var>&amp;{languages}</var>
-</assign>
-<msg timestamp="20160701 14:49:33.295" level="INFO">List of devices attached:
-seq	serial  	state
-1	LGH815e4eec017	device</msg>
-<msg timestamp="20160701 14:49:33.296" level="INFO">&amp;{languages} = { country=GB
- | language=en
- }</msg>
-<status status="PASS" endtime="20160701 14:49:33.296" starttime="20160701 14:49:29.151"></status>
+<status endtime="20160701 15:26:20.558" starttime="20160701 15:26:20.513" status="FAIL"></status>
 </kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${RunFrom}</arg>
-</arguments>
-<msg timestamp="20160701 14:49:33.298" level="INFO">Maven</msg>
-<status status="PASS" endtime="20160701 14:49:33.298" starttime="20160701 14:49:33.297"></status>
-</kw>
-<kw name="Set Library Search Order" library="BuiltIn">
-<doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
-<arguments>
-<arg>AppiumLibrary</arg>
-<arg>Selenium2Library</arg>
-</arguments>
-<status status="PASS" endtime="20160701 14:49:33.299" starttime="20160701 14:49:33.299"></status>
-</kw>
-<kw name="Open Application" library="AppiumLibrary">
-<doc>Opens a new application to given Appium server.</doc>
-<arguments>
-<arg>http://127.0.0.1:4442/wd/hub</arg>
-<arg>&amp;{local_device}</arg>
-<arg>&amp;{an_app_under_test}</arg>
-</arguments>
-<status status="PASS" endtime="20160701 14:49:57.024" starttime="20160701 14:49:33.300"></status>
-</kw>
-<status status="PASS" endtime="20160701 14:49:57.024" starttime="20160701 14:49:27.007"></status>
-</kw>
-<kw name="On &lt;Country of Residence&gt; Page, Select :">
-<arguments>
-<arg>France</arg>
-</arguments>
-<kw name="I'm on &lt;Country of Residence&gt; Page">
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<arguments>
-<arg>${Title Country of residence(TextView)}</arg>
-<arg>5s</arg>
-</arguments>
-<msg timestamp="20160701 14:50:02.259" level="INFO">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;hierarchy rotation="0"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][1440,2392]" resource-id="" instance="0"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][1440,2392]" resource-id="" instance="0"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,2392]" resource-id="" instance="1"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,2392]" resource-id="com.afklm.mobile.android.gomobile.klm:id/action_bar_root" instance="1"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,2392]" resource-id="android:id/content" instance="2"&gt;&lt;android.support.v4.widget.DrawerLayout index="0" text="" class="android.support.v4.widget.DrawerLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,2392]" resource-id="com.afklm.mobile.android.gomobile.klm:id/drawer_layout" instance="0"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,2392]" resource-id="com.afklm.mobile.android.gomobile.klm:id/content_frame" instance="3"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,2392]" resource-id="com.afklm.mobile.android.gomobile.klm:id/miniapp" instance="4"/&gt;&lt;android.widget.FrameLayout index="1" text="" class="android.widget.FrameLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,2392]" resource-id="com.afklm.mobile.android.gomobile.klm:id/main_content" instance="5"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,2392]" resource-id="" instance="6"&gt;&lt;android.support.v7.widget.RecyclerView index="0" text="" class="android.support.v7.widget.RecyclerView" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="true" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,2392]" resource-id="com.afklm.mobile.android.gomobile.klm:id/fragment_cardlist_listview" instance="0"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,2240]" resource-id="" instance="7"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,2240]" resource-id="com.afklm.mobile.android.gomobile.klm:id/trips_header" instance="2"&gt;&lt;android.view.View index="0" text="" class="android.view.View" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,272]" resource-id="com.afklm.mobile.android.gomobile.klm:id/actionbar_blocker" instance="0"/&gt;&lt;android.widget.FrameLayout index="1" text="" class="android.widget.FrameLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,272][1440,732]" resource-id="com.afklm.mobile.android.gomobile.klm:id/brand_voice_container" instance="8"&gt;&lt;android.widget.RelativeLayout index="0" text="" class="android.widget.RelativeLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,272][1440,732]" resource-id="com.afklm.mobile.android.gomobile.klm:id/mytrips_bv_id" instance="0"&gt;&lt;android.widget.ImageView index="0" text="" class="android.widget.ImageView" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[100,316][284,500]" resource-id="com.afklm.mobile.android.gomobile.klm:id/brand_voice_logo_image_view" instance="0"/&gt;&lt;android.widget.TextView index="1" text="Welcome, your journey starts here." class="android.widget.TextView" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[324,373][1300,554]" resource-id="com.afklm.mobile.android.gomobile.klm:id/text_brandvoice" instance="0"/&gt;&lt;/android.widget.RelativeLayout&gt;&lt;/android.widget.FrameLayout&gt;&lt;android.widget.LinearLayout index="3" text="" class="android.widget.LinearLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,732][1440,1932]" resource-id="com.afklm.mobile.android.gomobile.klm:id/book_buttons_container_above_banner" instance="3"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[60,732][1380,1932]" resource-id="com.afklm.mobile.android.gomobile.klm:id/book_buttons" instance="4"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[60,732][1380,1332]" resource-id="com.afklm.mobile.android.gomobile.klm:id/mytrips_book_a_trip_container" instance="9"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[60,732][1380,1332]" resource-id="com.afklm.mobile.android.gomobile.klm:id/mytrips_book_a_trip" instance="5"&gt;&lt;android.widget.ImageView index="0" text="" class="android.widget.ImageView" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[60,912][300,1152]" resource-id="com.afklm.mobile.android.gomobile.klm:id/list_item_icon" instance="1"/&gt;&lt;android.widget.TextView index="1" text="Book a trip" class="android.widget.TextView" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[372,966][1212,1098]" resource-id="com.afklm.mobile.android.gomobile.klm:id/list_item_title" instance="1"/&gt;&lt;android.view.View index="2" text="" class="android.view.View" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[1260,984][1356,1080]" resource-id="com.afklm.mobile.android.gomobile.klm:id/list_item_button" instance="1"/&gt;&lt;/android.widget.LinearLayout&gt;&lt;android.view.View index="1" text="" class="android.view.View" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[132,1328][1308,1332]" resource-id="com.afklm.mobile.android.gomobile.klm:id/divider" instance="2"/&gt;&lt;/android.widget.FrameLayout&gt;&lt;android.widget.LinearLayout index="1" text="" class="android.widget.LinearLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[60,1332][1380,1932]" resource-id="com.afklm.mobile.android.gomobile.klm:id/mytrips_add_booking_id" instance="6"&gt;&lt;android.widget.ImageView index="0" text="" class="android.widget.ImageView" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[60,1512][300,1752]" resource-id="com.afklm.mobile.android.gomobile.klm:id/list_item_icon" instance="2"/&gt;&lt;android.widget.TextView index="1" text="Add a booking" class="android.widget.TextView" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[372,1566][1212,1698]" resource-id="com.afklm.mobile.android.gomobile.klm:id/list_item_title" instance="2"/&gt;&lt;android.view.View index="2" text="" class="android.view.View" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[1260,1584][1356,1680]" resource-id="com.afklm.mobile.android.gomobile.klm:id/list_item_button" instance="3"/&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.LinearLayout&gt;&lt;android.widget.LinearLayout index="4" text="" class="android.widget.LinearLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[60,1932][1380,2240]" resource-id="" instance="7"&gt;&lt;android.widget.TextView index="0" text="Log in" class="android.widget.TextView" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[60,1980][1380,2192]" resource-id="com.afklm.mobile.android.gomobile.klm:id/blue_button" instance="3"/&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.support.v7.widget.RecyclerView&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.widget.FrameLayout&gt;&lt;android.widget.FrameLayout index="2" text="" class="android.widget.FrameLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,272]" resource-id="com.afklm.mobile.android.gomobile.klm:id/header" instance="10"&gt;&lt;android.widget.FrameLayout index="0" text="" class="android.widget.FrameLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,272]" resource-id="" instance="11"&gt;&lt;android.widget.RelativeLayout index="0" text="" class="android.widget.RelativeLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,272]" resource-id="" instance="1"&gt;&lt;android.widget.RelativeLayout index="0" text="" class="android.widget.RelativeLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,272]" resource-id="com.afklm.mobile.android.gomobile.klm:id/actionbar_container" instance="2"&gt;&lt;android.view.View index="0" text="" class="android.view.View" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,272]" resource-id="com.afklm.mobile.android.gomobile.klm:id/actionbar_slider" instance="4"/&gt;&lt;android.widget.FrameLayout NAF="true" index="1" text="" class="android.widget.FrameLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][172,272]" resource-id="com.afklm.mobile.android.gomobile.klm:id/actionbar_drawer_button" instance="12"&gt;&lt;android.widget.ImageView index="0" text="" class="android.widget.ImageView" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[26,126][146,246]" resource-id="com.afklm.mobile.android.gomobile.klm:id/actionbar_drawer_button_image" instance="3"/&gt;&lt;/android.widget.FrameLayout&gt;&lt;android.widget.ImageView index="2" text="" class="android.widget.ImageView" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[626,142][814,230]" resource-id="com.afklm.mobile.android.gomobile.klm:id/klm_logo" instance="4"/&gt;&lt;android.view.View index="4" text="" class="android.view.View" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,268][1440,272]" resource-id="com.afklm.mobile.android.gomobile.klm:id/divider" instance="5"/&gt;&lt;android.widget.LinearLayout index="5" text="" class="android.widget.LinearLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[854,100][1440,272]" resource-id="com.afklm.mobile.android.gomobile.klm:id/action_views_container" instance="8"&gt;&lt;android.widget.LinearLayout index="0" text="" class="android.widget.LinearLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[996,100][1440,272]" resource-id="com.afklm.mobile.android.gomobile.klm:id/add_booking_action_view" instance="9"&gt;&lt;android.widget.TextView index="0" text="Book a trip" class="android.widget.TextView" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[996,151][1300,221]" resource-id="com.afklm.mobile.android.gomobile.klm:id/action_item_title" instance="4"/&gt;&lt;android.widget.ImageView index="1" text="" class="android.widget.ImageView" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[1332,148][1408,224]" resource-id="com.afklm.mobile.android.gomobile.klm:id/action_item_icon" instance="5"/&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.RelativeLayout&gt;&lt;/android.widget.RelativeLayout&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.support.v4.widget.DrawerLayout&gt;&lt;android.widget.FrameLayout index="1" text="" class="android.widget.FrameLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,2392]" resource-id="com.afklm.mobile.android.gomobile.klm:id/splash" instance="13"&gt;&lt;android.widget.RelativeLayout index="0" text="" class="android.widget.RelativeLayout" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,100][1440,2392]" resource-id="com.afklm.mobile.android.gomobile.klm:id/splash_screen" instance="3"&gt;&lt;android.widget.TextView index="0" text="Good afternoon" class="android.widget.TextView" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[160,1185][1280,1306]" resource-id="com.afklm.mobile.android.gomobile.klm:id/text_on_startup" instance="5"/&gt;&lt;android.widget.ImageView index="1" text="" class="android.widget.ImageView" package="com.afklm.mobile.android.gomobile.klm" content-desc="Content Description" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[525,962][915,1122]" resource-id="com.afklm.mobile.android.gomobile.klm:id/logo" instance="6"/&gt;&lt;/android.widget.RelativeLayout&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.widget.LinearLayout&gt;&lt;/android.widget.FrameLayout&gt;&lt;/android.widget.LinearLayout&gt;&lt;android.view.View index="1" text="" class="android.view.View" package="com.afklm.mobile.android.gomobile.klm" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,2392][1440,2560]" resource-id="android:id/navigationBarBackground" instance="6"/&gt;&lt;/android.widget.FrameLayout&gt;&lt;/hierarchy&gt;</msg>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20160701 14:50:03.132" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20160701 14:50:03.132" starttime="20160701 14:50:02.261"></status>
-</kw>
-<msg timestamp="20160701 14:50:03.135" level="FAIL">Element 'xpath=//android.widget.TextView[@text='Country of residence'][@resource-id='com.afklm.mobile.android.gomobile.klm:id/action_bar_text']' did not appear in 5 seconds</msg>
-<status status="FAIL" endtime="20160701 14:50:03.135" starttime="20160701 14:49:57.026"></status>
-</kw>
-<status status="FAIL" endtime="20160701 14:50:03.135" starttime="20160701 14:49:57.025"></status>
-</kw>
-<status status="FAIL" endtime="20160701 14:50:03.136" starttime="20160701 14:49:57.024"></status>
-</kw>
-<status status="FAIL" endtime="20160701 14:50:03.136" starttime="20160701 14:49:27.007"></status>
-</kw>
+<doc></doc>
 <tags>
 <tag>KLM</tag>
 <tag>Smoke</tag>
 </tags>
-<status status="FAIL" endtime="20160701 14:50:03.136" critical="yes" starttime="20160701 14:49:27.006">Element 'xpath=//android.widget.TextView[@text='Country of residence'][@resource-id='com.afklm.mobile.android.gomobile.klm:id/action_bar_text']' did not appear in 5 seconds</status>
+<status critical="yes" endtime="20160701 15:26:20.561" starttime="20160701 15:26:20.500" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
 </test>
-<status status="FAIL" endtime="20160701 14:50:03.137" starttime="20160701 14:49:26.680"></status>
+<test name="TC0XX - Verify whether the user is able to book a one way flight without login." id="s1-s1-t3">
+<kw type="kw" name="${Search_Destination(TextView)_id} = xpath_helpers.Xpath By Id">
+<doc></doc>
+<arguments>
+<arg>search_destination</arg>
+</arguments>
+<msg level="INFO" timestamp="20160701 15:26:20.591">${Search_Destination(TextView)_id} = //*[ends-with(@resource-id,'search_destination']</msg>
+<status endtime="20160701 15:26:20.589" starttime="20160701 15:26:20.584" status="PASS"></status>
+</kw>
+<kw type="kw" name="Given I've started the KLM App">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Launch Application on Local Device">
+<doc></doc>
+<arguments>
+<arg>&amp;{app_KLM}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20160701 15:26:20.634">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160701 15:26:20.635" starttime="20160701 15:26:20.628" status="FAIL"></status>
+</kw>
+<status endtime="20160701 15:26:20.638" starttime="20160701 15:26:20.595" status="FAIL"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>KLM</tag>
+<tag>Smoke</tag>
+<tag>unfinished</tag>
+</tags>
+<status critical="yes" endtime="20160701 15:26:20.641" starttime="20160701 15:26:20.572" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+</test>
+<test name="TC051 - Verify the message shown, when there are no entries for the given Origin and destination" id="s1-s1-t4">
+<kw type="kw" name="Given I've started the KLM App">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Launch Application on Local Device">
+<doc></doc>
+<arguments>
+<arg>&amp;{app_KLM}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20160701 15:26:20.691">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160701 15:26:20.692" starttime="20160701 15:26:20.689" status="FAIL"></status>
+</kw>
+<status endtime="20160701 15:26:20.694" starttime="20160701 15:26:20.659" status="FAIL"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>DEMO</tag>
+<tag>KLM</tag>
+</tags>
+<status critical="yes" endtime="20160701 15:26:20.697" starttime="20160701 15:26:20.645" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+</test>
+<test name="TC058 - Verify the user able to see the lowest price according to the destination selected, when not logged in" id="s1-s1-t5">
+<kw type="kw" name="Given I've started the KLM App">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Launch Application on Local Device">
+<doc></doc>
+<arguments>
+<arg>&amp;{app_KLM}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20160701 15:26:20.741">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160701 15:26:20.742" starttime="20160701 15:26:20.739" status="FAIL"></status>
+</kw>
+<status endtime="20160701 15:26:20.745" starttime="20160701 15:26:20.711" status="FAIL"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>KLM</tag>
+</tags>
+<status critical="yes" endtime="20160701 15:26:20.748" starttime="20160701 15:26:20.701" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+</test>
+<doc></doc>
+<metadata>
+</metadata>
+<status endtime="20160701 15:26:20.758" starttime="20160701 15:26:19.801" status="FAIL"></status>
+</suite>
+<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src" name="Src" id="s1-s2">
+<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test" name="Test" id="s1-s2-s1">
+<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework" name="Robotframework" id="s1-s2-s1-s1">
+<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance" name="Acceptance" id="s1-s2-s1-s1-s1">
+<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot" name="Airfrance KLM" id="s1-s2-s1-s1-s1-s1">
+<test name="Access to Flight News(AF)" id="s1-s2-s1-s1-s1-s1-t1">
+<kw type="kw" name="GIVEN I am on AirFrance HomePage">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="af.pages.Open the Airfrance App">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Launch Application on Local Device">
+<doc></doc>
+<arguments>
+<arg>&amp;{app_AF}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20160701 15:26:21.323">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160701 15:26:21.324" starttime="20160701 15:26:21.321" status="FAIL"></status>
+</kw>
+<status endtime="20160701 15:26:21.325" starttime="20160701 15:26:21.301" status="FAIL"></status>
+</kw>
+<status endtime="20160701 15:26:21.327" starttime="20160701 15:26:21.294" status="FAIL"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>AF</tag>
+</tags>
+<status critical="yes" endtime="20160701 15:26:21.329" starttime="20160701 15:26:21.286" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+</test>
+<test name="TC050 - Verify that the user is able to see the default values in the search module" id="s1-s2-s1-s1-s1-s1-t2">
+<kw type="kw" name="Given I've started the KLM App">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Launch Application on Local Device">
+<doc></doc>
+<arguments>
+<arg>&amp;{app_KLM}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20160701 15:26:21.370">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160701 15:26:21.371" starttime="20160701 15:26:21.368" status="FAIL"></status>
+</kw>
+<status endtime="20160701 15:26:21.373" starttime="20160701 15:26:21.345" status="FAIL"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>KLM</tag>
+<tag>Smoke</tag>
+</tags>
+<status critical="yes" endtime="20160701 15:26:21.376" starttime="20160701 15:26:21.334" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+</test>
+<test name="TC0XX - Verify whether the user is able to book a one way flight without login." id="s1-s2-s1-s1-s1-s1-t3">
+<kw type="kw" name="${Search_Destination(TextView)_id} = xpath_helpers.Xpath By Id">
+<doc></doc>
+<arguments>
+<arg>search_destination</arg>
+</arguments>
+<msg level="INFO" timestamp="20160701 15:26:21.394">${Search_Destination(TextView)_id} = //*[ends-with(@resource-id,'search_destination']</msg>
+<status endtime="20160701 15:26:21.393" starttime="20160701 15:26:21.391" status="PASS"></status>
+</kw>
+<kw type="kw" name="Given I've started the KLM App">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Launch Application on Local Device">
+<doc></doc>
+<arguments>
+<arg>&amp;{app_KLM}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20160701 15:26:21.421">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160701 15:26:21.422" starttime="20160701 15:26:21.419" status="FAIL"></status>
+</kw>
+<status endtime="20160701 15:26:21.424" starttime="20160701 15:26:21.397" status="FAIL"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>KLM</tag>
+<tag>Smoke</tag>
+<tag>unfinished</tag>
+</tags>
+<status critical="yes" endtime="20160701 15:26:21.427" starttime="20160701 15:26:21.382" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+</test>
+<test name="TC051 - Verify the message shown, when there are no entries for the given Origin and destination" id="s1-s2-s1-s1-s1-s1-t4">
+<kw type="kw" name="Given I've started the KLM App">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Launch Application on Local Device">
+<doc></doc>
+<arguments>
+<arg>&amp;{app_KLM}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20160701 15:26:21.463">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160701 15:26:21.464" starttime="20160701 15:26:21.461" status="FAIL"></status>
+</kw>
+<status endtime="20160701 15:26:21.466" starttime="20160701 15:26:21.440" status="FAIL"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>DEMO</tag>
+<tag>KLM</tag>
+</tags>
+<status critical="yes" endtime="20160701 15:26:21.469" starttime="20160701 15:26:21.430" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+</test>
+<test name="TC058 - Verify the user able to see the lowest price according to the destination selected, when not logged in" id="s1-s2-s1-s1-s1-s1-t5">
+<kw type="kw" name="Given I've started the KLM App">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Launch Application on Local Device">
+<doc></doc>
+<arguments>
+<arg>&amp;{app_KLM}</arg>
+</arguments>
+<msg level="FAIL" timestamp="20160701 15:26:21.500">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160701 15:26:21.502" starttime="20160701 15:26:21.498" status="FAIL"></status>
+</kw>
+<status endtime="20160701 15:26:21.504" starttime="20160701 15:26:21.480" status="FAIL"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>KLM</tag>
+</tags>
+<status critical="yes" endtime="20160701 15:26:21.506" starttime="20160701 15:26:21.472" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+</test>
+<doc></doc>
+<metadata>
+</metadata>
+<status endtime="20160701 15:26:21.512" starttime="20160701 15:26:20.983" status="FAIL"></status>
+</suite>
+<doc></doc>
+<metadata>
+</metadata>
+<status endtime="20160701 15:26:21.521" starttime="20160701 15:26:20.933" status="FAIL"></status>
+</suite>
+<doc></doc>
+<metadata>
+</metadata>
+<status endtime="20160701 15:26:21.538" starttime="20160701 15:26:20.889" status="FAIL"></status>
+</suite>
+<doc></doc>
+<metadata>
+</metadata>
+<status endtime="20160701 15:26:21.546" starttime="20160701 15:26:20.846" status="FAIL"></status>
+</suite>
+<doc></doc>
+<metadata>
+</metadata>
+<status endtime="20160701 15:26:21.556" starttime="20160701 15:26:20.770" status="FAIL"></status>
+</suite>
+<doc></doc>
+<metadata>
+</metadata>
+<status endtime="20160701 15:26:21.572" starttime="20160701 15:26:19.298" status="FAIL"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat pass="0" fail="10">Critical Tests</stat>
+<stat pass="0" fail="10">All Tests</stat>
 </total>
 <tag>
-<stat fail="1" pass="0">KLM</stat>
-<stat fail="1" pass="0">Smoke</stat>
+<stat pass="0" fail="2" doc="" links="" combined="" info="">AF</stat>
+<stat pass="0" fail="2" doc="" links="" combined="" info="">DEMO</stat>
+<stat pass="0" fail="8" doc="" links="" combined="" info="">KLM</stat>
+<stat pass="0" fail="4" doc="" links="" combined="" info="">Smoke</stat>
+<stat pass="0" fail="2" doc="" links="" combined="" info="">unfinished</stat>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="Airfrance KLM" pass="0">Airfrance KLM</stat>
+<stat pass="0" fail="10" name="UserStoriesForKLM" id="s1">UserStoriesForKLM</stat>
+<stat pass="0" fail="5" name="Airfrance KLM" id="s1-s1">UserStoriesForKLM.Airfrance KLM</stat>
+<stat pass="0" fail="5" name="Src" id="s1-s2">UserStoriesForKLM.Src</stat>
+<stat pass="0" fail="5" name="Test" id="s1-s2-s1">UserStoriesForKLM.Src.Test</stat>
+<stat pass="0" fail="5" name="Robotframework" id="s1-s2-s1-s1">UserStoriesForKLM.Src.Test.Robotframework</stat>
+<stat pass="0" fail="5" name="Acceptance" id="s1-s2-s1-s1-s1">UserStoriesForKLM.Src.Test.Robotframework.Acceptance</stat>
+<stat pass="0" fail="5" name="Airfrance KLM" id="s1-s2-s1-s1-s1-s1">UserStoriesForKLM.Src.Test.Robotframework.Acceptance.Airfrance KLM</stat>
 </suite>
 </statistics>
 <errors>
+<msg level="ERROR" timestamp="20160701 15:26:19.794">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Setting variable '&amp;{app_AF}' failed: Variable name '&amp;{app_AF}' is invalid.</msg>
+<msg level="ERROR" timestamp="20160701 15:26:19.800">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Setting variable '&amp;{app_KLM}' failed: Variable name '&amp;{app_KLM}' is invalid.</msg>
+<msg level="ERROR" timestamp="20160701 15:26:20.022">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Importing test library 'AppiumLibrary' failed: ImportError: No module named AppiumLibrary
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\AM077783\.m2\repository\org\robotframework\robotframework\2.8.7\robotframework-2.8.7.jar\Lib\robot\libraries
+  C:\Users\AM077783\.m2\repository\org\robotframework\robotframework\2.8.7\robotframework-2.8.7.jar\Lib
+  C:\Users\AM077783\.m2\repository\org\robotframework\robotframework\2.8.7\Lib
+  __classpath__
+  __pyclasspath__/
+  .
+  C:\temp\MISSION_WG\08_RF_MOBILE\140_DEV_OF_UTILITIES\PySnapRF
+  C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM
+CLASSPATH:
+  C:\temp\MISSION_WG\08_RF_MOBILE\TOOLS\apache-maven\bin\..\boot\plexus-classworlds-2.5.2.jar</msg>
+<msg level="ERROR" timestamp="20160701 15:26:20.064">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Resource file '..\..\..\30_LIBRAIRIES\rf_helpers.txt' does not exist.</msg>
+<msg level="ERROR" timestamp="20160701 15:26:20.977">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Setting variable '&amp;{app_AF}' failed: Variable name '&amp;{app_AF}' is invalid.</msg>
+<msg level="ERROR" timestamp="20160701 15:26:20.981">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Setting variable '&amp;{app_KLM}' failed: Variable name '&amp;{app_KLM}' is invalid.</msg>
+<msg level="ERROR" timestamp="20160701 15:26:21.130">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Importing test library 'AppiumLibrary' failed: ImportError: No module named AppiumLibrary
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\AM077783\.m2\repository\org\robotframework\robotframework\2.8.7\robotframework-2.8.7.jar\Lib\robot\libraries
+  C:\Users\AM077783\.m2\repository\org\robotframework\robotframework\2.8.7\robotframework-2.8.7.jar\Lib
+  C:\Users\AM077783\.m2\repository\org\robotframework\robotframework\2.8.7\Lib
+  __classpath__
+  __pyclasspath__/
+  .
+  C:\temp\MISSION_WG\08_RF_MOBILE\140_DEV_OF_UTILITIES\PySnapRF
+  C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM
+CLASSPATH:
+  C:\temp\MISSION_WG\08_RF_MOBILE\TOOLS\apache-maven\bin\..\boot\plexus-classworlds-2.5.2.jar</msg>
+<msg level="ERROR" timestamp="20160701 15:26:21.169">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Resource file '..\..\..\30_LIBRAIRIES\rf_helpers.txt' does not exist.</msg>
 </errors>
 </robot>

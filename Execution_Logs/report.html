@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 3.0 (Python 2.7.5 on win32)" name="Generator">
+<meta content="Robot Framework 2.8.7 (Jython 2.5.3 on java1.8.0_66)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAJEBoACtnfgA5cYYAERsiAEx2lAAbKkQAcazBACZCVwAcM1cAK0ucAAMDBQAnQncASG+FABkoVQAyWmgA6f8SgvH/Ij99+GLyIinyJfn/Yi//KSLzUy9iZogpIld3/4JVVTkid7vyUjNVNVJEAGOZ6Z7pXwAABpmZkRiLAAAGiJZpmGAAAEEt3SXdxAAATC7o/u3EAAC8MRZpjasAAAY1VVVTYAAABKqqqqpAAAAADKqq4AAAAAAAv4sAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMADAADgAwAA4AcAAOAHAADgBwAAwAcAAOAHAADgDwAA8A8AAPg/AAD+fwAA">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -30,14 +30,14 @@ br {
 }
 a, a:link, a:visited {
     text-decoration: none;
-    color: #15c;
+    color: blue;
 }
 a > img {
-    border: 1px solid #15c !important;
+    border: 1px solid blue !important;
 }
 a:hover, a:active {
     text-decoration: underline;
-    color: #61c;
+    color: purple;
 }
 .parent-name {
     font-size: 0.7em;
@@ -77,37 +77,19 @@ h2 {
     font-size: 1.0em;
 }
 /* Status text colors -- !important allows using them in links */
-.fail {
-    color: #f33 !important;
+.error, .fail {
+    color: red !important;
     font-weight: bold;
 }
 .pass {
-    color: #393 !important;
+    color: #009900 !important;
 }
-.label {
-    padding: 2px 5px;
-    font-size: 0.75em;
-    letter-spacing: 1px;
-    white-space: nowrap;
-    color: black;
-    background-color: #ddd;
-    border-radius: 3px;
-}
-.label.debug, .label.trace, .label.error, .label.keyword {
-    letter-spacing: 0;
-}
-.label.error, .label.fail, .label.pass, .label.warn {
-    color: #fff !important;
+.warn {
+    color: #FFCC00 !important;
     font-weight: bold;
 }
-.label.error, .label.fail {
-    background-color: #d9534f;
-}
-.label.pass {
-    background-color: #5cb85c;
-}
-.label.warn {
-    background-color: #ec971f;
+.not-run {
+    color: #444444 !important;
 }
 /* Top right header */
 #top-right-header {
@@ -123,19 +105,18 @@ h2 {
     background: black;
     color: white;
     text-decoration: none;
-    font-weight: bold;
     letter-spacing: 0.1em;
     padding: 0.3em 0;
     border-bottom-left-radius: 4px;
 }
 #report-or-log-link a:hover {
-    color: #ddd;
+    color: yellow;
 }
 #log-level-selector {
     padding: 0.3em 0;
     font-size: 0.9em;
     border-bottom-left-radius: 4px;
-    background: #ddd;
+    background: lightgray;
 }
 /* Statistics table */
 .statistics {
@@ -145,15 +126,15 @@ h2 {
     margin-bottom: 1em;
 }
 .statistics tr:hover {
-    background: #f4f4f4;
+    background: #ECECF7;
     cursor: pointer;
 }
 .statistics th, .statistics td {
-    border: 1px solid #ccc;
+    border: 1px solid black;
     padding: 0.1em 0.3em;
 }
 .statistics th {
-    background-color: #ddd;
+    background-color: #DCDCF0;
     padding: 0.2em 0.3em;
 }
 .statistics td {
@@ -189,21 +170,21 @@ th.stats-col-graph:hover {
 }
 /* Statistics graph */
 .graph, .empty-graph {
-    border: 1px solid #ccc;
+    border: 1px solid black;
     width: auto;
     height: 7px;
     padding: 0;
-    background: #f33;
+    background: red;
 }
 .empty-graph {
-    background: #eee;
+    background: #E9E9E9;
 }
 .pass-bar, .fail-bar {
     float: left;
     height: 100%;
 }
 .pass-bar {
-    background: #1d4;
+    background: #00F000;
 }
 /* Tablesorter - adapted from provided Blue Skin */
 .tablesorter-header {
@@ -213,22 +194,22 @@ th.stats-col-graph:hover {
     cursor: pointer;
 }
 .tablesorter-header:hover {
-    background-color: #ccc;
+    background-color: #B8C8E3;
 }
 .tablesorter-headerAsc {
     background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==);
-    background-color: #ccc !important;
+    background-color: #B8C8E3 !important;
 }
 .tablesorter-headerDesc {
     background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==);
-    background-color: #ccc !important;
+    background-color: #B8C8E3 !important;
 }
 .sorter-false {
     background-image: none;
     cursor: default;
 }
 .sorter-false:hover {
-    background-color: #ddd;
+    background-color: #DCDCF0;
 }
 </style>
 <style media="all" type="text/css">
@@ -241,12 +222,12 @@ tr {
     background: white;
 }
 th {
-    background: #ddd;
+    background: #DCDCF0;
     color: black;
 }
 /* Summary and total/tag/suite details */
 .details {
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-collapse: collapse;
     clear: both;
     width: 65em;
@@ -292,8 +273,8 @@ th {
 #search-help div {
     margin: 0.5em 0.5em 0.7em 0;
     padding: 0.7em;
-    background: #eee;
-    border: 1px solid #ccc;
+    background: #ECECF7;
+    border: 1px solid #BCBCD7;
     border-radius: 3px;
 }
 #search-help h3, #search-help p {
@@ -328,15 +309,15 @@ th {
 }
 .detail-tab {
     float: left;
-    background: #ddd;
-    border: 1px solid #ccc;
+    background: #DCDCF0;
+    border: 1px solid black;
     border-bottom-width: 0;
     margin: 0 0.5em 0 0;
     padding-top: 0.1em;
     border-radius: 3px 3px 0 0;
 }
 .detail-tab:hover {
-    background: #ccc;
+    background: yellow;
 }
 .detail-tab a {
     color: black;
@@ -356,10 +337,10 @@ th {
 #test-details {
     width: 100%;
     border-spacing: 1px;
-    background-color: #ccc;
+    background-color: black;
 }
 #test-details > tbody > tr:hover {
-    background: #f4f4f4;
+    background: #F4F4FF;
     cursor: pointer;
 }
 #test-details th, #test-details td {
@@ -374,7 +355,7 @@ th {
 }
 .details-col-toggle {
     float: left;
-    color: #6c6c6c; /* same as in sort icon */
+    color: #808080;
     cursor: pointer;
 }
 .details-col-toggle:hover {
@@ -419,7 +400,7 @@ th {
     background-image: none;
 }
 th.hidden:hover {
-    background-color: #ccc;
+    background-color: #DCDCF0;
 }
 </style>
 <style media="print" type="text/css">
@@ -459,7 +440,7 @@ a:link, a:visited {
 }
 .tablesorter-header {
     background-image: none;
-    background: #ddd !important;
+    background: #DCDCF0 !important;
 }
 </style>
 <style media="all" type="text/css">
@@ -467,9 +448,9 @@ a:link, a:visited {
     width: 600px;
     margin: 100px auto 0 auto;
     padding: 20px;
-    color: black;
-    border: 1px solid #ccc;
-    background: #eee;
+    color: #2A2A2E;
+    border: 1px solid #9A9A9E;
+    background: #FAFAFF;
 }
 #javascript-disabled h1 {
     width: 100%;
@@ -497,14 +478,14 @@ a:link, a:visited {
     margin-top: 0.1em;
 }
 .doc table {
-    border: 1px solid #ccc;
+    border: 1px solid gray;
     background: transparent;
     border-collapse: collapse;
     empty-cells: show;
     font-size: 0.9em;
 }
 .doc table th, .doc table td {
-    border: 1px solid #ccc;
+    border: 1px solid gray;
     background: transparent;
     padding: 0.1em 0.3em;
     height: 1.2em;
@@ -516,22 +497,22 @@ a:link, a:visited {
 .doc pre {
     font-size: 1.1em;
     letter-spacing: 0.05em;
-    background: #eee;
+    background: #F4F4FF;
 }
 .doc code {
     padding: 0 0.2em;
     letter-spacing: 0.05em;
-    background: #eee;
+    background: #F4F4FF;
 }
 .doc li {
     list-style-position: inside;
     list-style-type: square;
 }
 .doc img {
-    border: 1px solid #ccc;
+    border: 1px solid gray;
 }
 .doc hr {
-    background: #ccc;
+    background: gray;
     height: 1px;
     border: 0;
 }
@@ -651,11 +632,9 @@ window.model = (function () {
             for (var i in suites)
                 tests = tests.concat(suites[i].searchTestsInSuite(pattern, matcher));
             return tests;
-        };
+        }
         suite.searchTestsByTag = function (tag) {
             return suite.searchTests(function (test) {
-                if (tag.info == "critical" || tag.info == "non-critical")
-                    return containsTagPattern(test.tags, tag.label);
                 if (tag.combined)
                     return containsTagPattern(test.tags, tag.combined);
                 return containsTag(test.tags, tag.label);
@@ -684,10 +663,6 @@ window.model = (function () {
         var patterns;
         if (pattern.indexOf('NOT') != -1) {
             patterns = pattern.split('NOT');
-            if (!util.normalize(patterns[0]))
-                return util.all(util.map(patterns.slice(1), function (p) {
-                    return !containsTagPattern(testTags, p);
-                }));
             return containsTagPattern(testTags, patterns[0]) &&
                 util.all(util.map(patterns.slice(1), function (p) {
                     return !containsTagPattern(testTags, p);
@@ -758,11 +733,8 @@ window.model = (function () {
     }
     function Keyword(data) {
         var kw = createModelObject(data);
-        kw.libname = data.libname;
         kw.type = data.type;
         kw.arguments = data.args;
-        kw.assign = data.assign + (data.assign ? ' =' : '');
-        kw.tags = data.tags;
         kw.timeout = data.timeout;
         kw.populateMessages = createIterablePopulator('Message');
         kw.populateKeywords = createIterablePopulator('Keyword');
@@ -1101,7 +1073,7 @@ window.testdata = function () {
     var elementsById = {};
     var idCounter = 0;
     var _statistics = null;
-    var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL'];
+    var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'FAIL', 'ERROR'];
     var STATUSES = ['FAIL', 'PASS', 'NOT_RUN'];
     var KEYWORDS = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'VAR'];
     function addElement(elem) {
@@ -1143,36 +1115,30 @@ window.testdata = function () {
             type: KEYWORDS[element[0]],
             id: 'k' + (index + 1),
             name: strings.get(element[1]),
-            libname: strings.get(element[2]),
-            timeout: strings.get(element[3]),
-            args: strings.get(element[5]),
-            assign: strings.get(element[6]),
-            tags: strings.get(element[7]),
+            timeout: strings.get(element[2]),
+            args: strings.get(element[4]),
             doc: function () {
-                var doc = strings.get(element[4]);
+                var doc = strings.get(element[3]);
                 this.doc = function () { return doc; };
                 return doc;
             },
-            status: parseStatus(element[8], strings),
-            times: model.Times(times(element[8])),
-            isChildrenLoaded: typeof(element[9]) !== 'number'
+            status: parseStatus(element[5], strings),
+            times: model.Times(times(element[5])),
+            isChildrenLoaded: typeof(element[6]) !== 'number'
         });
-        lazyPopulateKeywordsFromFile(kw, element[9], strings);
-        kw.populateMessages(Populator(element[10], strings, message));
+        lazyPopulateKeywordsFromFile(kw, element[6], strings);
+        kw.populateMessages(Populator(element[7], strings, message));
         return kw;
     }
-    function lazyPopulateKeywordsFromFile(parent, modelOrIndex, strings) {
-        var model, index, populator;
-        var creator = childCreator(parent, createKeyword);
+    function lazyPopulateKeywordsFromFile(parent, keywordsOrIndex, strings) {
         if (parent.isChildrenLoaded) {
-            model = modelOrIndex;
-            populator = Populator(model, strings, creator);
+            var keywords = keywordsOrIndex;
+            parent.populateKeywords(Populator(keywords, strings, childCreator(parent, createKeyword)));
         } else {
-            index = modelOrIndex;
+            var index = keywordsOrIndex;
             parent.childFileName = window.settings['splitLogBase'] + '-' + index + '.js';
-            populator = SplitLogPopulator(index, creator);
+            parent.populateKeywords(SplitLogPopulator(keywordsOrIndex, childCreator(parent, createKeyword)));
         }
-        parent.populateKeywords(populator);
     }
     function tags(taglist, strings) {
         return util.map(taglist, strings.get);
@@ -1557,28 +1523,28 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,0,36457],[],[[4,0,1,0,[5,6],[0,326,36130,7],[]]],[],[1,0,1,0]];
+window.output["suite"] = [1,2,3,0,[],[0,0,2274],[[4,5,6,0,[],[0,503,957],[],[[7,0,1,0,[8],[0,1111,86,9],[]],[10,0,1,0,[11,12],[0,1202,61,9],[]],[13,0,1,0,[11,12,14],[0,1274,69,9],[]],[15,0,1,0,[16,11],[0,1347,52,9],[]],[17,0,1,0,[11],[0,1403,47,9],[]]],[],[5,0,5,0]],[18,19,20,0,[],[0,1472,786],[[21,22,23,0,[],[0,1548,700],[[24,25,26,0,[],[0,1591,649],[[27,28,29,0,[],[0,1635,588],[[4,30,31,0,[],[0,1685,529],[],[[7,0,1,0,[8],[0,1988,43,9],[]],[10,0,1,0,[11,12],[0,2036,42,9],[]],[13,0,1,0,[11,12,14],[0,2084,45,9],[]],[15,0,1,0,[16,11],[0,2132,39,9],[]],[17,0,1,0,[11],[0,2174,34,9],[]]],[],[5,0,5,0]]],[],[],[5,0,5,0]]],[],[],[5,0,5,0]]],[],[],[5,0,5,0]]],[],[],[5,0,5,0]]],[],[],[10,0,10,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Airfrance KLM","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\Airfrance_KLM.robot","*../Airfrance_KLM.robot","*TC050 - Verify that the user is able to see the default values in the search module","*KLM","*Smoke","*Element 'xpath=//android.widget.TextView[@text='Country of residence'][@resource-id='com.afklm.mobile.android.gomobile.klm:id/action_bar_text']' did not appear in 5 seconds"]);
+window.output["strings"] = window.output["strings"].concat(["*","*UserStoriesForKLM","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM","*../","*Airfrance KLM","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\Airfrance_KLM.robot","*../Airfrance_KLM.robot","*Access to Flight News(AF)","*AF","*No keyword with name 'Launch Application on Local Device' found.","*TC050 - Verify that the user is able to see the default values in the search module","*KLM","*Smoke","*TC0XX - Verify whether the user is able to book a one way flight without login.","*unfinished","*TC051 - Verify the message shown, when there are no entries for the given Origin and destination","*DEMO","*TC058 - Verify the user able to see the lowest price according to the destination selected, when not logged in","*Src","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src","*../src","*Test","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src\\test","*../src/test","*Robotframework","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src\\test\\robotframework","*../src/test/robotframework","*Acceptance","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src\\test\\robotframework\\acceptance","*../src/test/robotframework/acceptance","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src\\test\\robotframework\\acceptance\\Airfrance_KLM.robot","*../src/test/robotframework/acceptance/Airfrance_KLM.robot"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:36","fail":1,"label":"Critical Tests","pass":0},{"elapsed":"00:00:36","fail":1,"label":"All Tests","pass":0}],[{"elapsed":"00:00:36","fail":1,"label":"KLM","pass":0},{"elapsed":"00:00:36","fail":1,"label":"Smoke","pass":0}],[{"elapsed":"00:00:36","fail":1,"id":"s1","label":"Airfrance KLM","name":"Airfrance KLM","pass":0}]];
+window.output["generatedTimestamp"] = "20160701 15:26:22 GMT +02:00";
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1467377366680;
+window.output["generatedMillis"] = 2702;
 </script>
 <script type="text/javascript">
-window.output["generatedMillis"] = 36320;
+window.output["baseMillis"] = 1467379579298;
 </script>
 <script type="text/javascript">
-window.output["generatedTimestamp"] = "20160701 14:50:03 GMT +02:00";
+window.output["stats"] = [[{"elapsed":"00:00:01","fail":10,"label":"Critical Tests","pass":0},{"elapsed":"00:00:01","fail":10,"label":"All Tests","pass":0}],[{"elapsed":"00:00:00","fail":2,"label":"AF","pass":0},{"elapsed":"00:00:00","fail":2,"label":"DEMO","pass":0},{"elapsed":"00:00:00","fail":8,"label":"KLM","pass":0},{"elapsed":"00:00:00","fail":4,"label":"Smoke","pass":0},{"elapsed":"00:00:00","fail":2,"label":"unfinished","pass":0}],[{"elapsed":"00:00:02","fail":10,"id":"s1","label":"UserStoriesForKLM","name":"UserStoriesForKLM","pass":0},{"elapsed":"00:00:01","fail":5,"id":"s1-s1","label":"UserStoriesForKLM.Airfrance KLM","name":"Airfrance KLM","pass":0},{"elapsed":"00:00:01","fail":5,"id":"s1-s2","label":"UserStoriesForKLM.Src","name":"Src","pass":0},{"elapsed":"00:00:01","fail":5,"id":"s1-s2-s1","label":"UserStoriesForKLM.Src.Test","name":"Test","pass":0},{"elapsed":"00:00:01","fail":5,"id":"s1-s2-s1-s1","label":"UserStoriesForKLM.Src.Test.Robotframework","name":"Robotframework","pass":0},{"elapsed":"00:00:01","fail":5,"id":"s1-s2-s1-s1-s1","label":"UserStoriesForKLM.Src.Test.Robotframework.Acceptance","name":"Acceptance","pass":0},{"elapsed":"00:00:01","fail":5,"id":"s1-s2-s1-s1-s1-s1","label":"UserStoriesForKLM.Src.Test.Robotframework.Acceptance.Airfrance KLM","name":"Airfrance KLM","pass":0}]];
 </script>
 <script type="text/javascript">
-window.settings = {"background":{"fail":"#f66","nonCriticalFail":"#9e9","pass":"#9e9"},"logURL":"log.html","title":""};
+window.settings = {"background":{"fail":"#FF3333","nonCriticalFail":"#99FF66","pass":"#99FF66"},"logURL":"log.html","title":""};
 </script>
 <title></title>
 </head>
@@ -2249,11 +2215,8 @@ function hideHiddenDetailsColumns(elem) {
               </tr>
               <tr>
                 <td>NOT</td>
-                <td>
-                    Matches if (optional) pattern before matches and pattern
-                    after does not.
-                </td>
-                <td>foo NOT bar<br>* NOT id-* AND smoke<br>NOT bar</td>
+                <td>Matches if pattern before matches and pattern after does not.</td>
+                <td>foo NOT bar<br>* NOT id-* AND smoke</td>
               </tr>
             </table>
           </div>
@@ -2387,7 +2350,7 @@ function hideHiddenDetailsColumns(elem) {
     <td class="details-col-doc"><div class="doc details-limited">{{html doc()}}</div></td>
     <td class="details-col-tags"><div>{{html tags.join(', ')}}</div></td>
     <td class="details-col-crit"><div>{{if isCritical}}yes{{else}}no{{/if}}</div></td>
-    <td class="details-col-status"><div><span class="label ${status.toLowerCase()}">${status}</span></div></td>
+    <td class="details-col-status"><div class="${status.toLowerCase()}">${status}</div></td>
     <td class="details-col-msg"><div class="message details-limited">{{html message()}}</div></td>
     <td class="details-col-elapsed"><div>${times.elapsedTime}</div></td>
     <td class="details-col-times"><div>${times.startTime}<br>${times.endTime}</div></td>

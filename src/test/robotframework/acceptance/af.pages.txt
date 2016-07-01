@@ -1,0 +1,32 @@
+*** Keywords ***
+At Launch, Refuse to Update the App
+    Wait Until Page Contains Element    ${Popup_Update_Application}    20s    The Popup to Update the Application did not display
+    Click Element    ${Update_Later_Button}
+
+At Launch, Skip the login Step
+    Wait Until Page Contains Element    ${SignIn_Screen}    2s
+    Click Element    ${SkipSignIn_Button}
+
+At Launch, Confirm the UK Language
+    Wait Until Page Contains Element    ${Confirm_Language_Screen}    5s
+    Click Element    ${Confirm_Current_Language}
+
+On Homepage, Select “Flight news”
+    I'm on HomePage
+    Click Element    ${Flight_News_Icon}
+
+I'm on "Flight News" Page
+    Wait Until Page Contains Element    ${Flight News Screen}    5s
+
+Open the Airfrance App
+    Launch Application on Local Device    &{app_AF}
+
+I'm on HomePage
+    Wait Until Page Contains Element    ${HomePage_Screen}    5s
+
+Check that I’m on the AirFrance HomePage
+    I'm on HomePage
+
+Check that I’m on the “Flight news” Page
+    I'm on "Flight News" Page
+    Capture Page Screenshot
