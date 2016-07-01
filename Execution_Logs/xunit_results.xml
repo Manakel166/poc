@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite failures="1" tests="1" errors="0" name="Airfrance KLM" skip="0">
+<testcase classname="Airfrance KLM" name="TC050 - Verify that the user is able to see the default values in the search module" time="36">
+<failure message="Element 'xpath=//android.widget.TextView[@text='Country of residence'][@resource-id='com.afklm.mobile.android.gomobile.klm:id/action_bar_text']' did not appear in 5 seconds" type="AssertionError"></failure>
+</testcase>
+</testsuite>
