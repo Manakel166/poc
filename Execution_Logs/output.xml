@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 2.8.7 (Jython 2.5.3 on java1.8.0_66)" generated="20160701 15:26:19.290">
+<robot generator="Robot 2.8.7 (Jython 2.5.3 on java1.8.0_66)" generated="20160704 10:43:16.903">
 <suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM" name="UserStoriesForKLM" id="s1">
 <suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot" name="Airfrance KLM" id="s1-s1">
 <test name="Access to Flight News(AF)" id="s1-s1-t1">
@@ -16,18 +16,18 @@
 <arguments>
 <arg>&amp;{app_AF}</arg>
 </arguments>
-<msg level="FAIL" timestamp="20160701 15:26:20.482">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160701 15:26:20.484" starttime="20160701 15:26:20.479" status="FAIL"></status>
+<msg level="FAIL" timestamp="20160704 10:43:18.719">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160704 10:43:18.719" starttime="20160704 10:43:18.718" status="FAIL"></status>
 </kw>
-<status endtime="20160701 15:26:20.487" starttime="20160701 15:26:20.433" status="FAIL"></status>
+<status endtime="20160704 10:43:18.719" starttime="20160704 10:43:18.678" status="FAIL"></status>
 </kw>
-<status endtime="20160701 15:26:20.492" starttime="20160701 15:26:20.424" status="FAIL"></status>
+<status endtime="20160704 10:43:18.719" starttime="20160704 10:43:18.668" status="FAIL"></status>
 </kw>
 <doc></doc>
 <tags>
 <tag>AF</tag>
 </tags>
-<status critical="yes" endtime="20160701 15:26:20.495" starttime="20160701 15:26:20.409" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+<status critical="yes" endtime="20160704 10:43:18.721" starttime="20160704 10:43:18.648" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
 </test>
 <test name="TC050 - Verify that the user is able to see the default values in the search module" id="s1-s1-t2">
 <kw type="kw" name="Given I've started the KLM App">
@@ -39,17 +39,17 @@
 <arguments>
 <arg>&amp;{app_KLM}</arg>
 </arguments>
-<msg level="FAIL" timestamp="20160701 15:26:20.553">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160701 15:26:20.555" starttime="20160701 15:26:20.551" status="FAIL"></status>
+<msg level="FAIL" timestamp="20160704 10:43:18.790">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160704 10:43:18.800" starttime="20160704 10:43:18.790" status="FAIL"></status>
 </kw>
-<status endtime="20160701 15:26:20.558" starttime="20160701 15:26:20.513" status="FAIL"></status>
+<status endtime="20160704 10:43:18.800" starttime="20160704 10:43:18.738" status="FAIL"></status>
 </kw>
 <doc></doc>
 <tags>
 <tag>KLM</tag>
 <tag>Smoke</tag>
 </tags>
-<status critical="yes" endtime="20160701 15:26:20.561" starttime="20160701 15:26:20.500" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+<status critical="yes" endtime="20160704 10:43:18.800" starttime="20160704 10:43:18.725" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
 </test>
 <test name="TC0XX - Verify whether the user is able to book a one way flight without login." id="s1-s1-t3">
 <kw type="kw" name="${Search_Destination(TextView)_id} = xpath_helpers.Xpath By Id">
@@ -57,8 +57,8 @@
 <arguments>
 <arg>search_destination</arg>
 </arguments>
-<msg level="INFO" timestamp="20160701 15:26:20.591">${Search_Destination(TextView)_id} = //*[ends-with(@resource-id,'search_destination']</msg>
-<status endtime="20160701 15:26:20.589" starttime="20160701 15:26:20.584" status="PASS"></status>
+<msg level="INFO" timestamp="20160704 10:43:18.882">${Search_Destination(TextView)_id} = //*[ends-with(@resource-id,'search_destination']</msg>
+<status endtime="20160704 10:43:18.882" starttime="20160704 10:43:18.872" status="PASS"></status>
 </kw>
 <kw type="kw" name="Given I've started the KLM App">
 <doc></doc>
@@ -69,10 +69,10 @@
 <arguments>
 <arg>&amp;{app_KLM}</arg>
 </arguments>
-<msg level="FAIL" timestamp="20160701 15:26:20.634">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160701 15:26:20.635" starttime="20160701 15:26:20.628" status="FAIL"></status>
+<msg level="FAIL" timestamp="20160704 10:43:18.932">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160704 10:43:18.932" starttime="20160704 10:43:18.932" status="FAIL"></status>
 </kw>
-<status endtime="20160701 15:26:20.638" starttime="20160701 15:26:20.595" status="FAIL"></status>
+<status endtime="20160704 10:43:18.942" starttime="20160704 10:43:18.892" status="FAIL"></status>
 </kw>
 <doc></doc>
 <tags>
@@ -80,7 +80,7 @@
 <tag>Smoke</tag>
 <tag>unfinished</tag>
 </tags>
-<status critical="yes" endtime="20160701 15:26:20.641" starttime="20160701 15:26:20.572" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+<status critical="yes" endtime="20160704 10:43:18.942" starttime="20160704 10:43:18.810" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
 </test>
 <test name="TC051 - Verify the message shown, when there are no entries for the given Origin and destination" id="s1-s1-t4">
 <kw type="kw" name="Given I've started the KLM App">
@@ -92,17 +92,17 @@
 <arguments>
 <arg>&amp;{app_KLM}</arg>
 </arguments>
-<msg level="FAIL" timestamp="20160701 15:26:20.691">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160701 15:26:20.692" starttime="20160701 15:26:20.689" status="FAIL"></status>
+<msg level="FAIL" timestamp="20160704 10:43:18.994">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160704 10:43:18.994" starttime="20160704 10:43:18.984" status="FAIL"></status>
 </kw>
-<status endtime="20160701 15:26:20.694" starttime="20160701 15:26:20.659" status="FAIL"></status>
+<status endtime="20160704 10:43:18.994" starttime="20160704 10:43:18.953" status="FAIL"></status>
 </kw>
 <doc></doc>
 <tags>
 <tag>DEMO</tag>
 <tag>KLM</tag>
 </tags>
-<status critical="yes" endtime="20160701 15:26:20.697" starttime="20160701 15:26:20.645" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+<status critical="yes" endtime="20160704 10:43:18.994" starttime="20160704 10:43:18.952" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
 </test>
 <test name="TC058 - Verify the user able to see the lowest price according to the destination selected, when not logged in" id="s1-s1-t5">
 <kw type="kw" name="Given I've started the KLM App">
@@ -114,21 +114,21 @@
 <arguments>
 <arg>&amp;{app_KLM}</arg>
 </arguments>
-<msg level="FAIL" timestamp="20160701 15:26:20.741">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160701 15:26:20.742" starttime="20160701 15:26:20.739" status="FAIL"></status>
+<msg level="FAIL" timestamp="20160704 10:43:19.034">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160704 10:43:19.034" starttime="20160704 10:43:19.034" status="FAIL"></status>
 </kw>
-<status endtime="20160701 15:26:20.745" starttime="20160701 15:26:20.711" status="FAIL"></status>
+<status endtime="20160704 10:43:19.034" starttime="20160704 10:43:19.004" status="FAIL"></status>
 </kw>
 <doc></doc>
 <tags>
 <tag>KLM</tag>
 </tags>
-<status critical="yes" endtime="20160701 15:26:20.748" starttime="20160701 15:26:20.701" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+<status critical="yes" endtime="20160704 10:43:19.034" starttime="20160704 10:43:19.004" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
 </test>
 <doc></doc>
 <metadata>
 </metadata>
-<status endtime="20160701 15:26:20.758" starttime="20160701 15:26:19.801" status="FAIL"></status>
+<status endtime="20160704 10:43:19.044" starttime="20160704 10:43:17.410" status="FAIL"></status>
 </suite>
 <suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src" name="Src" id="s1-s2">
 <suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test" name="Test" id="s1-s2-s1">
@@ -149,18 +149,18 @@
 <arguments>
 <arg>&amp;{app_AF}</arg>
 </arguments>
-<msg level="FAIL" timestamp="20160701 15:26:21.323">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160701 15:26:21.324" starttime="20160701 15:26:21.321" status="FAIL"></status>
+<msg level="FAIL" timestamp="20160704 10:43:19.653">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160704 10:43:19.653" starttime="20160704 10:43:19.643" status="FAIL"></status>
 </kw>
-<status endtime="20160701 15:26:21.325" starttime="20160701 15:26:21.301" status="FAIL"></status>
+<status endtime="20160704 10:43:19.653" starttime="20160704 10:43:19.633" status="FAIL"></status>
 </kw>
-<status endtime="20160701 15:26:21.327" starttime="20160701 15:26:21.294" status="FAIL"></status>
+<status endtime="20160704 10:43:19.663" starttime="20160704 10:43:19.623" status="FAIL"></status>
 </kw>
 <doc></doc>
 <tags>
 <tag>AF</tag>
 </tags>
-<status critical="yes" endtime="20160701 15:26:21.329" starttime="20160701 15:26:21.286" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+<status critical="yes" endtime="20160704 10:43:19.663" starttime="20160704 10:43:19.623" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
 </test>
 <test name="TC050 - Verify that the user is able to see the default values in the search module" id="s1-s2-s1-s1-s1-s1-t2">
 <kw type="kw" name="Given I've started the KLM App">
@@ -172,17 +172,17 @@
 <arguments>
 <arg>&amp;{app_KLM}</arg>
 </arguments>
-<msg level="FAIL" timestamp="20160701 15:26:21.370">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160701 15:26:21.371" starttime="20160701 15:26:21.368" status="FAIL"></status>
+<msg level="FAIL" timestamp="20160704 10:43:19.703">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160704 10:43:19.703" starttime="20160704 10:43:19.693" status="FAIL"></status>
 </kw>
-<status endtime="20160701 15:26:21.373" starttime="20160701 15:26:21.345" status="FAIL"></status>
+<status endtime="20160704 10:43:19.703" starttime="20160704 10:43:19.673" status="FAIL"></status>
 </kw>
 <doc></doc>
 <tags>
 <tag>KLM</tag>
 <tag>Smoke</tag>
 </tags>
-<status critical="yes" endtime="20160701 15:26:21.376" starttime="20160701 15:26:21.334" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+<status critical="yes" endtime="20160704 10:43:19.713" starttime="20160704 10:43:19.663" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
 </test>
 <test name="TC0XX - Verify whether the user is able to book a one way flight without login." id="s1-s2-s1-s1-s1-s1-t3">
 <kw type="kw" name="${Search_Destination(TextView)_id} = xpath_helpers.Xpath By Id">
@@ -190,8 +190,8 @@
 <arguments>
 <arg>search_destination</arg>
 </arguments>
-<msg level="INFO" timestamp="20160701 15:26:21.394">${Search_Destination(TextView)_id} = //*[ends-with(@resource-id,'search_destination']</msg>
-<status endtime="20160701 15:26:21.393" starttime="20160701 15:26:21.391" status="PASS"></status>
+<msg level="INFO" timestamp="20160704 10:43:19.735">${Search_Destination(TextView)_id} = //*[ends-with(@resource-id,'search_destination']</msg>
+<status endtime="20160704 10:43:19.734" starttime="20160704 10:43:19.731" status="PASS"></status>
 </kw>
 <kw type="kw" name="Given I've started the KLM App">
 <doc></doc>
@@ -202,10 +202,10 @@
 <arguments>
 <arg>&amp;{app_KLM}</arg>
 </arguments>
-<msg level="FAIL" timestamp="20160701 15:26:21.421">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160701 15:26:21.422" starttime="20160701 15:26:21.419" status="FAIL"></status>
+<msg level="FAIL" timestamp="20160704 10:43:19.775">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160704 10:43:19.775" starttime="20160704 10:43:19.775" status="FAIL"></status>
 </kw>
-<status endtime="20160701 15:26:21.424" starttime="20160701 15:26:21.397" status="FAIL"></status>
+<status endtime="20160704 10:43:19.775" starttime="20160704 10:43:19.755" status="FAIL"></status>
 </kw>
 <doc></doc>
 <tags>
@@ -213,7 +213,7 @@
 <tag>Smoke</tag>
 <tag>unfinished</tag>
 </tags>
-<status critical="yes" endtime="20160701 15:26:21.427" starttime="20160701 15:26:21.382" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+<status critical="yes" endtime="20160704 10:43:19.785" starttime="20160704 10:43:19.722" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
 </test>
 <test name="TC051 - Verify the message shown, when there are no entries for the given Origin and destination" id="s1-s2-s1-s1-s1-s1-t4">
 <kw type="kw" name="Given I've started the KLM App">
@@ -225,17 +225,17 @@
 <arguments>
 <arg>&amp;{app_KLM}</arg>
 </arguments>
-<msg level="FAIL" timestamp="20160701 15:26:21.463">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160701 15:26:21.464" starttime="20160701 15:26:21.461" status="FAIL"></status>
+<msg level="FAIL" timestamp="20160704 10:43:19.815">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160704 10:43:19.815" starttime="20160704 10:43:19.805" status="FAIL"></status>
 </kw>
-<status endtime="20160701 15:26:21.466" starttime="20160701 15:26:21.440" status="FAIL"></status>
+<status endtime="20160704 10:43:19.815" starttime="20160704 10:43:19.795" status="FAIL"></status>
 </kw>
 <doc></doc>
 <tags>
 <tag>DEMO</tag>
 <tag>KLM</tag>
 </tags>
-<status critical="yes" endtime="20160701 15:26:21.469" starttime="20160701 15:26:21.430" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+<status critical="yes" endtime="20160704 10:43:19.815" starttime="20160704 10:43:19.785" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
 </test>
 <test name="TC058 - Verify the user able to see the lowest price according to the destination selected, when not logged in" id="s1-s2-s1-s1-s1-s1-t5">
 <kw type="kw" name="Given I've started the KLM App">
@@ -247,46 +247,46 @@
 <arguments>
 <arg>&amp;{app_KLM}</arg>
 </arguments>
-<msg level="FAIL" timestamp="20160701 15:26:21.500">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160701 15:26:21.502" starttime="20160701 15:26:21.498" status="FAIL"></status>
+<msg level="FAIL" timestamp="20160704 10:43:19.855">No keyword with name 'Launch Application on Local Device' found.</msg>
+<status endtime="20160704 10:43:19.855" starttime="20160704 10:43:19.855" status="FAIL"></status>
 </kw>
-<status endtime="20160701 15:26:21.504" starttime="20160701 15:26:21.480" status="FAIL"></status>
+<status endtime="20160704 10:43:19.855" starttime="20160704 10:43:19.825" status="FAIL"></status>
 </kw>
 <doc></doc>
 <tags>
 <tag>KLM</tag>
 </tags>
-<status critical="yes" endtime="20160701 15:26:21.506" starttime="20160701 15:26:21.472" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+<status critical="yes" endtime="20160704 10:43:19.856" starttime="20160704 10:43:19.815" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
 </test>
 <doc></doc>
 <metadata>
 </metadata>
-<status endtime="20160701 15:26:21.512" starttime="20160701 15:26:20.983" status="FAIL"></status>
+<status endtime="20160704 10:43:19.857" starttime="20160704 10:43:19.251" status="FAIL"></status>
 </suite>
 <doc></doc>
 <metadata>
 </metadata>
-<status endtime="20160701 15:26:21.521" starttime="20160701 15:26:20.933" status="FAIL"></status>
+<status endtime="20160704 10:43:19.871" starttime="20160704 10:43:19.191" status="FAIL"></status>
 </suite>
 <doc></doc>
 <metadata>
 </metadata>
-<status endtime="20160701 15:26:21.538" starttime="20160701 15:26:20.889" status="FAIL"></status>
+<status endtime="20160704 10:43:19.897" starttime="20160704 10:43:19.133" status="FAIL"></status>
 </suite>
 <doc></doc>
 <metadata>
 </metadata>
-<status endtime="20160701 15:26:21.546" starttime="20160701 15:26:20.846" status="FAIL"></status>
+<status endtime="20160704 10:43:19.897" starttime="20160704 10:43:19.089" status="FAIL"></status>
 </suite>
 <doc></doc>
 <metadata>
 </metadata>
-<status endtime="20160701 15:26:21.556" starttime="20160701 15:26:20.770" status="FAIL"></status>
+<status endtime="20160704 10:43:19.917" starttime="20160704 10:43:19.054" status="FAIL"></status>
 </suite>
 <doc></doc>
 <metadata>
 </metadata>
-<status endtime="20160701 15:26:21.572" starttime="20160701 15:26:19.298" status="FAIL"></status>
+<status endtime="20160704 10:43:19.917" starttime="20160704 10:43:16.913" status="FAIL"></status>
 </suite>
 <statistics>
 <total>
@@ -311,9 +311,9 @@
 </suite>
 </statistics>
 <errors>
-<msg level="ERROR" timestamp="20160701 15:26:19.794">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Setting variable '&amp;{app_AF}' failed: Variable name '&amp;{app_AF}' is invalid.</msg>
-<msg level="ERROR" timestamp="20160701 15:26:19.800">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Setting variable '&amp;{app_KLM}' failed: Variable name '&amp;{app_KLM}' is invalid.</msg>
-<msg level="ERROR" timestamp="20160701 15:26:20.022">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Importing test library 'AppiumLibrary' failed: ImportError: No module named AppiumLibrary
+<msg level="ERROR" timestamp="20160704 10:43:17.410">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Setting variable '&amp;{app_AF}' failed: Variable name '&amp;{app_AF}' is invalid.</msg>
+<msg level="ERROR" timestamp="20160704 10:43:17.410">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Setting variable '&amp;{app_KLM}' failed: Variable name '&amp;{app_KLM}' is invalid.</msg>
+<msg level="ERROR" timestamp="20160704 10:43:17.635">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Importing test library 'AppiumLibrary' failed: ImportError: No module named AppiumLibrary
 Traceback (most recent call last):
   None
 PYTHONPATH:
@@ -327,10 +327,10 @@ PYTHONPATH:
   C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM
 CLASSPATH:
   C:\temp\MISSION_WG\08_RF_MOBILE\TOOLS\apache-maven\bin\..\boot\plexus-classworlds-2.5.2.jar</msg>
-<msg level="ERROR" timestamp="20160701 15:26:20.064">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Resource file '..\..\..\30_LIBRAIRIES\rf_helpers.txt' does not exist.</msg>
-<msg level="ERROR" timestamp="20160701 15:26:20.977">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Setting variable '&amp;{app_AF}' failed: Variable name '&amp;{app_AF}' is invalid.</msg>
-<msg level="ERROR" timestamp="20160701 15:26:20.981">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Setting variable '&amp;{app_KLM}' failed: Variable name '&amp;{app_KLM}' is invalid.</msg>
-<msg level="ERROR" timestamp="20160701 15:26:21.130">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Importing test library 'AppiumLibrary' failed: ImportError: No module named AppiumLibrary
+<msg level="ERROR" timestamp="20160704 10:43:17.744">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Resource file '..\..\..\30_LIBRAIRIES\rf_helpers.txt' does not exist.</msg>
+<msg level="ERROR" timestamp="20160704 10:43:19.241">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Setting variable '&amp;{app_AF}' failed: Variable name '&amp;{app_AF}' is invalid.</msg>
+<msg level="ERROR" timestamp="20160704 10:43:19.251">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Setting variable '&amp;{app_KLM}' failed: Variable name '&amp;{app_KLM}' is invalid.</msg>
+<msg level="ERROR" timestamp="20160704 10:43:19.393">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Importing test library 'AppiumLibrary' failed: ImportError: No module named AppiumLibrary
 Traceback (most recent call last):
   None
 PYTHONPATH:
@@ -344,6 +344,6 @@ PYTHONPATH:
   C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM
 CLASSPATH:
   C:\temp\MISSION_WG\08_RF_MOBILE\TOOLS\apache-maven\bin\..\boot\plexus-classworlds-2.5.2.jar</msg>
-<msg level="ERROR" timestamp="20160701 15:26:21.169">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Resource file '..\..\..\30_LIBRAIRIES\rf_helpers.txt' does not exist.</msg>
+<msg level="ERROR" timestamp="20160704 10:43:19.453">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Resource file '..\..\..\30_LIBRAIRIES\rf_helpers.txt' does not exist.</msg>
 </errors>
 </robot>

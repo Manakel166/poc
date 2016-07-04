@@ -1,13 +1,13 @@
 *** Settings ***
 Library           AppiumLibrary
 Resource          af.ui.txt    # UI Identifier. may change from Platform to Platform
-Resource          ../../../30_LIBRAIRIES/rf_helpers.txt
+Resource          ../../resources/robotframework/librairies/rf_helpers.txt
 Resource          klm.ui.txt
 Resource          af.pages.txt
 Library           String
 Library           DateTime
-Library           ../../30_LIBRAIRIES/xpath_helpers.py
-Library           ../../30_LIBRAIRIES/AppiumExtension.py
+Library           ../../resources/robotframework/librairies/xpath_helpers.py
+Library           ../../resources/robotframework/librairies/AppiumExtension.py
 
 *** Variables ***
 &{app_AF}         app=../../../../20_AUT/air_france_1.7.2_72.apk    # A dictionnary to provide the parameters of the App under Tests (like path to the apk....)

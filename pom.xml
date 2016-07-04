@@ -25,6 +25,16 @@
                  <testCasesDirectory>${project.basedir}/</testCasesDirectory>
                  <outputDirectory>${project.basedir}/Execution_Logs</outputDirectory>
                  <xunitFile>${project.basedir}/Execution_Logs/xunit_results.xml</xunitFile>
+                 <suites>
+                   <suite>Airfrance_KLM</suite>
+                 </suites>
+                 <includes>
+                    <include>smoke</include>
+                 </includes>
+                 <excludes>
+                    <exclude>unfinished</exclude>
+                 </excludes>
+                 
         </configuration>
         <dependencies>
           <dependency>
