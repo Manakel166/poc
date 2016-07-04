@@ -95,7 +95,7 @@
           </execution>
           <execution>
             <id>attach-ExecutionLog</id>
-            <phase>post-integration-test</phase>
+            <phase>post-test</phase>
             <configuration>
               <target>
                 <zip destfile="ExecutionLog.zip"
