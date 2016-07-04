@@ -13,6 +13,8 @@ Library           ../../resources/robotframework/librairies/AppiumExtension.py
 &{app_AF}         app=../../../../20_AUT/air_france_1.7.2_72.apk    # A dictionnary to provide the parameters of the App under Tests (like path to the apk....)
 &{app_KLM}        app=../../../../20_AUT/KLM_com.afklm.mobile.android.gomobile.klm_7.4.1_12744.apk
 ${RunFrom}        RIDE
+&{LG_G4}          platformName=ANDROID    platformVersion=5.1    deviceName=LG_G4    udid=LGH815e4eec017    platform=ANDROID
+${demo_grid_server}    http://192.168.2.6:4441/wd/hub
 
 *** Test Cases ***
 Access to Flight News(AF)
@@ -192,7 +194,8 @@ I'm on <select departure date> Page
     Capture Page ScreenShot
 
 I've started the KLM App
-    Launch Application on Local Device    &{app_KLM}
+    Comment    Launch Application on Local Device    &{app_KLM}
+    Open Application    ${demo_grid_server}    &{LG_G4}    &{app_KLM}
     On <Country of Residence> Page, Select :    France
     I'm on <KLM HomePage>
 

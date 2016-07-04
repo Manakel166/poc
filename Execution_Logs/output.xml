@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 2.9.2 (Jython 2.7.0 on java1.8.0_66)" generated="20160704 12:04:40.884">
+<robot generator="Robot 2.9.2 (Jython 2.7.0 on java1.8.0_66)" generated="20160704 12:30:40.726">
 <suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance" name="Acceptance" id="s1">
 <suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot" name="Airfrance KLM" id="s1-s1">
 <test name="TC050 - Verify that the user is able to see the default values in the search module" id="s1-s1-t1">
@@ -12,31 +12,31 @@
 <assign>
 <var>&amp;{local_device}</var>
 </assign>
-<msg level="INFO" timestamp="20160704 12:04:46.784">List of devices attached:
+<msg level="INFO" timestamp="20160704 12:30:48.142">List of devices attached:
 seq	serial  	state
 1	LGH815e4eec017	device</msg>
-<msg level="INFO" timestamp="20160704 12:04:46.794">&amp;{local_device} = { deviceName=LGH815e4eec017 | udid=LGH815e4eec017 | platformName=ANDROID }</msg>
-<status endtime="20160704 12:04:46.794" starttime="20160704 12:04:46.542" status="PASS"></status>
+<msg level="INFO" timestamp="20160704 12:30:48.142">&amp;{local_device} = { deviceName=LGH815e4eec017 | udid=LGH815e4eec017 | platformName=ANDROID }</msg>
+<status endtime="20160704 12:30:48.152" starttime="20160704 12:30:47.920" status="PASS"></status>
 </kw>
 <kw library="adb" name="Get Device Language">
 <assign>
 <var>&amp;{languages}</var>
 </assign>
-<msg level="INFO" timestamp="20160704 12:04:47.016">List of devices attached:
+<msg level="INFO" timestamp="20160704 12:30:48.332">List of devices attached:
 seq	serial  	state
 1	LGH815e4eec017	device</msg>
-<msg level="INFO" timestamp="20160704 12:04:47.016">&amp;{languages} = { country=GB
+<msg level="INFO" timestamp="20160704 12:30:48.332">&amp;{languages} = { country=GB
  | language=en
  }</msg>
-<status endtime="20160704 12:04:47.026" starttime="20160704 12:04:46.794" status="PASS"></status>
+<status endtime="20160704 12:30:48.332" starttime="20160704 12:30:48.152" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Log">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${RunFrom}</arg>
 </arguments>
-<msg level="INFO" timestamp="20160704 12:04:47.036">RIDE</msg>
-<status endtime="20160704 12:04:47.036" starttime="20160704 12:04:47.026" status="PASS"></status>
+<msg level="INFO" timestamp="20160704 12:30:48.342">RIDE</msg>
+<status endtime="20160704 12:30:48.342" starttime="20160704 12:30:48.342" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Set Library Search Order">
 <doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
@@ -44,7 +44,7 @@ seq	serial  	state
 <arg>AppiumLibrary</arg>
 <arg>Selenium2Library</arg>
 </arguments>
-<status endtime="20160704 12:04:47.047" starttime="20160704 12:04:47.046" status="PASS"></status>
+<status endtime="20160704 12:30:48.362" starttime="20160704 12:30:48.352" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Open Application">
 <doc>Opens a new application to given Appium server.</doc>
@@ -53,9 +53,9 @@ seq	serial  	state
 <arg>&amp;{local_device}</arg>
 <arg>&amp;{an_app_under_test}</arg>
 </arguments>
-<status endtime="20160704 12:05:09.237" starttime="20160704 12:04:47.047" status="PASS"></status>
+<status endtime="20160704 12:31:09.713" starttime="20160704 12:30:48.362" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:09.237" starttime="20160704 12:04:46.532" status="PASS"></status>
+<status endtime="20160704 12:31:09.713" starttime="20160704 12:30:47.910" status="PASS"></status>
 </kw>
 <kw name="On &lt;Country of Residence&gt; Page, Select :">
 <arguments>
@@ -68,14 +68,14 @@ seq	serial  	state
 <arg>${Title Country of residence(TextView)}</arg>
 <arg>5s</arg>
 </arguments>
-<status endtime="20160704 12:05:12.477" starttime="20160704 12:05:09.257" status="PASS"></status>
+<status endtime="20160704 12:31:13.603" starttime="20160704 12:31:09.733" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Capture Page Screenshot">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg level="INFO" html="yes" timestamp="20160704 12:05:13.529">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status endtime="20160704 12:05:13.529" starttime="20160704 12:05:12.487" status="PASS"></status>
+<msg level="INFO" html="yes" timestamp="20160704 12:31:14.655">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:31:14.655" starttime="20160704 12:31:13.613" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:13.529" starttime="20160704 12:05:09.247" status="PASS"></status>
+<status endtime="20160704 12:31:14.665" starttime="20160704 12:31:09.723" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Input Text">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -83,8 +83,8 @@ seq	serial  	state
 <arg>${Country of Residence(EditText)_id}</arg>
 <arg>${arg1}</arg>
 </arguments>
-<msg level="INFO" timestamp="20160704 12:05:13.539">Typing text 'France' into text field 'xpath=//android.widget.EditText[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_edit_text']'</msg>
-<status endtime="20160704 12:05:20.309" starttime="20160704 12:05:13.539" status="PASS"></status>
+<msg level="INFO" timestamp="20160704 12:31:14.675">Typing text 'France' into text field 'xpath=//android.widget.EditText[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_edit_text']'</msg>
+<status endtime="20160704 12:31:21.425" starttime="20160704 12:31:14.665" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Wait Until Page Contains Element">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
@@ -92,22 +92,22 @@ seq	serial  	state
 <arg>${France(TextView)}</arg>
 <arg>3s</arg>
 </arguments>
-<status endtime="20160704 12:05:20.859" starttime="20160704 12:05:20.319" status="PASS"></status>
+<status endtime="20160704 12:31:21.995" starttime="20160704 12:31:21.425" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Capture Page Screenshot">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg level="INFO" html="yes" timestamp="20160704 12:05:21.949">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status endtime="20160704 12:05:21.959" starttime="20160704 12:05:20.869" status="PASS"></status>
+<msg level="INFO" html="yes" timestamp="20160704 12:31:23.005">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:31:23.015" starttime="20160704 12:31:21.995" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Click Element">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>${France(TextView)}</arg>
 </arguments>
-<msg level="INFO" timestamp="20160704 12:05:21.960">Clicking element 'xpath=//android.widget.TextView[@text='France'][@resource-id='com.afklm.mobile.android.gomobile.klm:id/first_line_text']'.</msg>
-<status endtime="20160704 12:05:22.341" starttime="20160704 12:05:21.959" status="PASS"></status>
+<msg level="INFO" timestamp="20160704 12:31:23.025">Clicking element 'xpath=//android.widget.TextView[@text='France'][@resource-id='com.afklm.mobile.android.gomobile.klm:id/first_line_text']'.</msg>
+<status endtime="20160704 12:31:23.417" starttime="20160704 12:31:23.015" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:22.341" starttime="20160704 12:05:09.237" status="PASS"></status>
+<status endtime="20160704 12:31:23.427" starttime="20160704 12:31:09.713" status="PASS"></status>
 </kw>
 <kw name="I'm on &lt;KLM HomePage&gt;">
 <kw library="AppiumLibrary" name="Wait Until Page Contains Element">
@@ -117,16 +117,16 @@ seq	serial  	state
 <arg>30s</arg>
 <arg>Not on &lt;KLM HomePage&gt;</arg>
 </arguments>
-<status endtime="20160704 12:05:23.471" starttime="20160704 12:05:22.361" status="PASS"></status>
+<status endtime="20160704 12:31:24.537" starttime="20160704 12:31:23.447" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Capture Page Screenshot">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg level="INFO" html="yes" timestamp="20160704 12:05:24.441">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status endtime="20160704 12:05:24.441" starttime="20160704 12:05:23.481" status="PASS"></status>
+<msg level="INFO" html="yes" timestamp="20160704 12:31:25.607">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:31:25.607" starttime="20160704 12:31:24.547" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:24.441" starttime="20160704 12:05:22.341" status="PASS"></status>
+<status endtime="20160704 12:31:25.607" starttime="20160704 12:31:23.437" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:24.451" starttime="20160704 12:04:46.522" status="PASS"></status>
+<status endtime="20160704 12:31:25.617" starttime="20160704 12:30:47.890" status="PASS"></status>
 </kw>
 <kw name="When I Book A Trip">
 <kw name="On &lt;KLM HomePage&gt;, Request to Book a Trip via Central Button">
@@ -138,26 +138,26 @@ seq	serial  	state
 <arg>30s</arg>
 <arg>Not on &lt;KLM HomePage&gt;</arg>
 </arguments>
-<status endtime="20160704 12:05:24.601" starttime="20160704 12:05:24.471" status="PASS"></status>
+<status endtime="20160704 12:31:25.787" starttime="20160704 12:31:25.647" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Capture Page Screenshot">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg level="INFO" html="yes" timestamp="20160704 12:05:25.553">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status endtime="20160704 12:05:25.563" starttime="20160704 12:05:24.601" status="PASS"></status>
+<msg level="INFO" html="yes" timestamp="20160704 12:31:26.919">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:31:26.929" starttime="20160704 12:31:25.787" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:25.563" starttime="20160704 12:05:24.461" status="PASS"></status>
+<status endtime="20160704 12:31:26.929" starttime="20160704 12:31:25.637" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Click Element">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>${Book a trip(LinearLayout)_id}</arg>
 </arguments>
-<msg level="INFO" timestamp="20160704 12:05:25.573">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id='com.afklm.mobile.android.gomobile.klm:id/mytrips_book_a_trip']'.</msg>
-<status endtime="20160704 12:05:25.893" starttime="20160704 12:05:25.563" status="PASS"></status>
+<msg level="INFO" timestamp="20160704 12:31:26.929">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id='com.afklm.mobile.android.gomobile.klm:id/mytrips_book_a_trip']'.</msg>
+<status endtime="20160704 12:31:27.349" starttime="20160704 12:31:26.929" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:25.903" starttime="20160704 12:05:24.461" status="PASS"></status>
+<status endtime="20160704 12:31:27.349" starttime="20160704 12:31:25.627" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:25.913" starttime="20160704 12:05:24.451" status="PASS"></status>
+<status endtime="20160704 12:31:27.349" starttime="20160704 12:31:25.627" status="PASS"></status>
 </kw>
 <kw name="Then the Default Search Origin is &quot;Amsterdam&quot;">
 <kw name="On &lt;Book a trip&gt; Page, Check Origin is:">
@@ -172,14 +172,14 @@ seq	serial  	state
 <arg>5s</arg>
 <arg>Not on &lt;Book Trip&gt; Page</arg>
 </arguments>
-<status endtime="20160704 12:05:27.063" starttime="20160704 12:05:25.933" status="PASS"></status>
+<status endtime="20160704 12:31:28.650" starttime="20160704 12:31:27.379" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Capture Page Screenshot">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg level="INFO" html="yes" timestamp="20160704 12:05:27.973">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status endtime="20160704 12:05:27.973" starttime="20160704 12:05:27.073" status="PASS"></status>
+<msg level="INFO" html="yes" timestamp="20160704 12:31:29.660">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:31:29.660" starttime="20160704 12:31:28.650" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:27.983" starttime="20160704 12:05:25.923" status="PASS"></status>
+<status endtime="20160704 12:31:29.660" starttime="20160704 12:31:27.369" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Page Should Contain Element">
 <doc>Verifies that current page contains `locator` element.</doc>
@@ -187,8 +187,8 @@ seq	serial  	state
 <arg>${Search_Origin(TextView)_id}</arg>
 <arg>Search Origin is not Found!</arg>
 </arguments>
-<msg level="INFO" timestamp="20160704 12:05:28.103">Current page contains element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_origin']'.</msg>
-<status endtime="20160704 12:05:28.113" starttime="20160704 12:05:27.983" status="PASS"></status>
+<msg level="INFO" timestamp="20160704 12:31:29.780">Current page contains element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_origin']'.</msg>
+<status endtime="20160704 12:31:29.780" starttime="20160704 12:31:29.670" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Element Attribute Should Match">
 <doc>Verify that an attribute of an element matches the expected criteria.</doc>
@@ -197,17 +197,17 @@ seq	serial  	state
 <arg>text</arg>
 <arg>${arg1}</arg>
 </arguments>
-<msg level="INFO" timestamp="20160704 12:05:28.273">Element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_origin']' attribute 'text' is 'Amsterdam' </msg>
-<status endtime="20160704 12:05:28.273" starttime="20160704 12:05:28.113" status="PASS"></status>
+<msg level="INFO" timestamp="20160704 12:31:29.950">Element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_origin']' attribute 'text' is 'Amsterdam' </msg>
+<status endtime="20160704 12:31:29.950" starttime="20160704 12:31:29.780" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Capture Page Screenshot">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg level="INFO" html="yes" timestamp="20160704 12:05:29.193">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-6.png"&gt;&lt;img src="appium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status endtime="20160704 12:05:29.193" starttime="20160704 12:05:28.283" status="PASS"></status>
+<msg level="INFO" html="yes" timestamp="20160704 12:31:31.030">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-6.png"&gt;&lt;img src="appium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:31:31.040" starttime="20160704 12:31:29.950" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:29.193" starttime="20160704 12:05:25.923" status="PASS"></status>
+<status endtime="20160704 12:31:31.040" starttime="20160704 12:31:27.359" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:29.203" starttime="20160704 12:05:25.913" status="PASS"></status>
+<status endtime="20160704 12:31:31.040" starttime="20160704 12:31:27.359" status="PASS"></status>
 </kw>
 <kw name="And the Default Search Type is &quot;Return flight&quot;">
 <kw name="On &lt;Book a trip&gt; Page, Check Search Type is:">
@@ -222,14 +222,14 @@ seq	serial  	state
 <arg>5s</arg>
 <arg>Not on &lt;Book Trip&gt; Page</arg>
 </arguments>
-<status endtime="20160704 12:05:29.323" starttime="20160704 12:05:29.213" status="PASS"></status>
+<status endtime="20160704 12:31:31.170" starttime="20160704 12:31:31.060" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Capture Page Screenshot">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg level="INFO" html="yes" timestamp="20160704 12:05:30.263">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-7.png"&gt;&lt;img src="appium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status endtime="20160704 12:05:30.263" starttime="20160704 12:05:29.333" status="PASS"></status>
+<msg level="INFO" html="yes" timestamp="20160704 12:31:32.110">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-7.png"&gt;&lt;img src="appium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:31:32.110" starttime="20160704 12:31:31.180" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:30.263" starttime="20160704 12:05:29.213" status="PASS"></status>
+<status endtime="20160704 12:31:32.110" starttime="20160704 12:31:31.060" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Page Should Contain Element">
 <doc>Verifies that current page contains `locator` element.</doc>
@@ -237,8 +237,8 @@ seq	serial  	state
 <arg>${Search_Type(TextView)_id}</arg>
 <arg>Search Type</arg>
 </arguments>
-<msg level="INFO" timestamp="20160704 12:05:30.373">Current page contains element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_type']'.</msg>
-<status endtime="20160704 12:05:30.383" starttime="20160704 12:05:30.273" status="PASS"></status>
+<msg level="INFO" timestamp="20160704 12:31:32.262">Current page contains element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_type']'.</msg>
+<status endtime="20160704 12:31:32.262" starttime="20160704 12:31:32.131" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Element Attribute Should Match">
 <doc>Verify that an attribute of an element matches the expected criteria.</doc>
@@ -247,17 +247,17 @@ seq	serial  	state
 <arg>text</arg>
 <arg>${arg1}</arg>
 </arguments>
-<msg level="INFO" timestamp="20160704 12:05:30.553">Element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_type']' attribute 'text' is 'Return flight' </msg>
-<status endtime="20160704 12:05:30.553" starttime="20160704 12:05:30.383" status="PASS"></status>
+<msg level="INFO" timestamp="20160704 12:31:32.422">Element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_type']' attribute 'text' is 'Return flight' </msg>
+<status endtime="20160704 12:31:32.422" starttime="20160704 12:31:32.262" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Capture Page Screenshot">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg level="INFO" html="yes" timestamp="20160704 12:05:31.535">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-8.png"&gt;&lt;img src="appium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status endtime="20160704 12:05:31.535" starttime="20160704 12:05:30.553" status="PASS"></status>
+<msg level="INFO" html="yes" timestamp="20160704 12:31:33.322">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-8.png"&gt;&lt;img src="appium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:31:33.322" starttime="20160704 12:31:32.432" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:31.535" starttime="20160704 12:05:29.203" status="PASS"></status>
+<status endtime="20160704 12:31:33.332" starttime="20160704 12:31:31.050" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:31.545" starttime="20160704 12:05:29.203" status="PASS"></status>
+<status endtime="20160704 12:31:33.332" starttime="20160704 12:31:31.050" status="PASS"></status>
 </kw>
 <kw name="And the Default Search Passenger is &quot;1 adult in Economy Class&quot;">
 <kw name="On &lt;Book a trip&gt; Page, Check Search Passenger is:">
@@ -272,14 +272,14 @@ seq	serial  	state
 <arg>5s</arg>
 <arg>Not on &lt;Book Trip&gt; Page</arg>
 </arguments>
-<status endtime="20160704 12:05:31.665" starttime="20160704 12:05:31.555" status="PASS"></status>
+<status endtime="20160704 12:31:33.472" starttime="20160704 12:31:33.352" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Capture Page Screenshot">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg level="INFO" html="yes" timestamp="20160704 12:05:32.595">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-9.png"&gt;&lt;img src="appium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status endtime="20160704 12:05:32.595" starttime="20160704 12:05:31.665" status="PASS"></status>
+<msg level="INFO" html="yes" timestamp="20160704 12:31:34.392">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-9.png"&gt;&lt;img src="appium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:31:34.392" starttime="20160704 12:31:33.472" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:32.605" starttime="20160704 12:05:31.555" status="PASS"></status>
+<status endtime="20160704 12:31:34.392" starttime="20160704 12:31:33.352" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Page Should Contain Element">
 <doc>Verifies that current page contains `locator` element.</doc>
@@ -287,8 +287,8 @@ seq	serial  	state
 <arg>${Search_Passenger(TextView)_id}</arg>
 <arg>Search Passenger is not Found!</arg>
 </arguments>
-<msg level="INFO" timestamp="20160704 12:05:32.715">Current page contains element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_passenger']'.</msg>
-<status endtime="20160704 12:05:32.715" starttime="20160704 12:05:32.605" status="PASS"></status>
+<msg level="INFO" timestamp="20160704 12:31:34.532">Current page contains element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_passenger']'.</msg>
+<status endtime="20160704 12:31:34.532" starttime="20160704 12:31:34.402" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Element Attribute Should Match">
 <doc>Verify that an attribute of an element matches the expected criteria.</doc>
@@ -297,27 +297,27 @@ seq	serial  	state
 <arg>text</arg>
 <arg>${arg1}</arg>
 </arguments>
-<msg level="INFO" timestamp="20160704 12:05:32.885">Element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_passenger']' attribute 'text' is '1 adult in Economy Class' </msg>
-<status endtime="20160704 12:05:32.885" starttime="20160704 12:05:32.725" status="PASS"></status>
+<msg level="INFO" timestamp="20160704 12:31:34.702">Element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_passenger']' attribute 'text' is '1 adult in Economy Class' </msg>
+<status endtime="20160704 12:31:34.702" starttime="20160704 12:31:34.532" status="PASS"></status>
 </kw>
 <kw library="AppiumLibrary" name="Capture Page Screenshot">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg level="INFO" html="yes" timestamp="20160704 12:05:33.795">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-10.png"&gt;&lt;img src="appium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status endtime="20160704 12:05:33.805" starttime="20160704 12:05:32.895" status="PASS"></status>
+<msg level="INFO" html="yes" timestamp="20160704 12:31:35.632">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-10.png"&gt;&lt;img src="appium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:31:35.632" starttime="20160704 12:31:34.702" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:33.805" starttime="20160704 12:05:31.545" status="PASS"></status>
+<status endtime="20160704 12:31:35.632" starttime="20160704 12:31:33.342" status="PASS"></status>
 </kw>
-<status endtime="20160704 12:05:33.805" starttime="20160704 12:05:31.545" status="PASS"></status>
+<status endtime="20160704 12:31:35.632" starttime="20160704 12:31:33.332" status="PASS"></status>
 </kw>
 <tags>
 <tag>KLM</tag>
 <tag>Smoke</tag>
 </tags>
-<status critical="yes" endtime="20160704 12:05:33.805" starttime="20160704 12:04:46.512" status="PASS"></status>
+<status critical="yes" endtime="20160704 12:31:35.642" starttime="20160704 12:30:47.880" status="PASS"></status>
 </test>
-<status endtime="20160704 12:05:33.815" starttime="20160704 12:04:41.652" status="PASS"></status>
+<status endtime="20160704 12:31:35.652" starttime="20160704 12:30:41.896" status="PASS"></status>
 </suite>
-<status endtime="20160704 12:05:33.825" starttime="20160704 12:04:40.924" status="PASS"></status>
+<status endtime="20160704 12:31:35.672" starttime="20160704 12:30:40.756" status="PASS"></status>
 </suite>
 <statistics>
 <total>
