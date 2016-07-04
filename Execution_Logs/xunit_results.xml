@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite failures="0" skip="0" tests="1" name="Acceptance" errors="0">
-<testcase classname="Acceptance.Airfrance KLM" name="TC050 - Verify that the user is able to see the default values in the search module" time="48">
+<testcase classname="Acceptance.Airfrance KLM" name="TC050 - Verify that the user is able to see the default values in the search module" time="65">
 </testcase>
 </testsuite>

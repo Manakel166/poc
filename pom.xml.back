@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    <groupId>com.afklm.app</groupId>
+    <artifactId>klm-app</artifactId>
+    <version>1</version>
+    
+<build>
+    <plugins>
+    
+       <plugin>
+        <groupId>org.robotframework</groupId>
+        <artifactId>robotframework-maven-plugin</artifactId>
+        <version>1.4.6</version>
+        <executions>
+          <execution>
+            <id> acceptance test campaign with RF plugin</id>
+            <goals>
+               <goal>run</goal>
+            </goals> 
+          </execution>
+        </executions>
+        <configuration>
+                 <!-- <testCasesDirectory>${project.basedir}/</testCasesDirectory> -->
+                 <outputDirectory>${project.basedir}/Execution_Logs</outputDirectory>
+                 <xunitFile>${project.basedir}/Execution_Logs/xunit_results.xml</xunitFile>
+                 <suites>
+                   <suite>Airfrance_KLM</suite>
+                 </suites>
+                 <includes>
+                    <include>smoke</include>
+                 </includes>
+                 <excludes>
+                    <exclude>unfinished</exclude>
+                 </excludes>
+                 <extraPathDirectories>
+                    <extraPathDirectory>src/test/resources/python</extraPathDirectory>
+                </extraPathDirectories>    
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.robotframework</groupId>
+            <artifactId>robotframework</artifactId>
+            <version>2.9.2</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.8</version>
+        <executions>
+          <!--
+          <execution>
+            <id> blocking_smoke_test at test time</id>
+            <phase>test</phase>
+            <configuration>
+              <target>
+                <exec executable="C:\temp\RF_DEV\00_CONSOLE\Pybot_portable.bat" spawn="false">
+                    <arg line="--suite Airfrance_KLM" />
+                    <arg line="--include smoke" />
+                    <arg line="--exclude unfinished" />
+                    <arg line="--variable RunFrom:Maven" /> 
+                    <arg line="--outputdir C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Execution_Logs"/>
+                    <arg line="--debugfile C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Execution_Logs\debug.log"/>
+                    <arg line="--xunit xunit_results.xml"/>
+                    <arg line="--xunitskipnoncritical"/>
+                    <arg value="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot"/>  
+                </exec>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id> non_blocking_full_test_at_integration_time </id>
+            <phase>integration-test</phase>
+            <configuration>
+              <target>
+                <exec executable="C:\temp\RF_DEV\00_CONSOLE\Pybot_portable.bat" spawn="false">>
+                    <arg line="--suite Airfrance_KLM" />
+                    <arg line="--include demo" />
+                    <arg line="--exclude unfinished" />
+                    <arg line="--variable RunFrom:Maven" />
+                    <arg line="--outputdir C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Execution_Logs"/>
+                    <arg line="--debugfile C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Execution_Logs\debug.log"/>
+                    <arg value="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot" />           
+                </exec>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          -->
+          <execution>
+            <id>attach-ExecutionLog</id>
+            <phase>verify</phase>
+            <configuration>
+              <target>
+                <zip destfile="ExecutionLog.zip"
+                     basedir=".\Execution_Logs"
+                     includes="*.*"
+                  />
+                <attachartifact file="ExecutionLog.zip" classifier="test" type="zip"/>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+    
+
+    
+    
+</project>
