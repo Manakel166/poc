@@ -174,7 +174,7 @@ I'm on <Confirm departure date> Page
     Capture Page Screenshot
 
 I'm on <Country of Residence> Page
-    Wait Until Page Contains Element    ${Title Country of residence(TextView)}    5s
+    Wait Until Page Contains Element    ${Title Country of residence(TextView)}    15s
     Capture Page Screenshot
 
 I'm on <Destination> Page
