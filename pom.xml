@@ -46,11 +46,11 @@
           </dependency>
         </dependencies>
       </plugin>
-      
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
         <version>1.8</version>
         <executions>
+          <!-- comment out ant run version 
           <execution>
             <id> blocking_smoke_test at test time</id>
             <phase>test</phase>
@@ -93,6 +93,7 @@
               <goal>run</goal>
             </goals>
           </execution>
+          -->
           <execution>
             <id>attach-ExecutionLog</id>
             <phase>verify</phase>
