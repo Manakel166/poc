@@ -14,7 +14,8 @@ Library           ../../resources/robotframework/librairies/AppiumExtension.py
 &{app_KLM}        app=../../../../20_AUT/KLM_com.afklm.mobile.android.gomobile.klm_7.4.1_12744.apk
 ${RunFrom}        RIDE
 &{LG_G4}          platformName=ANDROID    platformVersion=5.1    deviceName=LG_G4    udid=LGH815e4eec017    platform=ANDROID
-${demo_grid_server}    http://192.168.2.6:4441/wd/hub
+${devnet_grid_server}    http://172.21.42.155:4444/wd/hub
+${dinb_demo_server}    http://10.70.148.60:4441/wd/hub
 
 *** Test Cases ***
 Access to Flight News(AF)
@@ -195,7 +196,7 @@ I'm on <select departure date> Page
 
 I've started the KLM App
     Comment    Launch Application on Local Device    &{app_KLM}
-    Open Application    ${demo_grid_server}    &{LG_G4}    &{app_KLM}
+    Open Application    ${dinb_demo_server}    &{LG_G4}    &{app_KLM}
     On <Country of Residence> Page, Select :    France
     I'm on <KLM HomePage>
 
