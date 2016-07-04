@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 2.8.7 (Jython 2.5.3 on java1.8.0_66)" name="Generator">
+<meta content="Robot Framework 2.9.2 (Jython 2.7.0 on java1.8.0_66)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAJEBoACtnfgA5cYYAERsiAEx2lAAbKkQAcazBACZCVwAcM1cAK0ucAAMDBQAnQncASG+FABkoVQAyWmgA6f8SgvH/Ij99+GLyIinyJfn/Yi//KSLzUy9iZogpIld3/4JVVTkid7vyUjNVNVJEAGOZ6Z7pXwAABpmZkRiLAAAGiJZpmGAAAEEt3SXdxAAATC7o/u3EAAC8MRZpjasAAAY1VVVTYAAABKqqqqpAAAAADKqq4AAAAAAAv4sAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMADAADgAwAA4AcAAOAHAADgBwAAwAcAAOAHAADgDwAA8A8AAPg/AAD+fwAA">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -30,14 +30,14 @@ br {
 }
 a, a:link, a:visited {
     text-decoration: none;
-    color: blue;
+    color: #15c;
 }
 a > img {
-    border: 1px solid blue !important;
+    border: 1px solid #15c !important;
 }
 a:hover, a:active {
     text-decoration: underline;
-    color: purple;
+    color: #61c;
 }
 .parent-name {
     font-size: 0.7em;
@@ -77,19 +77,37 @@ h2 {
     font-size: 1.0em;
 }
 /* Status text colors -- !important allows using them in links */
-.error, .fail {
-    color: red !important;
+.fail {
+    color: #f33 !important;
     font-weight: bold;
 }
 .pass {
-    color: #009900 !important;
+    color: #393 !important;
 }
-.warn {
-    color: #FFCC00 !important;
+.label {
+    padding: 2px 5px;
+    font-size: 0.75em;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    color: black;
+    background-color: #ddd;
+    border-radius: 3px;
+}
+.label.debug, .label.trace, .label.error, .label.keyword {
+    letter-spacing: 0;
+}
+.label.error, .label.fail, .label.pass, .label.warn {
+    color: #fff !important;
     font-weight: bold;
 }
-.not-run {
-    color: #444444 !important;
+.label.error, .label.fail {
+    background-color: #d9534f;
+}
+.label.pass {
+    background-color: #5cb85c;
+}
+.label.warn {
+    background-color: #ec971f;
 }
 /* Top right header */
 #top-right-header {
@@ -105,18 +123,19 @@ h2 {
     background: black;
     color: white;
     text-decoration: none;
+    font-weight: bold;
     letter-spacing: 0.1em;
     padding: 0.3em 0;
     border-bottom-left-radius: 4px;
 }
 #report-or-log-link a:hover {
-    color: yellow;
+    color: #ddd;
 }
 #log-level-selector {
     padding: 0.3em 0;
     font-size: 0.9em;
     border-bottom-left-radius: 4px;
-    background: lightgray;
+    background: #ddd;
 }
 /* Statistics table */
 .statistics {
@@ -126,15 +145,15 @@ h2 {
     margin-bottom: 1em;
 }
 .statistics tr:hover {
-    background: #ECECF7;
+    background: #f4f4f4;
     cursor: pointer;
 }
 .statistics th, .statistics td {
-    border: 1px solid black;
+    border: 1px solid #ccc;
     padding: 0.1em 0.3em;
 }
 .statistics th {
-    background-color: #DCDCF0;
+    background-color: #ddd;
     padding: 0.2em 0.3em;
 }
 .statistics td {
@@ -170,21 +189,21 @@ th.stats-col-graph:hover {
 }
 /* Statistics graph */
 .graph, .empty-graph {
-    border: 1px solid black;
+    border: 1px solid #ccc;
     width: auto;
     height: 7px;
     padding: 0;
-    background: red;
+    background: #f33;
 }
 .empty-graph {
-    background: #E9E9E9;
+    background: #eee;
 }
 .pass-bar, .fail-bar {
     float: left;
     height: 100%;
 }
 .pass-bar {
-    background: #00F000;
+    background: #1d4;
 }
 /* Tablesorter - adapted from provided Blue Skin */
 .tablesorter-header {
@@ -194,22 +213,22 @@ th.stats-col-graph:hover {
     cursor: pointer;
 }
 .tablesorter-header:hover {
-    background-color: #B8C8E3;
+    background-color: #ccc;
 }
 .tablesorter-headerAsc {
     background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==);
-    background-color: #B8C8E3 !important;
+    background-color: #ccc !important;
 }
 .tablesorter-headerDesc {
     background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==);
-    background-color: #B8C8E3 !important;
+    background-color: #ccc !important;
 }
 .sorter-false {
     background-image: none;
     cursor: default;
 }
 .sorter-false:hover {
-    background-color: #DCDCF0;
+    background-color: #ddd;
 }
 </style>
 <style media="all" type="text/css">
@@ -217,7 +236,7 @@ th.stats-col-graph:hover {
    Licensed under the MIT License. */
 /* Containers */
 .suite, .test, #errors {
-    border: 1px solid gray;
+    border: 1px solid #ccc;
     padding: 0.3em 0.2em;
     margin: 0.2em 0;
 }
@@ -246,13 +265,13 @@ th.stats-col-graph:hover {
 }
 .element-header:hover {
     cursor: pointer;
-    background-color: #ECECF7;
-    border-color: #BCBCD7;
+    background-color: #eee;
+    border-color: #ccc;
 }
 .element-header-toggle {
     position: absolute;
     left: 3px;
-    top: 4px;
+    top: 5px;
     background-repeat: no-repeat;
     background-position: center;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAQAAABKxSfDAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCR0JChSkZz20AAAAGklEQVQI12NgQAKMDKzInP8IDhOqMk4G7AAANQwBE427PYUAAAAASUVORK5CYII=);
@@ -260,7 +279,7 @@ th.stats-col-graph:hover {
     height: 10px;
     width: 10px;
     background-size: 6px 6px;
-    border: 1px solid black;
+    border: 1px solid #ccc;
     border-radius: 2px;
 }
 .closed > .element-header-toggle {
@@ -268,7 +287,7 @@ th.stats-col-graph:hover {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0zIDB2M2gtM3YyaDN2M2gydi0zaDN2LTJoLTN2LTNoLTJ6IiAvPgo8L3N2Zz4=), none;
 }
 .element-header:hover > .element-header-toggle {
-    background-color: yellow;
+    background-color: #ccc;
 }
 .element-header-right:hover ~ .element-header-toggle {
     background-color: transparent;
@@ -288,7 +307,7 @@ th.stats-col-graph:hover {
 }
 .elapsed {
     float: right;
-    color: #808080;
+    color: #999;
     padding-left: 1em;
 }
 .link {
@@ -313,7 +332,7 @@ th.stats-col-graph:hover {
     background-size: 8px 8px;
     background-repeat: no-repeat;
     background-position: center;
-    border: 1px solid black;
+    border: 1px solid #ccc;
     border-radius: 2px;
 }
 .link {
@@ -323,25 +342,30 @@ th.stats-col-graph:hover {
     visibility: visible;
 }
 .expand:hover, .collapse:hover, .link:hover {
-    background-color: yellow;
+    background-color: #ccc;
 }
 /* Messages and errors */
-.messages {
+.messages .time, .messages .message {
     font-family: monospace;
     font-size: 1.1em;
+}
+#errors .message {
+    font-family: monospace;
+    font-size: 1.2em;
 }
 .message-row {
     height: 20px;
 }
 .time {
-    width: 8em;
+    width: 7.5em;
 }
 .error-time {
     width: 11em;
+    font-size: 0.9em;
     white-space: nowrap;
 }
 .level {
-    width: 4.5em;
+    width: 5em;
     text-align: center;
 }
 .select-message {
@@ -359,11 +383,11 @@ th.stats-col-graph:hover {
 .message-row:hover .select-message div {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCR0MOzhWKZQOAAAASUlEQVQY032PsRHAIAwDX9BkicD+W8UMEqegAQJWKZ/+3sLZJhFGQEZzNaIa4ibh66En867VNaIeoP5WppNuIGoAlOm3g5VC1AdYeQv1BZPRSgAAAABJRU5ErkJggg==);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0wIDB2MWg4di0xaC04em0wIDJ2MWg2di0xaC02em0wIDJ2MWg4di0xaC04em0wIDJ2MWg2di0xaC02eiIgLz4KPC9zdmc+), none;
-    border: 1px solid black;
+    border: 1px solid #ccc;
     border-radius: 2px;
 }
 .select-message:hover div {
-    background-color: yellow;
+    background-color: #ccc;
     cursor: pointer;
 }
 /* Message tables - these MUST NOT be combined together because otherwise
@@ -429,7 +453,7 @@ a:link, a:visited {
 }
 .tablesorter-header {
     background-image: none;
-    background: #DCDCF0 !important;
+    background: #ddd !important;
 }
 </style>
 <style media="all" type="text/css">
@@ -437,9 +461,9 @@ a:link, a:visited {
     width: 600px;
     margin: 100px auto 0 auto;
     padding: 20px;
-    color: #2A2A2E;
-    border: 1px solid #9A9A9E;
-    background: #FAFAFF;
+    color: black;
+    border: 1px solid #ccc;
+    background: #eee;
 }
 #javascript-disabled h1 {
     width: 100%;
@@ -467,14 +491,14 @@ a:link, a:visited {
     margin-top: 0.1em;
 }
 .doc table {
-    border: 1px solid gray;
+    border: 1px solid #ccc;
     background: transparent;
     border-collapse: collapse;
     empty-cells: show;
     font-size: 0.9em;
 }
 .doc table th, .doc table td {
-    border: 1px solid gray;
+    border: 1px solid #ccc;
     background: transparent;
     padding: 0.1em 0.3em;
     height: 1.2em;
@@ -486,22 +510,22 @@ a:link, a:visited {
 .doc pre {
     font-size: 1.1em;
     letter-spacing: 0.05em;
-    background: #F4F4FF;
+    background: #eee;
 }
 .doc code {
     padding: 0 0.2em;
     letter-spacing: 0.05em;
-    background: #F4F4FF;
+    background: #eee;
 }
 .doc li {
     list-style-position: inside;
     list-style-type: square;
 }
 .doc img {
-    border: 1px solid gray;
+    border: 1px solid #ccc;
 }
 .doc hr {
-    background: gray;
+    background: #ccc;
     height: 1px;
     border: 0;
 }
@@ -808,7 +832,7 @@ window.model = (function () {
             for (var i in suites)
                 tests = tests.concat(suites[i].searchTestsInSuite(pattern, matcher));
             return tests;
-        }
+        };
         suite.searchTestsByTag = function (tag) {
             return suite.searchTests(function (test) {
                 if (tag.combined)
@@ -839,6 +863,10 @@ window.model = (function () {
         var patterns;
         if (pattern.indexOf('NOT') != -1) {
             patterns = pattern.split('NOT');
+            if (!util.normalize(patterns[0]))
+                return util.all(util.map(patterns.slice(1), function (p) {
+                    return !containsTagPattern(testTags, p);
+                }));
             return containsTagPattern(testTags, patterns[0]) &&
                 util.all(util.map(patterns.slice(1), function (p) {
                     return !containsTagPattern(testTags, p);
@@ -909,8 +937,11 @@ window.model = (function () {
     }
     function Keyword(data) {
         var kw = createModelObject(data);
+        kw.libname = data.libname;
         kw.type = data.type;
         kw.arguments = data.args;
+        kw.assign = data.assign + (data.assign ? ' =' : '');
+        kw.tags = data.tags;
         kw.timeout = data.timeout;
         kw.populateMessages = createIterablePopulator('Message');
         kw.populateKeywords = createIterablePopulator('Keyword');
@@ -1249,7 +1280,7 @@ window.testdata = function () {
     var elementsById = {};
     var idCounter = 0;
     var _statistics = null;
-    var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'FAIL', 'ERROR'];
+    var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL'];
     var STATUSES = ['FAIL', 'PASS', 'NOT_RUN'];
     var KEYWORDS = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'VAR'];
     function addElement(elem) {
@@ -1291,30 +1322,36 @@ window.testdata = function () {
             type: KEYWORDS[element[0]],
             id: 'k' + (index + 1),
             name: strings.get(element[1]),
-            timeout: strings.get(element[2]),
-            args: strings.get(element[4]),
+            libname: strings.get(element[2]),
+            timeout: strings.get(element[3]),
+            args: strings.get(element[5]),
+            assign: strings.get(element[6]),
+            tags: strings.get(element[7]),
             doc: function () {
-                var doc = strings.get(element[3]);
+                var doc = strings.get(element[4]);
                 this.doc = function () { return doc; };
                 return doc;
             },
-            status: parseStatus(element[5], strings),
-            times: model.Times(times(element[5])),
-            isChildrenLoaded: typeof(element[6]) !== 'number'
+            status: parseStatus(element[8], strings),
+            times: model.Times(times(element[8])),
+            isChildrenLoaded: typeof(element[9]) !== 'number'
         });
-        lazyPopulateKeywordsFromFile(kw, element[6], strings);
-        kw.populateMessages(Populator(element[7], strings, message));
+        lazyPopulateKeywordsFromFile(kw, element[9], strings);
+        kw.populateMessages(Populator(element[10], strings, message));
         return kw;
     }
-    function lazyPopulateKeywordsFromFile(parent, keywordsOrIndex, strings) {
+    function lazyPopulateKeywordsFromFile(parent, modelOrIndex, strings) {
+        var model, index, populator;
+        var creator = childCreator(parent, createKeyword);
         if (parent.isChildrenLoaded) {
-            var keywords = keywordsOrIndex;
-            parent.populateKeywords(Populator(keywords, strings, childCreator(parent, createKeyword)));
+            model = modelOrIndex;
+            populator = Populator(model, strings, creator);
         } else {
-            var index = keywordsOrIndex;
+            index = modelOrIndex;
             parent.childFileName = window.settings['splitLogBase'] + '-' + index + '.js';
-            parent.populateKeywords(SplitLogPopulator(keywordsOrIndex, childCreator(parent, createKeyword)));
+            populator = SplitLogPopulator(index, creator);
         }
+        parent.populateKeywords(populator);
     }
     function tags(taglist, strings) {
         return util.map(taglist, strings.get);
@@ -1678,28 +1715,28 @@ function stopPropagation(event) {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,0,3004],[[4,5,6,0,[],[0,497,1634],[],[[7,0,1,0,[8],[0,1735,73,9],[[0,10,0,0,0,[0,1755,51],[[0,11,0,0,0,[0,1765,41],[[0,12,0,0,13,[0,1805,1],[],[[1806,4,9]]]],[]]],[]]]],[14,0,1,0,[15,16],[0,1812,75,9],[[0,17,0,0,0,[0,1825,62],[[0,12,0,0,18,[0,1877,10],[],[[1877,4,9]]]],[]]]],[19,0,1,0,[15,16,20],[0,1897,132,9],[[0,21,0,0,22,[1,1959,10],[],[[1969,2,23]]],[0,17,0,0,0,[0,1979,50],[[0,12,0,0,18,[0,2019,0],[],[[2019,4,9]]]],[]]]],[24,0,1,0,[25,15],[0,2039,42,9],[[0,17,0,0,0,[0,2040,41],[[0,12,0,0,18,[0,2071,10],[],[[2081,4,9]]]],[]]]],[26,0,1,0,[15],[0,2091,30,9],[[0,17,0,0,0,[0,2091,30],[[0,12,0,0,18,[0,2121,0],[],[[2121,4,9]]]],[]]]]],[],[5,0,5,0]],[27,28,29,0,[],[0,2141,863],[[30,31,32,0,[],[0,2176,808],[[33,34,35,0,[],[0,2220,764],[[36,37,38,0,[],[0,2278,680],[[4,39,40,0,[],[0,2338,606],[],[[7,0,1,0,[8],[0,2710,40,9],[[0,10,0,0,0,[0,2710,40],[[0,11,0,0,0,[0,2720,20],[[0,12,0,0,13,[0,2730,10],[],[[2740,4,9]]]],[]]],[]]]],[14,0,1,0,[15,16],[0,2750,50,9],[[0,17,0,0,0,[0,2760,30],[[0,12,0,0,18,[0,2780,10],[],[[2790,4,9]]]],[]]]],[19,0,1,0,[15,16,20],[0,2809,63,9],[[0,21,0,0,22,[1,2818,3],[],[[2822,2,23]]],[0,17,0,0,0,[0,2842,20],[[0,12,0,0,18,[0,2862,0],[],[[2862,4,9]]]],[]]]],[24,0,1,0,[25,15],[0,2872,30,9],[[0,17,0,0,0,[0,2882,20],[[0,12,0,0,18,[0,2892,10],[],[[2902,4,9]]]],[]]]],[26,0,1,0,[15],[0,2902,41,9],[[0,17,0,0,0,[0,2912,30],[[0,12,0,0,18,[0,2942,0],[],[[2942,4,9]]]],[]]]]],[],[5,0,5,0]]],[],[],[5,0,5,0]]],[],[],[5,0,5,0]]],[],[],[5,0,5,0]]],[],[],[5,0,5,0]]],[],[],[10,0,10,0]];
+window.output["suite"] = [1,2,3,0,[],[1,0,52901],[[4,5,6,0,[],[1,728,52163],[],[[7,0,1,0,[8,9],[1,5588,47293],[[0,10,0,0,0,0,0,0,[1,5598,37929],[[0,11,12,0,0,13,0,0,[1,5608,22705],[[0,14,15,0,0,0,16,0,[1,5618,252],[],[[5860,2,17],[5870,2,18]]],[0,19,15,0,0,0,20,0,[1,5870,232],[],[[6092,2,17],[6092,2,21]]],[0,22,23,0,24,25,0,0,[1,6102,10],[],[[6112,2,26]]],[0,27,23,0,28,29,0,0,[1,6122,1],[],[]],[0,30,31,0,32,33,0,0,[1,6123,22190],[],[]]],[]],[0,34,0,0,0,35,0,0,[1,28313,13104],[[0,36,0,0,0,0,0,0,[1,28323,4282],[[0,37,31,0,38,39,0,0,[1,28333,3220],[],[]],[0,40,31,0,41,0,0,0,[1,31563,1042],[],[[32605,2,42]]]],[]],[0,43,31,0,44,45,0,0,[1,32615,6770],[],[[32615,2,46]]],[0,37,31,0,38,47,0,0,[1,39395,540],[],[]],[0,40,31,0,41,0,0,0,[1,39945,1090],[],[[41025,2,48]]],[0,49,31,0,50,51,0,0,[1,41035,382],[],[[41036,2,52]]]],[]],[0,53,0,0,0,0,0,0,[1,41417,2100],[[0,37,31,0,38,54,0,0,[1,41437,1110],[],[]],[0,40,31,0,41,0,0,0,[1,42557,960],[],[[43517,2,55]]]],[]]],[]],[0,56,0,0,0,0,0,0,[1,43527,1462],[[0,57,0,0,0,0,0,0,[1,43537,1442],[[0,53,0,0,0,0,0,0,[1,43537,1102],[[0,37,31,0,38,54,0,0,[1,43547,130],[],[]],[0,40,31,0,41,0,0,0,[1,43677,962],[],[[44629,2,58]]]],[]],[0,49,31,0,50,59,0,0,[1,44639,330],[],[[44649,2,60]]]],[]]],[]],[0,61,0,0,0,0,0,0,[1,44989,3290],[[0,62,0,0,0,63,0,0,[1,44999,3270],[[0,64,0,0,0,0,0,0,[1,44999,2060],[[0,37,31,0,38,65,0,0,[1,45009,1130],[],[]],[0,40,31,0,41,0,0,0,[1,46149,900],[],[[47049,2,66]]]],[]],[0,67,31,0,68,69,0,0,[1,47059,130],[],[[47179,2,70]]],[0,71,31,0,72,73,0,0,[1,47189,160],[],[[47349,2,74]]],[0,40,31,0,41,0,0,0,[1,47359,910],[],[[48269,2,75]]]],[]]],[]],[0,76,0,0,0,0,0,0,[1,48279,2342],[[0,77,0,0,0,78,0,0,[1,48279,2332],[[0,64,0,0,0,0,0,0,[1,48289,1050],[[0,37,31,0,38,65,0,0,[1,48289,110],[],[]],[0,40,31,0,41,0,0,0,[1,48409,930],[],[[49339,2,79]]]],[]],[0,67,31,0,68,80,0,0,[1,49349,110],[],[[49449,2,81]]],[0,71,31,0,72,82,0,0,[1,49459,170],[],[[49629,2,83]]],[0,40,31,0,41,0,0,0,[1,49629,982],[],[[50611,2,84]]]],[]]],[]],[0,85,0,0,0,0,0,0,[1,50621,2260],[[0,86,0,0,0,87,0,0,[1,50621,2260],[[0,64,0,0,0,0,0,0,[1,50631,1050],[[0,37,31,0,38,65,0,0,[1,50631,110],[],[]],[0,40,31,0,41,0,0,0,[1,50741,930],[],[[51671,2,88]]]],[]],[0,67,31,0,68,89,0,0,[1,51681,110],[],[[51791,2,90]]],[0,71,31,0,72,91,0,0,[1,51801,160],[],[[51961,2,92]]],[0,40,31,0,41,0,0,0,[1,51971,910],[],[[52871,2,93]]]],[]]],[]]]]],[],[1,1,1,1]]],[],[],[1,1,1,1]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*UserStoriesForKLM","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM","*../","*Airfrance KLM","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\Airfrance_KLM.robot","*../Airfrance_KLM.robot","*Access to Flight News(AF)","*AF","*No keyword with name 'Launch Application on Local Device' found.","*GIVEN I am on AirFrance HomePage","*af.pages.Open the Airfrance App","*Launch Application on Local Device","*&amp;{app_AF}","*TC050 - Verify that the user is able to see the default values in the search module","*KLM","*Smoke","*Given I've started the KLM App","*&amp;{app_KLM}","*TC0XX - Verify whether the user is able to book a one way flight without login.","*unfinished","*${Search_Destination(TextView)_id} = xpath_helpers.Xpath By Id","*search_destination","*${Search_Destination(TextView)_id} = //*[ends-with(@resource-id,'search_destination']","*TC051 - Verify the message shown, when there are no entries for the given Origin and destination","*DEMO","*TC058 - Verify the user able to see the lowest price according to the destination selected, when not logged in","*Src","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src","*../src","*Test","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src\\test","*../src/test","*Robotframework","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src\\test\\robotframework","*../src/test/robotframework","*Acceptance","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src\\test\\robotframework\\acceptance","*../src/test/robotframework/acceptance","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src\\test\\robotframework\\acceptance\\Airfrance_KLM.robot","*../src/test/robotframework/acceptance/Airfrance_KLM.robot","*Error in file 'C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\Airfrance_KLM.robot': Setting variable '&amp;{app_AF}' failed: Variable name '&amp;{app_AF}' is invalid.","*Error in file 'C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\Airfrance_KLM.robot': Setting variable '&amp;{app_KLM}' failed: Variable name '&amp;{app_KLM}' is invalid.","eNq9UktvGjEQvvMrfKM54BKaCsRtmyxl1YVF8aZVpJEs72KCy/qhsWnDv493V5UIh+RS5TifPfM9ZlJEi0QZslONJMPbOQSpHdwv+F36E67HvExZyeDBS2TBopJ+YfFHvoJE4Q6FqSWPFUVb2TCck0w7i0GZJxKkD6RRFQo8kWHinDrqvC+HZCci2/bf97TVMCdrS7TdHqMMI7Tcklc9gxJFLStRH8gnbeNolLU0gdSiaUgjfLiaD0gcYeRg81gui/UmKZctFB214j0kq/F0Op19AaongNJZr6KhE1h8gk5+tKPlX4uHy3JCZ3R6AY46kP4WCFFh/wi93ZjRR/H+T55+HOd1TNM7Efacd7U7nSGfI0R71u5OVhljWbHmv77DeMbj1ayKb1mewvXNuD0gXiz4Q5nlWZmlDDYnZoS7X5z1v3tng9s8YexsmW/SlkWRMxBO1Hs50uKPNFApA5RCZeN+XCOfj37U+YnOm62PcX6lkzbOF4qFDPA=","*Error in file 'C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\Airfrance_KLM.robot': Resource file '..\\..\\..\\30_LIBRAIRIES\\rf_helpers.txt' does not exist.","*Error in file 'C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src\\test\\robotframework\\acceptance\\Airfrance_KLM.robot': Setting variable '&amp;{app_AF}' failed: Variable name '&amp;{app_AF}' is invalid.","*Error in file 'C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src\\test\\robotframework\\acceptance\\Airfrance_KLM.robot': Setting variable '&amp;{app_KLM}' failed: Variable name '&amp;{app_KLM}' is invalid.","eNq9UsGO0zAQvfcrfCscaroF1Kq3sKRsRNpU6ywIaSTLcd1ds4ltjV2gf88kEVLpAS6Im+d5Zt57M5MjemTWsaNtDZveriGZLsD9Rr7PP8HNXNa5qAU8RIMiebQmbjx+LLcQUVNqTIC+8emIqjPfPT6D0tqEpJw2kFkknF6SCviQN12zogsek3WPrC9nrW1Q4ZlNsxDsqSvHcMqOigQdfqXnvcw123nW+cOJlDriO7DfaiY1Km0apZ/Zi85TazTauMS0alvWqpherieMWjgz2X+p76rdPqvveohM9/4iZNv5crlcvQbeLQBN8NGS5zN4fLy2eRUu+Iovr8DZAPKvCoEUjp8w2qUx/i/ef8kztpNS0zRjUOlJyiEO5wvkFUF8ZB1OaVsIUVQ7+fkDzFeSDmtbvSvKHG7ezPsbk9VGPtRFWdRFLmB/Fk6F+81F/V9PcXJbZkJcLPOPtHVVlQJUUPrJzDr1zThorAPOofG0n9CaH6c4G/yQ8/YQaZxv+aIf50/rchtj","*Error in file 'C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src\\test\\robotframework\\acceptance\\Airfrance_KLM.robot': Resource file '..\\..\\..\\30_LIBRAIRIES\\rf_helpers.txt' does not exist."]);
+window.output["strings"] = window.output["strings"].concat(["*","*Acceptance","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src\\test\\robotframework\\acceptance","*../src/test/robotframework/acceptance","*Airfrance KLM","*C:\\temp\\RF_DEV\\10_TESTS\\UserStoriesForKLM\\src\\test\\robotframework\\acceptance\\Airfrance_KLM.robot","*../src/test/robotframework/acceptance/Airfrance_KLM.robot","*TC050 - Verify that the user is able to see the default values in the search module","*KLM","*Smoke","*Given I've started the KLM App","*Launch Application on Local Device","*rf_helpers","*&amp;{app_KLM}","*Get First Connected Device","*adb","*&amp;{local_device}","*List of devices attached:\nseq\tserial  \tstate\n1\tLGH815e4eec017\tdevice","*&amp;{local_device} = { deviceName=LGH815e4eec017 | udid=LGH815e4eec017 | platformName=ANDROID }","*Get Device Language","*&amp;{languages}","*&amp;{languages} = { country=GB\n | language=en\n }","*Log","*BuiltIn","*<p>Logs the given message with the given level.\x3c/p>","*${RunFrom}","*RIDE","*Set Library Search Order","*<p>Sets the resolution order to use when a name matches multiple keywords.\x3c/p>","*AppiumLibrary, Selenium2Library","*Open Application","*AppiumLibrary","*<p>Opens a new application to given Appium server.\x3c/p>","*<a href=\"http://127.0.0.1:4442/wd/hub\">http://127.0.0.1:4442/wd/hub\x3c/a>, &amp;{local_device}, &amp;{an_app_under_test}","*On &lt;Country of Residence&gt; Page, Select :","*France","*I'm on &lt;Country of Residence&gt; Page","*Wait Until Page Contains Element","*<p>Waits until element specified with `locator` appears on current page.\x3c/p>","*${Title Country of residence(TextView)}, 5s","*Capture Page Screenshot","*<p>Takes a screenshot of the current page and embeds it into the log.\x3c/p>","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"appium-screenshot-1.png\"><img src=\"appium-screenshot-1.png\" width=\"800px\">\x3c/a>","*Input Text","*<p>Types the given `text` into text field identified by `locator`.\x3c/p>","*${Country of Residence(EditText)_id}, ${arg1}","*Typing text 'France' into text field 'xpath=//android.widget.EditText[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_edit_text']'","*${France(TextView)}, 3s","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"appium-screenshot-2.png\"><img src=\"appium-screenshot-2.png\" width=\"800px\">\x3c/a>","*Click Element","*<p>Click element identified by `locator`.\x3c/p>","*${France(TextView)}","*Clicking element 'xpath=//android.widget.TextView[@text='France'][@resource-id='com.afklm.mobile.android.gomobile.klm:id/first_line_text']'.","*I'm on &lt;KLM HomePage&gt;","*${Welcome, your journey starts here.(TextView)_id}, 30s, Not on &lt;KLM HomePage&gt;","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"appium-screenshot-3.png\"><img src=\"appium-screenshot-3.png\" width=\"800px\">\x3c/a>","*When I Book A Trip","*On &lt;KLM HomePage&gt;, Request to Book a Trip via Central Button","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"appium-screenshot-4.png\"><img src=\"appium-screenshot-4.png\" width=\"800px\">\x3c/a>","*${Book a trip(LinearLayout)_id}","*Clicking element 'xpath=//android.widget.LinearLayout[@resource-id='com.afklm.mobile.android.gomobile.klm:id/mytrips_book_a_trip']'.","*Then the Default Search Origin is &quot;Amsterdam&quot;","*On &lt;Book a trip&gt; Page, Check Origin is:","*Amsterdam","*I'm on &lt;Book a trip&gt; Page","*${Title Book a trip(TextView)}, 5s, Not on &lt;Book Trip&gt; Page","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"appium-screenshot-5.png\"><img src=\"appium-screenshot-5.png\" width=\"800px\">\x3c/a>","*Page Should Contain Element","*<p>Verifies that current page contains `locator` element.\x3c/p>","*${Search_Origin(TextView)_id}, Search Origin is not Found!","*Current page contains element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_origin']'.","*Element Attribute Should Match","*<p>Verify that an attribute of an element matches the expected criteria.\x3c/p>","*${Search_Origin(TextView)_id}, text, ${arg1}","*Element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_origin']' attribute 'text' is 'Amsterdam' ","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"appium-screenshot-6.png\"><img src=\"appium-screenshot-6.png\" width=\"800px\">\x3c/a>","*And the Default Search Type is &quot;Return flight&quot;","*On &lt;Book a trip&gt; Page, Check Search Type is:","*Return flight","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"appium-screenshot-7.png\"><img src=\"appium-screenshot-7.png\" width=\"800px\">\x3c/a>","*${Search_Type(TextView)_id}, Search Type","*Current page contains element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_type']'.","*${Search_Type(TextView)_id}, text, ${arg1}","*Element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_type']' attribute 'text' is 'Return flight' ","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"appium-screenshot-8.png\"><img src=\"appium-screenshot-8.png\" width=\"800px\">\x3c/a>","*And the Default Search Passenger is &quot;1 adult in Economy Class&quot;","*On &lt;Book a trip&gt; Page, Check Search Passenger is:","*1 adult in Economy Class","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"appium-screenshot-9.png\"><img src=\"appium-screenshot-9.png\" width=\"800px\">\x3c/a>","*${Search_Passenger(TextView)_id}, Search Passenger is not Found!","*Current page contains element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_passenger']'.","*${Search_Passenger(TextView)_id}, text, ${arg1}","*Element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_passenger']' attribute 'text' is '1 adult in Economy Class' ","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"appium-screenshot-10.png\"><img src=\"appium-screenshot-10.png\" width=\"800px\">\x3c/a>"]);
 </script>
 <script type="text/javascript">
-window.output["generatedTimestamp"] = "20160704 10:43:20 GMT +02:00";
+window.output["generatedTimestamp"] = "20160704 12:05:34 GMT +02:00";
 </script>
 <script type="text/javascript">
-window.output["generatedMillis"] = 3087;
+window.output["generatedMillis"] = 53076;
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1467621796913;
+window.output["baseMillis"] = 1467626680924;
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:01","fail":10,"label":"Critical Tests","pass":0},{"elapsed":"00:00:01","fail":10,"label":"All Tests","pass":0}],[{"elapsed":"00:00:00","fail":2,"label":"AF","pass":0},{"elapsed":"00:00:00","fail":2,"label":"DEMO","pass":0},{"elapsed":"00:00:00","fail":8,"label":"KLM","pass":0},{"elapsed":"00:00:00","fail":4,"label":"Smoke","pass":0},{"elapsed":"00:00:00","fail":2,"label":"unfinished","pass":0}],[{"elapsed":"00:00:03","fail":10,"id":"s1","label":"UserStoriesForKLM","name":"UserStoriesForKLM","pass":0},{"elapsed":"00:00:02","fail":5,"id":"s1-s1","label":"UserStoriesForKLM.Airfrance KLM","name":"Airfrance KLM","pass":0},{"elapsed":"00:00:01","fail":5,"id":"s1-s2","label":"UserStoriesForKLM.Src","name":"Src","pass":0},{"elapsed":"00:00:01","fail":5,"id":"s1-s2-s1","label":"UserStoriesForKLM.Src.Test","name":"Test","pass":0},{"elapsed":"00:00:01","fail":5,"id":"s1-s2-s1-s1","label":"UserStoriesForKLM.Src.Test.Robotframework","name":"Robotframework","pass":0},{"elapsed":"00:00:01","fail":5,"id":"s1-s2-s1-s1-s1","label":"UserStoriesForKLM.Src.Test.Robotframework.Acceptance","name":"Acceptance","pass":0},{"elapsed":"00:00:01","fail":5,"id":"s1-s2-s1-s1-s1-s1","label":"UserStoriesForKLM.Src.Test.Robotframework.Acceptance.Airfrance KLM","name":"Airfrance KLM","pass":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:47","fail":0,"label":"Critical Tests","pass":1},{"elapsed":"00:00:47","fail":0,"label":"All Tests","pass":1}],[{"elapsed":"00:00:47","fail":0,"label":"KLM","pass":1},{"elapsed":"00:00:47","fail":0,"label":"Smoke","pass":1}],[{"elapsed":"00:00:53","fail":0,"id":"s1","label":"Acceptance","name":"Acceptance","pass":1},{"elapsed":"00:00:52","fail":0,"id":"s1-s1","label":"Acceptance.Airfrance KLM","name":"Airfrance KLM","pass":1}]];
 </script>
 <script type="text/javascript">
-window.output["errors"] = [[497,5,41],[497,5,42],[722,5,43],[831,5,44],[2328,5,45],[2338,5,46],[2480,5,47],[2540,5,48]];
+window.output["errors"] = [];
 </script>
 <script type="text/javascript">
 window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.html","splitLogBase":"log","title":""};
@@ -1867,7 +1904,7 @@ function addTestExecutionLog(main) {
       ${date} ${time}
       {{/if}}
     </td>
-    <td class="${level.toLowerCase()} level">${level}</td>
+    <td class="${level.toLowerCase()} level"><span class="label ${level.toLowerCase()}">${level}</span></td>
     <td class="message">{{html text}}</td>
     <td class="select-message" onclick="javascript:selectMessage('${id}')" title="Select message text">
       <div></div>
@@ -1880,7 +1917,7 @@ function addTestExecutionLog(main) {
     <div class="element-header closed" onclick="toggleSuite('${id}')">
       <div class="element-header-left" title="{{html fullName}}">
         <span class="elapsed" title="Elapsed time">${times.elapsedTime}</span>
-        <span class="${status.toLowerCase()}">TEST SUITE: </span>
+        <span class="label ${status.toLowerCase()}">SUITE</span>
         <span class="name">{{html name}}</span>
       </div>
       <div class="element-header-right" onclick="stopPropagation(event)" title="">
@@ -1942,7 +1979,7 @@ function addTestExecutionLog(main) {
     <div class="element-header closed" onclick="toggleTest('${id}')">
       <div class="element-header-left" title="{{html fullName}}">
         <span class="elapsed" title="Elapsed time">${times.elapsedTime}</span>
-        <span class="${status.toLowerCase()}">TEST CASE: </span>
+        <span class="label ${status.toLowerCase()}">TEST</span>
         <span class="name">{{html name}}</span>
         {{if !isCritical}}(non-critical){{/if}}
       </div>
@@ -1983,7 +2020,7 @@ function addTestExecutionLog(main) {
         </tr>
         <tr>
           <th>Status:</th>
-          <td><span class="${status.toLowerCase()}">${status}</span> ({{if isCritical}}critical{{else}}non-critical{{/if}})</td>
+          <td><span class="label ${status.toLowerCase()}">${status}</span> ({{if isCritical}}critical{{else}}non-critical{{/if}})</td>
         </tr>
         {{if message()}}
         <tr>
@@ -2001,8 +2038,9 @@ function addTestExecutionLog(main) {
     <div class="element-header closed" onclick="toggleKeyword('${id}')">
       <div class="element-header-left" title="{{html name}}">
         <span class="elapsed" title="Elapsed time">${times.elapsedTime}</span>
-        <span class="${status.toLowerCase()}">${type}: </span>
-        <span class="name">{{html name}}</span>
+        <span class="label keyword ${status.toLowerCase()}">${type}</span>
+        <span>{{html assign}}</span>
+        <span class="name"><span class="parent-name">{{html libname}}{{if libname}} . {{/if}}</span>{{html name}}</span>
         <span class="arg">{{html arguments}}</span>
       </div>
       <div class="element-header-right" onclick="stopPropagation(event)">
@@ -2018,6 +2056,12 @@ function addTestExecutionLog(main) {
         <tr>
           <th>Documentation:</th>
           <td class="doc">{{html doc()}}</td>
+        </tr>
+        {{/if}}
+        {{if tags}}
+        <tr>
+          <th>Tags:</th>
+          <td>{{html tags}}</td>
         </tr>
         {{/if}}
         {{if timeout}}
@@ -2039,7 +2083,7 @@ function addTestExecutionLog(main) {
   <table id="${id}" class="messages ${level.toLowerCase()}-message">
     <tr class="message-row">
       <td class="time">${time}</td>
-      <td class="${level.toLowerCase()} level">${level}</td>
+      <td class="${level.toLowerCase()} level"><span class="label ${level.toLowerCase()}">${level}</span></td>
       <td class="message">{{html text}}</td>
       <td class="select-message" onclick="javascript:selectMessage('${id}')" title="Select message text">
         <div></div>

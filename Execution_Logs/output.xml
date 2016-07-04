@@ -1,349 +1,338 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 2.8.7 (Jython 2.5.3 on java1.8.0_66)" generated="20160704 10:43:16.903">
-<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM" name="UserStoriesForKLM" id="s1">
-<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot" name="Airfrance KLM" id="s1-s1">
-<test name="Access to Flight News(AF)" id="s1-s1-t1">
-<kw type="kw" name="GIVEN I am on AirFrance HomePage">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="af.pages.Open the Airfrance App">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Launch Application on Local Device">
-<doc></doc>
-<arguments>
-<arg>&amp;{app_AF}</arg>
-</arguments>
-<msg level="FAIL" timestamp="20160704 10:43:18.719">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160704 10:43:18.719" starttime="20160704 10:43:18.718" status="FAIL"></status>
-</kw>
-<status endtime="20160704 10:43:18.719" starttime="20160704 10:43:18.678" status="FAIL"></status>
-</kw>
-<status endtime="20160704 10:43:18.719" starttime="20160704 10:43:18.668" status="FAIL"></status>
-</kw>
-<doc></doc>
-<tags>
-<tag>AF</tag>
-</tags>
-<status critical="yes" endtime="20160704 10:43:18.721" starttime="20160704 10:43:18.648" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
-</test>
-<test name="TC050 - Verify that the user is able to see the default values in the search module" id="s1-s1-t2">
-<kw type="kw" name="Given I've started the KLM App">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Launch Application on Local Device">
-<doc></doc>
+<robot generator="Robot 2.9.2 (Jython 2.7.0 on java1.8.0_66)" generated="20160704 12:04:40.884">
+<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance" name="Acceptance" id="s1">
+<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot" name="Airfrance KLM" id="s1-s1">
+<test name="TC050 - Verify that the user is able to see the default values in the search module" id="s1-s1-t1">
+<kw name="Given I've started the KLM App">
+<kw library="rf_helpers" name="Launch Application on Local Device">
 <arguments>
 <arg>&amp;{app_KLM}</arg>
 </arguments>
-<msg level="FAIL" timestamp="20160704 10:43:18.790">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160704 10:43:18.800" starttime="20160704 10:43:18.790" status="FAIL"></status>
+<kw library="adb" name="Get First Connected Device">
+<assign>
+<var>&amp;{local_device}</var>
+</assign>
+<msg level="INFO" timestamp="20160704 12:04:46.784">List of devices attached:
+seq	serial  	state
+1	LGH815e4eec017	device</msg>
+<msg level="INFO" timestamp="20160704 12:04:46.794">&amp;{local_device} = { deviceName=LGH815e4eec017 | udid=LGH815e4eec017 | platformName=ANDROID }</msg>
+<status endtime="20160704 12:04:46.794" starttime="20160704 12:04:46.542" status="PASS"></status>
 </kw>
-<status endtime="20160704 10:43:18.800" starttime="20160704 10:43:18.738" status="FAIL"></status>
+<kw library="adb" name="Get Device Language">
+<assign>
+<var>&amp;{languages}</var>
+</assign>
+<msg level="INFO" timestamp="20160704 12:04:47.016">List of devices attached:
+seq	serial  	state
+1	LGH815e4eec017	device</msg>
+<msg level="INFO" timestamp="20160704 12:04:47.016">&amp;{languages} = { country=GB
+ | language=en
+ }</msg>
+<status endtime="20160704 12:04:47.026" starttime="20160704 12:04:46.794" status="PASS"></status>
 </kw>
-<doc></doc>
+<kw library="BuiltIn" name="Log">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${RunFrom}</arg>
+</arguments>
+<msg level="INFO" timestamp="20160704 12:04:47.036">RIDE</msg>
+<status endtime="20160704 12:04:47.036" starttime="20160704 12:04:47.026" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Set Library Search Order">
+<doc>Sets the resolution order to use when a name matches multiple keywords.</doc>
+<arguments>
+<arg>AppiumLibrary</arg>
+<arg>Selenium2Library</arg>
+</arguments>
+<status endtime="20160704 12:04:47.047" starttime="20160704 12:04:47.046" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Open Application">
+<doc>Opens a new application to given Appium server.</doc>
+<arguments>
+<arg>http://127.0.0.1:4442/wd/hub</arg>
+<arg>&amp;{local_device}</arg>
+<arg>&amp;{an_app_under_test}</arg>
+</arguments>
+<status endtime="20160704 12:05:09.237" starttime="20160704 12:04:47.047" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:09.237" starttime="20160704 12:04:46.532" status="PASS"></status>
+</kw>
+<kw name="On &lt;Country of Residence&gt; Page, Select :">
+<arguments>
+<arg>France</arg>
+</arguments>
+<kw name="I'm on &lt;Country of Residence&gt; Page">
+<kw library="AppiumLibrary" name="Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${Title Country of residence(TextView)}</arg>
+<arg>5s</arg>
+</arguments>
+<status endtime="20160704 12:05:12.477" starttime="20160704 12:05:09.257" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg level="INFO" html="yes" timestamp="20160704 12:05:13.529">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:05:13.529" starttime="20160704 12:05:12.487" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:13.529" starttime="20160704 12:05:09.247" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${Country of Residence(EditText)_id}</arg>
+<arg>${arg1}</arg>
+</arguments>
+<msg level="INFO" timestamp="20160704 12:05:13.539">Typing text 'France' into text field 'xpath=//android.widget.EditText[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_edit_text']'</msg>
+<status endtime="20160704 12:05:20.309" starttime="20160704 12:05:13.539" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${France(TextView)}</arg>
+<arg>3s</arg>
+</arguments>
+<status endtime="20160704 12:05:20.859" starttime="20160704 12:05:20.319" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg level="INFO" html="yes" timestamp="20160704 12:05:21.949">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:05:21.959" starttime="20160704 12:05:20.869" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${France(TextView)}</arg>
+</arguments>
+<msg level="INFO" timestamp="20160704 12:05:21.960">Clicking element 'xpath=//android.widget.TextView[@text='France'][@resource-id='com.afklm.mobile.android.gomobile.klm:id/first_line_text']'.</msg>
+<status endtime="20160704 12:05:22.341" starttime="20160704 12:05:21.959" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:22.341" starttime="20160704 12:05:09.237" status="PASS"></status>
+</kw>
+<kw name="I'm on &lt;KLM HomePage&gt;">
+<kw library="AppiumLibrary" name="Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${Welcome, your journey starts here.(TextView)_id}</arg>
+<arg>30s</arg>
+<arg>Not on &lt;KLM HomePage&gt;</arg>
+</arguments>
+<status endtime="20160704 12:05:23.471" starttime="20160704 12:05:22.361" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg level="INFO" html="yes" timestamp="20160704 12:05:24.441">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-3.png"&gt;&lt;img src="appium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:05:24.441" starttime="20160704 12:05:23.481" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:24.441" starttime="20160704 12:05:22.341" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:24.451" starttime="20160704 12:04:46.522" status="PASS"></status>
+</kw>
+<kw name="When I Book A Trip">
+<kw name="On &lt;KLM HomePage&gt;, Request to Book a Trip via Central Button">
+<kw name="I'm on &lt;KLM HomePage&gt;">
+<kw library="AppiumLibrary" name="Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${Welcome, your journey starts here.(TextView)_id}</arg>
+<arg>30s</arg>
+<arg>Not on &lt;KLM HomePage&gt;</arg>
+</arguments>
+<status endtime="20160704 12:05:24.601" starttime="20160704 12:05:24.471" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg level="INFO" html="yes" timestamp="20160704 12:05:25.553">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-4.png"&gt;&lt;img src="appium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:05:25.563" starttime="20160704 12:05:24.601" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:25.563" starttime="20160704 12:05:24.461" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Click Element">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${Book a trip(LinearLayout)_id}</arg>
+</arguments>
+<msg level="INFO" timestamp="20160704 12:05:25.573">Clicking element 'xpath=//android.widget.LinearLayout[@resource-id='com.afklm.mobile.android.gomobile.klm:id/mytrips_book_a_trip']'.</msg>
+<status endtime="20160704 12:05:25.893" starttime="20160704 12:05:25.563" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:25.903" starttime="20160704 12:05:24.461" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:25.913" starttime="20160704 12:05:24.451" status="PASS"></status>
+</kw>
+<kw name="Then the Default Search Origin is &quot;Amsterdam&quot;">
+<kw name="On &lt;Book a trip&gt; Page, Check Origin is:">
+<arguments>
+<arg>Amsterdam</arg>
+</arguments>
+<kw name="I'm on &lt;Book a trip&gt; Page">
+<kw library="AppiumLibrary" name="Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${Title Book a trip(TextView)}</arg>
+<arg>5s</arg>
+<arg>Not on &lt;Book Trip&gt; Page</arg>
+</arguments>
+<status endtime="20160704 12:05:27.063" starttime="20160704 12:05:25.933" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg level="INFO" html="yes" timestamp="20160704 12:05:27.973">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-5.png"&gt;&lt;img src="appium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:05:27.973" starttime="20160704 12:05:27.073" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:27.983" starttime="20160704 12:05:25.923" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Page Should Contain Element">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>${Search_Origin(TextView)_id}</arg>
+<arg>Search Origin is not Found!</arg>
+</arguments>
+<msg level="INFO" timestamp="20160704 12:05:28.103">Current page contains element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_origin']'.</msg>
+<status endtime="20160704 12:05:28.113" starttime="20160704 12:05:27.983" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Element Attribute Should Match">
+<doc>Verify that an attribute of an element matches the expected criteria.</doc>
+<arguments>
+<arg>${Search_Origin(TextView)_id}</arg>
+<arg>text</arg>
+<arg>${arg1}</arg>
+</arguments>
+<msg level="INFO" timestamp="20160704 12:05:28.273">Element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_origin']' attribute 'text' is 'Amsterdam' </msg>
+<status endtime="20160704 12:05:28.273" starttime="20160704 12:05:28.113" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg level="INFO" html="yes" timestamp="20160704 12:05:29.193">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-6.png"&gt;&lt;img src="appium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:05:29.193" starttime="20160704 12:05:28.283" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:29.193" starttime="20160704 12:05:25.923" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:29.203" starttime="20160704 12:05:25.913" status="PASS"></status>
+</kw>
+<kw name="And the Default Search Type is &quot;Return flight&quot;">
+<kw name="On &lt;Book a trip&gt; Page, Check Search Type is:">
+<arguments>
+<arg>Return flight</arg>
+</arguments>
+<kw name="I'm on &lt;Book a trip&gt; Page">
+<kw library="AppiumLibrary" name="Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${Title Book a trip(TextView)}</arg>
+<arg>5s</arg>
+<arg>Not on &lt;Book Trip&gt; Page</arg>
+</arguments>
+<status endtime="20160704 12:05:29.323" starttime="20160704 12:05:29.213" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg level="INFO" html="yes" timestamp="20160704 12:05:30.263">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-7.png"&gt;&lt;img src="appium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:05:30.263" starttime="20160704 12:05:29.333" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:30.263" starttime="20160704 12:05:29.213" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Page Should Contain Element">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>${Search_Type(TextView)_id}</arg>
+<arg>Search Type</arg>
+</arguments>
+<msg level="INFO" timestamp="20160704 12:05:30.373">Current page contains element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_type']'.</msg>
+<status endtime="20160704 12:05:30.383" starttime="20160704 12:05:30.273" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Element Attribute Should Match">
+<doc>Verify that an attribute of an element matches the expected criteria.</doc>
+<arguments>
+<arg>${Search_Type(TextView)_id}</arg>
+<arg>text</arg>
+<arg>${arg1}</arg>
+</arguments>
+<msg level="INFO" timestamp="20160704 12:05:30.553">Element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_type']' attribute 'text' is 'Return flight' </msg>
+<status endtime="20160704 12:05:30.553" starttime="20160704 12:05:30.383" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg level="INFO" html="yes" timestamp="20160704 12:05:31.535">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-8.png"&gt;&lt;img src="appium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:05:31.535" starttime="20160704 12:05:30.553" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:31.535" starttime="20160704 12:05:29.203" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:31.545" starttime="20160704 12:05:29.203" status="PASS"></status>
+</kw>
+<kw name="And the Default Search Passenger is &quot;1 adult in Economy Class&quot;">
+<kw name="On &lt;Book a trip&gt; Page, Check Search Passenger is:">
+<arguments>
+<arg>1 adult in Economy Class</arg>
+</arguments>
+<kw name="I'm on &lt;Book a trip&gt; Page">
+<kw library="AppiumLibrary" name="Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${Title Book a trip(TextView)}</arg>
+<arg>5s</arg>
+<arg>Not on &lt;Book Trip&gt; Page</arg>
+</arguments>
+<status endtime="20160704 12:05:31.665" starttime="20160704 12:05:31.555" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg level="INFO" html="yes" timestamp="20160704 12:05:32.595">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-9.png"&gt;&lt;img src="appium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:05:32.595" starttime="20160704 12:05:31.665" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:32.605" starttime="20160704 12:05:31.555" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Page Should Contain Element">
+<doc>Verifies that current page contains `locator` element.</doc>
+<arguments>
+<arg>${Search_Passenger(TextView)_id}</arg>
+<arg>Search Passenger is not Found!</arg>
+</arguments>
+<msg level="INFO" timestamp="20160704 12:05:32.715">Current page contains element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_passenger']'.</msg>
+<status endtime="20160704 12:05:32.715" starttime="20160704 12:05:32.605" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Element Attribute Should Match">
+<doc>Verify that an attribute of an element matches the expected criteria.</doc>
+<arguments>
+<arg>${Search_Passenger(TextView)_id}</arg>
+<arg>text</arg>
+<arg>${arg1}</arg>
+</arguments>
+<msg level="INFO" timestamp="20160704 12:05:32.885">Element 'xpath=//android.widget.TextView[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_passenger']' attribute 'text' is '1 adult in Economy Class' </msg>
+<status endtime="20160704 12:05:32.885" starttime="20160704 12:05:32.725" status="PASS"></status>
+</kw>
+<kw library="AppiumLibrary" name="Capture Page Screenshot">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg level="INFO" html="yes" timestamp="20160704 12:05:33.795">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-10.png"&gt;&lt;img src="appium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status endtime="20160704 12:05:33.805" starttime="20160704 12:05:32.895" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:33.805" starttime="20160704 12:05:31.545" status="PASS"></status>
+</kw>
+<status endtime="20160704 12:05:33.805" starttime="20160704 12:05:31.545" status="PASS"></status>
+</kw>
 <tags>
 <tag>KLM</tag>
 <tag>Smoke</tag>
 </tags>
-<status critical="yes" endtime="20160704 10:43:18.800" starttime="20160704 10:43:18.725" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
+<status critical="yes" endtime="20160704 12:05:33.805" starttime="20160704 12:04:46.512" status="PASS"></status>
 </test>
-<test name="TC0XX - Verify whether the user is able to book a one way flight without login." id="s1-s1-t3">
-<kw type="kw" name="${Search_Destination(TextView)_id} = xpath_helpers.Xpath By Id">
-<doc></doc>
-<arguments>
-<arg>search_destination</arg>
-</arguments>
-<msg level="INFO" timestamp="20160704 10:43:18.882">${Search_Destination(TextView)_id} = //*[ends-with(@resource-id,'search_destination']</msg>
-<status endtime="20160704 10:43:18.882" starttime="20160704 10:43:18.872" status="PASS"></status>
-</kw>
-<kw type="kw" name="Given I've started the KLM App">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Launch Application on Local Device">
-<doc></doc>
-<arguments>
-<arg>&amp;{app_KLM}</arg>
-</arguments>
-<msg level="FAIL" timestamp="20160704 10:43:18.932">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160704 10:43:18.932" starttime="20160704 10:43:18.932" status="FAIL"></status>
-</kw>
-<status endtime="20160704 10:43:18.942" starttime="20160704 10:43:18.892" status="FAIL"></status>
-</kw>
-<doc></doc>
-<tags>
-<tag>KLM</tag>
-<tag>Smoke</tag>
-<tag>unfinished</tag>
-</tags>
-<status critical="yes" endtime="20160704 10:43:18.942" starttime="20160704 10:43:18.810" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
-</test>
-<test name="TC051 - Verify the message shown, when there are no entries for the given Origin and destination" id="s1-s1-t4">
-<kw type="kw" name="Given I've started the KLM App">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Launch Application on Local Device">
-<doc></doc>
-<arguments>
-<arg>&amp;{app_KLM}</arg>
-</arguments>
-<msg level="FAIL" timestamp="20160704 10:43:18.994">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160704 10:43:18.994" starttime="20160704 10:43:18.984" status="FAIL"></status>
-</kw>
-<status endtime="20160704 10:43:18.994" starttime="20160704 10:43:18.953" status="FAIL"></status>
-</kw>
-<doc></doc>
-<tags>
-<tag>DEMO</tag>
-<tag>KLM</tag>
-</tags>
-<status critical="yes" endtime="20160704 10:43:18.994" starttime="20160704 10:43:18.952" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
-</test>
-<test name="TC058 - Verify the user able to see the lowest price according to the destination selected, when not logged in" id="s1-s1-t5">
-<kw type="kw" name="Given I've started the KLM App">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Launch Application on Local Device">
-<doc></doc>
-<arguments>
-<arg>&amp;{app_KLM}</arg>
-</arguments>
-<msg level="FAIL" timestamp="20160704 10:43:19.034">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160704 10:43:19.034" starttime="20160704 10:43:19.034" status="FAIL"></status>
-</kw>
-<status endtime="20160704 10:43:19.034" starttime="20160704 10:43:19.004" status="FAIL"></status>
-</kw>
-<doc></doc>
-<tags>
-<tag>KLM</tag>
-</tags>
-<status critical="yes" endtime="20160704 10:43:19.034" starttime="20160704 10:43:19.004" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
-</test>
-<doc></doc>
-<metadata>
-</metadata>
-<status endtime="20160704 10:43:19.044" starttime="20160704 10:43:17.410" status="FAIL"></status>
+<status endtime="20160704 12:05:33.815" starttime="20160704 12:04:41.652" status="PASS"></status>
 </suite>
-<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src" name="Src" id="s1-s2">
-<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test" name="Test" id="s1-s2-s1">
-<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework" name="Robotframework" id="s1-s2-s1-s1">
-<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance" name="Acceptance" id="s1-s2-s1-s1-s1">
-<suite source="C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot" name="Airfrance KLM" id="s1-s2-s1-s1-s1-s1">
-<test name="Access to Flight News(AF)" id="s1-s2-s1-s1-s1-s1-t1">
-<kw type="kw" name="GIVEN I am on AirFrance HomePage">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="af.pages.Open the Airfrance App">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Launch Application on Local Device">
-<doc></doc>
-<arguments>
-<arg>&amp;{app_AF}</arg>
-</arguments>
-<msg level="FAIL" timestamp="20160704 10:43:19.653">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160704 10:43:19.653" starttime="20160704 10:43:19.643" status="FAIL"></status>
-</kw>
-<status endtime="20160704 10:43:19.653" starttime="20160704 10:43:19.633" status="FAIL"></status>
-</kw>
-<status endtime="20160704 10:43:19.663" starttime="20160704 10:43:19.623" status="FAIL"></status>
-</kw>
-<doc></doc>
-<tags>
-<tag>AF</tag>
-</tags>
-<status critical="yes" endtime="20160704 10:43:19.663" starttime="20160704 10:43:19.623" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
-</test>
-<test name="TC050 - Verify that the user is able to see the default values in the search module" id="s1-s2-s1-s1-s1-s1-t2">
-<kw type="kw" name="Given I've started the KLM App">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Launch Application on Local Device">
-<doc></doc>
-<arguments>
-<arg>&amp;{app_KLM}</arg>
-</arguments>
-<msg level="FAIL" timestamp="20160704 10:43:19.703">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160704 10:43:19.703" starttime="20160704 10:43:19.693" status="FAIL"></status>
-</kw>
-<status endtime="20160704 10:43:19.703" starttime="20160704 10:43:19.673" status="FAIL"></status>
-</kw>
-<doc></doc>
-<tags>
-<tag>KLM</tag>
-<tag>Smoke</tag>
-</tags>
-<status critical="yes" endtime="20160704 10:43:19.713" starttime="20160704 10:43:19.663" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
-</test>
-<test name="TC0XX - Verify whether the user is able to book a one way flight without login." id="s1-s2-s1-s1-s1-s1-t3">
-<kw type="kw" name="${Search_Destination(TextView)_id} = xpath_helpers.Xpath By Id">
-<doc></doc>
-<arguments>
-<arg>search_destination</arg>
-</arguments>
-<msg level="INFO" timestamp="20160704 10:43:19.735">${Search_Destination(TextView)_id} = //*[ends-with(@resource-id,'search_destination']</msg>
-<status endtime="20160704 10:43:19.734" starttime="20160704 10:43:19.731" status="PASS"></status>
-</kw>
-<kw type="kw" name="Given I've started the KLM App">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Launch Application on Local Device">
-<doc></doc>
-<arguments>
-<arg>&amp;{app_KLM}</arg>
-</arguments>
-<msg level="FAIL" timestamp="20160704 10:43:19.775">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160704 10:43:19.775" starttime="20160704 10:43:19.775" status="FAIL"></status>
-</kw>
-<status endtime="20160704 10:43:19.775" starttime="20160704 10:43:19.755" status="FAIL"></status>
-</kw>
-<doc></doc>
-<tags>
-<tag>KLM</tag>
-<tag>Smoke</tag>
-<tag>unfinished</tag>
-</tags>
-<status critical="yes" endtime="20160704 10:43:19.785" starttime="20160704 10:43:19.722" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
-</test>
-<test name="TC051 - Verify the message shown, when there are no entries for the given Origin and destination" id="s1-s2-s1-s1-s1-s1-t4">
-<kw type="kw" name="Given I've started the KLM App">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Launch Application on Local Device">
-<doc></doc>
-<arguments>
-<arg>&amp;{app_KLM}</arg>
-</arguments>
-<msg level="FAIL" timestamp="20160704 10:43:19.815">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160704 10:43:19.815" starttime="20160704 10:43:19.805" status="FAIL"></status>
-</kw>
-<status endtime="20160704 10:43:19.815" starttime="20160704 10:43:19.795" status="FAIL"></status>
-</kw>
-<doc></doc>
-<tags>
-<tag>DEMO</tag>
-<tag>KLM</tag>
-</tags>
-<status critical="yes" endtime="20160704 10:43:19.815" starttime="20160704 10:43:19.785" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
-</test>
-<test name="TC058 - Verify the user able to see the lowest price according to the destination selected, when not logged in" id="s1-s2-s1-s1-s1-s1-t5">
-<kw type="kw" name="Given I've started the KLM App">
-<doc></doc>
-<arguments>
-</arguments>
-<kw type="kw" name="Launch Application on Local Device">
-<doc></doc>
-<arguments>
-<arg>&amp;{app_KLM}</arg>
-</arguments>
-<msg level="FAIL" timestamp="20160704 10:43:19.855">No keyword with name 'Launch Application on Local Device' found.</msg>
-<status endtime="20160704 10:43:19.855" starttime="20160704 10:43:19.855" status="FAIL"></status>
-</kw>
-<status endtime="20160704 10:43:19.855" starttime="20160704 10:43:19.825" status="FAIL"></status>
-</kw>
-<doc></doc>
-<tags>
-<tag>KLM</tag>
-</tags>
-<status critical="yes" endtime="20160704 10:43:19.856" starttime="20160704 10:43:19.815" status="FAIL">No keyword with name 'Launch Application on Local Device' found.</status>
-</test>
-<doc></doc>
-<metadata>
-</metadata>
-<status endtime="20160704 10:43:19.857" starttime="20160704 10:43:19.251" status="FAIL"></status>
-</suite>
-<doc></doc>
-<metadata>
-</metadata>
-<status endtime="20160704 10:43:19.871" starttime="20160704 10:43:19.191" status="FAIL"></status>
-</suite>
-<doc></doc>
-<metadata>
-</metadata>
-<status endtime="20160704 10:43:19.897" starttime="20160704 10:43:19.133" status="FAIL"></status>
-</suite>
-<doc></doc>
-<metadata>
-</metadata>
-<status endtime="20160704 10:43:19.897" starttime="20160704 10:43:19.089" status="FAIL"></status>
-</suite>
-<doc></doc>
-<metadata>
-</metadata>
-<status endtime="20160704 10:43:19.917" starttime="20160704 10:43:19.054" status="FAIL"></status>
-</suite>
-<doc></doc>
-<metadata>
-</metadata>
-<status endtime="20160704 10:43:19.917" starttime="20160704 10:43:16.913" status="FAIL"></status>
+<status endtime="20160704 12:05:33.825" starttime="20160704 12:04:40.924" status="PASS"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="10">Critical Tests</stat>
-<stat pass="0" fail="10">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="2" doc="" links="" combined="" info="">AF</stat>
-<stat pass="0" fail="2" doc="" links="" combined="" info="">DEMO</stat>
-<stat pass="0" fail="8" doc="" links="" combined="" info="">KLM</stat>
-<stat pass="0" fail="4" doc="" links="" combined="" info="">Smoke</stat>
-<stat pass="0" fail="2" doc="" links="" combined="" info="">unfinished</stat>
+<stat pass="1" fail="0">KLM</stat>
+<stat pass="1" fail="0">Smoke</stat>
 </tag>
 <suite>
-<stat pass="0" fail="10" name="UserStoriesForKLM" id="s1">UserStoriesForKLM</stat>
-<stat pass="0" fail="5" name="Airfrance KLM" id="s1-s1">UserStoriesForKLM.Airfrance KLM</stat>
-<stat pass="0" fail="5" name="Src" id="s1-s2">UserStoriesForKLM.Src</stat>
-<stat pass="0" fail="5" name="Test" id="s1-s2-s1">UserStoriesForKLM.Src.Test</stat>
-<stat pass="0" fail="5" name="Robotframework" id="s1-s2-s1-s1">UserStoriesForKLM.Src.Test.Robotframework</stat>
-<stat pass="0" fail="5" name="Acceptance" id="s1-s2-s1-s1-s1">UserStoriesForKLM.Src.Test.Robotframework.Acceptance</stat>
-<stat pass="0" fail="5" name="Airfrance KLM" id="s1-s2-s1-s1-s1-s1">UserStoriesForKLM.Src.Test.Robotframework.Acceptance.Airfrance KLM</stat>
+<stat pass="1" fail="0" name="Acceptance" id="s1">Acceptance</stat>
+<stat pass="1" fail="0" name="Airfrance KLM" id="s1-s1">Acceptance.Airfrance KLM</stat>
 </suite>
 </statistics>
 <errors>
-<msg level="ERROR" timestamp="20160704 10:43:17.410">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Setting variable '&amp;{app_AF}' failed: Variable name '&amp;{app_AF}' is invalid.</msg>
-<msg level="ERROR" timestamp="20160704 10:43:17.410">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Setting variable '&amp;{app_KLM}' failed: Variable name '&amp;{app_KLM}' is invalid.</msg>
-<msg level="ERROR" timestamp="20160704 10:43:17.635">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Importing test library 'AppiumLibrary' failed: ImportError: No module named AppiumLibrary
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  C:\Users\AM077783\.m2\repository\org\robotframework\robotframework\2.8.7\robotframework-2.8.7.jar\Lib\robot\libraries
-  C:\Users\AM077783\.m2\repository\org\robotframework\robotframework\2.8.7\robotframework-2.8.7.jar\Lib
-  C:\Users\AM077783\.m2\repository\org\robotframework\robotframework\2.8.7\Lib
-  __classpath__
-  __pyclasspath__/
-  .
-  C:\temp\MISSION_WG\08_RF_MOBILE\140_DEV_OF_UTILITIES\PySnapRF
-  C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM
-CLASSPATH:
-  C:\temp\MISSION_WG\08_RF_MOBILE\TOOLS\apache-maven\bin\..\boot\plexus-classworlds-2.5.2.jar</msg>
-<msg level="ERROR" timestamp="20160704 10:43:17.744">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\Airfrance_KLM.robot': Resource file '..\..\..\30_LIBRAIRIES\rf_helpers.txt' does not exist.</msg>
-<msg level="ERROR" timestamp="20160704 10:43:19.241">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Setting variable '&amp;{app_AF}' failed: Variable name '&amp;{app_AF}' is invalid.</msg>
-<msg level="ERROR" timestamp="20160704 10:43:19.251">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Setting variable '&amp;{app_KLM}' failed: Variable name '&amp;{app_KLM}' is invalid.</msg>
-<msg level="ERROR" timestamp="20160704 10:43:19.393">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Importing test library 'AppiumLibrary' failed: ImportError: No module named AppiumLibrary
-Traceback (most recent call last):
-  None
-PYTHONPATH:
-  C:\Users\AM077783\.m2\repository\org\robotframework\robotframework\2.8.7\robotframework-2.8.7.jar\Lib\robot\libraries
-  C:\Users\AM077783\.m2\repository\org\robotframework\robotframework\2.8.7\robotframework-2.8.7.jar\Lib
-  C:\Users\AM077783\.m2\repository\org\robotframework\robotframework\2.8.7\Lib
-  __classpath__
-  __pyclasspath__/
-  .
-  C:\temp\MISSION_WG\08_RF_MOBILE\140_DEV_OF_UTILITIES\PySnapRF
-  C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM
-CLASSPATH:
-  C:\temp\MISSION_WG\08_RF_MOBILE\TOOLS\apache-maven\bin\..\boot\plexus-classworlds-2.5.2.jar</msg>
-<msg level="ERROR" timestamp="20160704 10:43:19.453">Error in file 'C:\temp\RF_DEV\10_TESTS\UserStoriesForKLM\src\test\robotframework\acceptance\Airfrance_KLM.robot': Resource file '..\..\..\30_LIBRAIRIES\rf_helpers.txt' does not exist.</msg>
 </errors>
 </robot>

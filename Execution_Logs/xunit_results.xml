@@ -1,1 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="0" name="UserStoriesForKLM" tests="0"><testcase classname="ExecutionError" name="Invalid test data or command line options (Returncode 252)."><error message="Invalid test data or command line options (Returncode 252)."/></testcase></testsuite>
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite failures="0" skip="0" tests="1" name="Acceptance" errors="0">
+<testcase classname="Acceptance.Airfrance KLM" name="TC050 - Verify that the user is able to see the default values in the search module" time="47">
+</testcase>
+</testsuite>
