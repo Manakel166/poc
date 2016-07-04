@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<project name="maven-antrun-" default="main"  >
-<target name="main">
-  <zip basedir=".\Execution_Logs" destfile="ExecutionLog.zip" includes="*.*"/>
-  <attachartifact file="ExecutionLog.zip" classifier="test" type="zip"/>
-</target>
-</project>
