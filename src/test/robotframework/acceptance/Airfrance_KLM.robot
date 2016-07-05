@@ -48,7 +48,7 @@ TC0XX - Verify whether the user is able to book a one way flight without login.
     And I Can Book the First available Flight
 
 TC051 - Verify the message shown, when there are no entries for the given Origin and destination
-    [Tags]    KLM    DEMO
+    [Tags]    KLM    Smoke
     Given I've started the KLM App
     When I Book A Trip
     And I choose as Origin "Paris"
@@ -196,6 +196,7 @@ I'm on <select departure date> Page
 
 I've started the KLM App
     Comment    Launch Application on Local Device    &{app_KLM}
+    Log    ${RunFrom}
     Open Application    ${dinb_demo_server}    &{LG_G4}    &{app_KLM}
     On <Country of Residence> Page, Select :    France
     I'm on <KLM HomePage>

@@ -34,6 +34,9 @@
                  <excludes>
                     <exclude>unfinished</exclude>
                  </excludes>
+                 <variables>
+                    <variable>RunFrom:Bamboo</variable>
+                 </variables>
                  <extraPathDirectories>
                     <extraPathDirectory>src/test/resources/python</extraPathDirectory>
                 </extraPathDirectories>    
