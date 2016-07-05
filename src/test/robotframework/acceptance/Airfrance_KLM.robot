@@ -351,6 +351,7 @@ On <select departure date> Page, Choose Today
     ${today} =    Get Current Date
     Comment    Day is displayed as number (eg 26)
     ${current_day_of_month}=    Convert Date    ${today}    result_format=%d
+    ${current_day_of_month}=    Strip String    ${current_day_of_month}    mode=left    characters=0
     ${locator_for_Day}=    Replace String    ${Departure_day(TextView)}    Day    ${current_day_of_month}
     Page Should Contain Element    ${locator_for_Day}
     Comment    Month is Displayed as a Local Full Month (eg June)
