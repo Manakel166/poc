@@ -59,7 +59,7 @@
             <phase>verify</phase>
             <configuration>
               <target>
-                <zip destfile="ExecutionLog.zip"
+                <zip destfile=".\target\ExecutionLog.zip"
                      basedir=".\target\Execution_Logs"
                      includes="*.*"
                   />
