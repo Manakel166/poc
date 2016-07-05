@@ -59,11 +59,11 @@
             <phase>post-integration-test</phase>
             <configuration>
               <target>
-                <zip destfile="ExecutionLog.zip"
+                <zip destfile="ExecutionLog_{bamboo.buildNumber}.zip"
                      basedir=".\Execution_Logs"
                      includes="*.*"
                   />
-                <attachartifact file="ExecutionLog.zip" classifier="test" type="zip"/>
+                <attachartifact file="ExecutionLog_{bamboo.buildNumber}.zip" classifier="test" type="zip"/>
               </target>
             </configuration>
             <goals>

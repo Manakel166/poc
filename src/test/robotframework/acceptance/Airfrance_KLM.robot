@@ -22,6 +22,7 @@ Access to Flight News(AF)
     [Tags]    AF
     GIVEN I am on AirFrance HomePage
     THEN I can select "Flight News" from HomePage
+    [Teardown]    Close Application
 
 TC050 - Verify that the user is able to see the default values in the search module
     [Tags]    KLM    Smoke
@@ -30,6 +31,7 @@ TC050 - Verify that the user is able to see the default values in the search mod
     Then the Default Search Origin is "Amsterdam"
     And the Default Search Type is "Return flight"
     And the Default Search Passenger is "1 adult in Economy Class"
+    [Teardown]    Close Application
 
 TC0XX - Verify whether the user is able to book a one way flight without login.
     [Tags]    KLM    Smoke    unfinished
@@ -46,6 +48,7 @@ TC0XX - Verify whether the user is able to book a one way flight without login.
     Then I Can Search for Dates
     And I Can Choose Today as Date
     And I Can Book the First available Flight
+    [Teardown]    Close Application
 
 TC051 - Verify the message shown, when there are no entries for the given Origin and destination
     [Tags]    KLM    Smoke
@@ -55,6 +58,7 @@ TC051 - Verify the message shown, when there are no entries for the given Origin
     And I choose as Destination "Oulu"
     And I choose a one way flight
     Then I see a message for No Destination
+    [Teardown]    Close Application
 
 TC058 - Verify the user able to see the lowest price according to the destination selected, when not logged in
     [Tags]    KLM
@@ -68,6 +72,7 @@ TC058 - Verify the user able to see the lowest price according to the destinatio
     Then I can see the lowest price for my destination
     When I ask the flights available for Today
     Then All proposed flight must be pricier
+    [Teardown]    Close Application
 
 *** Keywords ***
 -----------------------Business Steps AF --------------------------------
