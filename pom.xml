@@ -23,8 +23,8 @@
         </executions>
         <configuration>
                  <!-- <testCasesDirectory>${project.basedir}/</testCasesDirectory> -->
-                 <outputDirectory>${project.basedir}/Execution_Logs</outputDirectory>
-                 <xunitFile>${project.basedir}/Execution_Logs/xunit_results.xml</xunitFile>
+                 <outputDirectory>${project.basedir}/target/Execution_Logs</outputDirectory>
+                 <xunitFile>${project.basedir}/target/Execution_Logs/xunit_results.xml</xunitFile>
                  <suites>
                    <suite>Airfrance_KLM</suite>
                  </suites>
@@ -59,11 +59,11 @@
             <phase>post-integration-test</phase>
             <configuration>
               <target>
-                <zip destfile="ExecutionLog_{bamboo.buildNumber}.zip"
-                     basedir=".\Execution_Logs"
+                <zip destfile="ExecutionLog.zip"
+                     basedir=".\target\Execution_Logs"
                      includes="*.*"
                   />
-                <attachartifact file="ExecutionLog_{bamboo.buildNumber}.zip" classifier="test" type="zip"/>
+                <attachartifact file="ExecutionLog.zip" classifier="test" type="zip"/>
               </target>
             </configuration>
             <goals>

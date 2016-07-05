@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite failures="0" skip="0" tests="1" name="Acceptance" errors="0">
-<testcase classname="Acceptance.Airfrance KLM" name="TC050 - Verify that the user is able to see the default values in the search module" time="65">
+<testsuite failures="1" skip="0" tests="2" name="Acceptance" errors="0">
+<testcase classname="Acceptance.Airfrance KLM" name="TC050 - Verify that the user is able to see the default values in the search module" time="70">
+</testcase>
+<testcase classname="Acceptance.Airfrance KLM" name="TC051 - Verify the message shown, when there are no entries for the given Origin and destination" time="101">
+<failure message="Page should have contained element 'xpath=//android.widget.TextView[@text='05']' but did not" type="AssertionError"></failure>
 </testcase>
 </testsuite>
