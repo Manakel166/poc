@@ -53,7 +53,7 @@ def replace_string(string, search_for, replace_with, count=-1):
     | Should Be Equal | ${str}         | Helo, world!   |       |          |
     """
     try:
-            icount= int(count)
-        except ValueError:
-            raise ValueError("Cannot convert 'count' argument  to an integer.")
+        icount= int(count)
+    except ValueError:
+        raise ValueError("Cannot convert 'count' argument  to an integer.")
     return string.replace(search_for, replace_with, icount)
