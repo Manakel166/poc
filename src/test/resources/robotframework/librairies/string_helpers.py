@@ -29,3 +29,31 @@ def strip_string(string, mode='both', characters=None):
     except KeyError:
         raise ValueError("Invalid mode '%s'." % mode)
     return method(characters)
+    
+    
+def replace_string(string, search_for, replace_with, count=-1):
+    """Replaces ``search_for`` in the given ``string`` with ``replace_with``.
+
+    ``search_for`` is used as a literal string. See `Replace String
+    Using Regexp` if more powerful pattern matching is needed.
+    If you need to just remove a string see `Remove String`.
+
+    If the optional argument ``count`` is given, only that many
+    occurrences from left are replaced. Negative ``count`` means
+    that all occurrences are replaced (default behaviour) and zero
+    means that nothing is done.
+
+    A modified version of the string is returned and the original
+    string is not altered.
+
+    Examples:
+    | ${str} =        | Replace String | Hello, world!  | world | tellus   |
+    | Should Be Equal | ${str}         | Hello, tellus! |       |          |
+    | ${str} =        | Replace String | Hello, world!  | l     | ${EMPTY} | count=1 |
+    | Should Be Equal | ${str}         | Helo, world!   |       |          |
+    """
+    try:
+            icount= int(count)
+        except ValueError:
+            raise ValueError("Cannot convert 'count' argument  to an integer.")
+    return string.replace(search_for, replace_with, icount)
