@@ -1,4 +1,4 @@
-def strip_string(self, string, mode='both', characters=None):
+def strip_string(string, mode='both', characters=None):
     """Remove leading and/or trailing whitespaces from the given string.
 
     ``mode`` is either ``left`` to remove leading characters, ``right`` to
