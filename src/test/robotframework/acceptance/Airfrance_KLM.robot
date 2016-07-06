@@ -4,7 +4,7 @@ Resource          af.ui.txt    # UI Identifier. may change from Platform to Plat
 Resource          ../../resources/robotframework/librairies/rf_helpers.txt
 Resource          klm.ui.txt
 Resource          af.pages.txt
-Library           ../../resources/python/robot/libraries/String.py
+Library           ../../resources/robotframework/librairies/string_helpers.py
 Library           DateTime
 Library           ../../resources/robotframework/librairies/xpath_helpers.py
 Library           ../../resources/robotframework/librairies/AppiumExtension.py

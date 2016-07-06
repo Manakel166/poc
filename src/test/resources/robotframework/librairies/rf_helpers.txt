@@ -1,6 +1,5 @@
 *** Settings ***
 Library           adb.py    # Driving the Adb from RF.
-Library           String
 
 *** Keywords ***
 Launch Application on Local Device
