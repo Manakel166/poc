@@ -77,15 +77,16 @@ TC058 - Verify the user able to see the lowest price according to the destinatio
 *** Keywords ***
 -----------------------Business Steps AF --------------------------------
 
------------------------Business Steps KLM --------------------------------
-
 -----------------------Functional Steps/ Reusable Blocks AF cf resource----------
 
------------------------Functional Steps/ Reusable Blocks KLM----------
+-----------------------Business Steps KLM --------------------------------
 
-All proposed flight must be pricier
-    On <Choose a Flight> Page, Check all flights are between the 2 airports:    CDG    FCO
-    On <Choose a Flight> Page, Check all flights are pricier than:    ${proposed_lowest_price}
+I've started the KLM App
+    Comment    Launch Application on Local Device    &{app_KLM}
+    Log    ${RunFrom}
+    Open Application    ${dinb_demo_server}    &{LG_G4}    &{app_KLM}
+    On <Country of Residence> Page, Select :    France
+    I'm on <KLM HomePage>
 
 I Book A Trip
     On <KLM HomePage>, Request to Book a Trip via Central Button
@@ -162,6 +163,21 @@ I see a message for No Destination
 I'm not Logged In
     Log    Not Implemented Yet
 
+All proposed flight must be pricier
+    On <Choose a Flight> Page, Check all flights are between the 2 airports:    CDG    FCO
+    On <Choose a Flight> Page, Check all flights are pricier than:    ${proposed_lowest_price}
+
+the Default Search Type is "Return flight"
+    On <Book a trip> Page, Check Search Type is:    Return flight
+
+the Default Search Origin is "Amsterdam"
+    On <Book a trip> Page, Check Origin is:    Amsterdam
+
+the Default Search Passenger is "1 adult in Economy Class"
+    On <Book a trip> Page, Check Search Passenger is:    1 adult in Economy Class
+
+-----------------------Pages Actions / Reusable Blocks KLM----------
+
 I'm on <Book a trip> Page
     Wait Until Page Contains Element    ${Title Book a trip(TextView)}    5s    Not on <Book Trip> Page
     Capture Page Screenshot
@@ -198,13 +214,6 @@ I'm on <Pay Page>
 I'm on <select departure date> Page
     Wait Until Page Contains Element    ${Title Select Departure Date(TextView)}    5s    Not on Select Departure Date Page
     Capture Page ScreenShot
-
-I've started the KLM App
-    Comment    Launch Application on Local Device    &{app_KLM}
-    Log    ${RunFrom}
-    Open Application    ${dinb_demo_server}    &{LG_G4}    &{app_KLM}
-    On <Country of Residence> Page, Select :    France
-    I'm on <KLM HomePage>
 
 On <Book a Trip> Page, Check that "Select travel date" is disabled
     I'm on <Book a trip> Page
@@ -359,12 +368,3 @@ On <select departure date> Page, Choose Today
     Page Should Contain Element    ${Departure_month(TextView)_id}
     Element Attribute Should Match    ${Departure_month(TextView)_id}    text    ${current_month_as_local_abrevation}
     Click Element    ${locator_for_Day}
-
-the Default Search Origin is "Amsterdam"
-    On <Book a trip> Page, Check Origin is:    Amsterdam
-
-the Default Search Passenger is "1 adult in Economy Class"
-    On <Book a trip> Page, Check Search Passenger is:    1 adult in Economy Class
-
-the Default Search Type is "Return flight"
-    On <Book a trip> Page, Check Search Type is:    Return flight
