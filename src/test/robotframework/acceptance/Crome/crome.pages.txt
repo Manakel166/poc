@@ -1,6 +1,6 @@
 *** Settings ***
 Library           ExtendedSelenium2Library
-Resource          ../../30_LIBRAIRIES/web_table_helpers.txt
+Resource          ../../../resources/robotframework/librairies/web_table_helpers.txt
 
 *** Variables ***
 ${Reference_on_Contract_Card}    xpath=//md-card//figure/dl/dt[contains(.,'Référence')]/following-sibling::dd

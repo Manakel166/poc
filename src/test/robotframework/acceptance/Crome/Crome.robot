@@ -1,17 +1,19 @@
 *** Settings ***
 Library           ExtendedSelenium2Library
-Library           ../../30_LIBRAIRIES/ExtendedSelenium2Extension.py
+Library           ../../../resources/robotframework/librairies/ExtendedSelenium2Extension.py
 Library           Collections
 Library           String
 Resource          crome.pages.txt
-Resource          ../../30_LIBRAIRIES/web_table_helpers.txt
+Resource          ../../../resources/robotframework/librairies/web_table_helpers.txt
 
 *** Variables ***
 ${url_rct_chrome}    https://habilerct.airfrance.fr/siteminderagent/habile.fcc?TYPE=33554433&REALMOID=06-46a18ee6-8edb-1036-92c1-847505340cb3&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=agttech_default_apache_hab-tomcat8_qvirnweblx03&TARGET=-SM-http%3a%2f%2fsurcoufj--mig--rct%2eairfrance%2efr%2fcromeFront%2f#
 ${grid_server}    http://10.70.147.63:4441/wd/hub
+${RunFrom}        RIDE
 
 *** Test Cases ***
 S1 - User Story My Contracts/Firm List Display
+    Log    Test run from:${RunFrom}
     Open Crome with Test user on Browser:    IE
     I have the 6 required Columns displayed
     I can click on Master Ref or Corporate Name to access the Contract Card
