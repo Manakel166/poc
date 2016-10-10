@@ -1,0 +1,126 @@
+*** Settings ***
+Library           ExtendedSelenium2Library
+Resource          ../../30_LIBRAIRIES/web_table_helpers.txt
+
+*** Variables ***
+${Reference_on_Contract_Card}    xpath=//md-card//figure/dl/dt[contains(.,'Référence')]/following-sibling::dd
+${Type_on_Contract_Card}    xpath=//md-card//figure/dl/dt[contains(.,'Type')]/following-sibling::dd
+${Status_on_contract_card}    xpath=//figure/dl/dt[contains(.,'Etat')]/following-sibling::dd
+
+*** Keywords ***
+From <CromeContractCard>, Navigate to <CromeContracts>
+    I'm on <CromeContractCard>
+    Click Element    xpath=//a[contains(@href,'/cromeFront/contracts')]
+
+From <CromeCorporateEnvironment>, Navigate to <CromeContracts>
+    I'm on <CromeCorporateEnvironment>
+    Click Element    xpath=//a[contains(@href,'/cromeFront/contracts')]
+
+From <CromeCreateCorporateEnvironment>, Navigate to <CromeContracts>
+    I'm on <CromeCreateCorporateEnvironment>
+    Click Element    xpath=//a[contains(@href,'/cromeFront/contracts')]
+
+I'm on <CromeContractCard>
+    Page Should Contain Element    xpath=//md-card-title[@class='contract']
+
+I'm on <CromeContracts>
+    Location Should Contain    /cromeFront/contracts
+    Page Should Contain Element    xpath=//a[@class='is-active'][contains(.,' Mon Contracts / Firm')]
+
+I'm on <CromeCorporateEnvironment>
+    Location Should Contain    cromeFront/corporate-environment
+
+I'm on <CromeCreateCorporateEnvironment>
+    Location Should Contain    cromeFront/corporate-environment/create
+    Page Should Contain Element    xpath=//md-toolbar-row[contains(.,' Create New corporate environnement ')]
+
+I'm on <CromeHome>
+    Wait Until Keyword Succeeds    10s    1s    Page should contain Element    xpath=//h1[contains(.,'CROME')]
+    Page should contain Element    xpath=//p[contains(.,' Welcome to cromeFront !')]
+
+I'm on <HabileRCT>
+    Wait Until Keyword Succeeds    10s    1s    Location Should Contain    https://habilerct.airfrance.fr/siteminderagent/
+    Page Should Contain Element    xpath=//h1[contains(.,'HABILE')]
+    Page Should Contain Element    xpath=//span[contains(.,'Authentification')]
+
+On <CromeContractCard>, Displayed Contract should be:
+    [Arguments]    ${ref}    ${type}    ${state}
+    I'm on <CromeContractCard>
+    Element Text Should Be    ${Reference_on_Contract_Card}    ${ref}
+    Element Text Should Be    ${Type_on_Contract_Card}    ${type}
+    Element Text Should Be    ${Status_on_contract_card}    ${state}
+
+On <CromeContracts>, Check that Column is displayed:
+    [Arguments]    ${column_header}
+    [Tags]
+    I'm on <CromeContracts>
+    Table header should contain    xpath=//md-card//table    ${column_header}
+
+On <CromeContracts>, Check that SortOptions is NOT AVAILABLE for Column:
+    [Arguments]    ${arg1}
+    Comment    Run Keyword And Expect Error    *    On <CromeContracts>, Check that SortOptions is available for Column:    ${arg1}
+    I'm on <CromeContracts>
+    Page Should Not Contain Element    xpath=//th//span[@class='header-label'][contains(.,'${arg1}')][following-sibling::div[@class='sort-arrow-container']//i[contains(.,'arrow_drop_down')]]
+
+On <CromeContracts>, Check that SortOptions is available for Column:
+    [Arguments]    ${arg1}
+    I'm on <CromeContracts>
+    Page Should Contain Element    xpath=//th//span[@class='header-label'][contains(.,'${arg1}')][following-sibling::div[@class='sort-arrow-container']//i[contains(.,'arrow_drop_down')]]
+
+On <CromeContracts>, Click a Corporate Environment Link:
+    [Arguments]    ${arg1}
+    I'm on <CromeContracts>
+    Click Element in Table Column by Displayed Text    xpath=//md-card//table    Corporate environment    ${arg1}    //th//span[@class='header-label']
+
+On <CromeContracts>, Click to Create an Environment for Contract:
+    [Arguments]    ${contract_ref}
+    ${target_row}=    Get Row from Column Value:    xpath=//md-card//table    Contract reference    ACTIA    //th//span[@class='header-label']
+    Click Element    xpath=//md-card//table//tr[5]//button[contains(.,'Create corporate environment \ ')]
+
+On <CromeContracts>, Sort by Ascending:
+    [Arguments]    ${column_name}
+    I'm on <CromeContracts>
+    ${column_to_sort}=    Get Column from Table Header:    xpath=//md-card//table    ${column_name}
+    Click Element    xpath=(//i[contains(.,'arrow_drop_up')])[${column_to_sort}]
+
+On <CromeCorporateEnvironment>, Displayed Environment should be
+    [Arguments]    ${env_name}    ${env_contract_ref}    ${env_company_name}
+    Element Should Contain    xpath=//md-card-title    Corporate Environment name ${env_name}
+    Page Should Contain Element    //div[contains(@class,'corporate-environment-card-link')]//span[contains(.,'Contract Reference : ${env_contract_ref}')]
+    Page Should Contain Element    //div[contains(@class,'corporate-environment-card-link')]//span[contains(.,'Company Name : ${env_company_name}')]
+
+On <HabileRCT>, log as:
+    [Arguments]    ${arg1}    ${arg2}
+    I'm on <HabileRCT>
+    Input Text    USER    ${arg1}
+    Input Password    PASSWORD    ${arg2}
+    Click Element    login_button
+
+On<CromeContracts>, Click a Company Name:
+    [Arguments]    ${arg1}
+    I'm on <CromeContracts>
+    Click Element in Table Column by Displayed Text    xpath=//md-card//table    Company    ${arg1}
+
+On<CromeContracts>, Click a Contract MasterRef:
+    [Arguments]    ${arg1}
+    I'm on <CromeContracts>
+    Click Element in Table Column by Displayed Text    xpath=//md-card//table    Contract reference    ${arg1}
+
+On<CromeHome>, Choose MonContract/Firm
+    I'm on <CromeHome>
+    Click Element    xpath=//a[contains(@href,'/cromeFront/contracts')]
+
+Open Crome with Browser
+    [Arguments]    ${arg1}
+    Open Browser    ${url_rct_chrome}    browser=${arg1}    alias=driver1    remote_url=${grid_server}
+
+Open Crome with Test user on Browser:
+    [Arguments]    ${browser}
+    Open Crome with Browser    ${browser}
+    Optionally, On <HabileRCT>, log as:    fsur007    abc123
+    Capture Page Screenshot
+
+Optionally, On <HabileRCT>, log as:
+    [Arguments]    ${arg1}    ${arg2}
+    ${need_habile_authentification} =    Run Keyword And Return Status    I'm on <HabileRCT>
+    Run Keyword If    ${need_habile_authentification}    On <HabileRCT>, log as:    ${arg1}    ${arg2}

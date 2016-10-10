@@ -28,9 +28,10 @@ TC050 - Verify that the user is able to see the default values in the search mod
     [Tags]    KLM    Smoke
     Given I've started the KLM App
     When I Book A Trip
-    Then the Default Search Origin is "Amsterdam"
+    Then the Default Search Origin is "Paris"
     And the Default Search Type is "Return flight"
     And the Default Search Passenger is "1 adult in Economy Class"
+    Says Hello to    Barry
     [Teardown]    Close Application
 
 TC0XX - Verify whether the user is able to book a one way flight without login.
@@ -51,7 +52,7 @@ TC0XX - Verify whether the user is able to book a one way flight without login.
     [Teardown]    Close Application
 
 TC051 - Verify the message shown, when there are no entries for the given Origin and destination
-    [Tags]    KLM    Smoke
+    [Tags]    KLM    Smoke    Nominal
     Given I've started the KLM App
     When I Book A Trip
     And I choose as Origin "Paris"
@@ -61,7 +62,7 @@ TC051 - Verify the message shown, when there are no entries for the given Origin
     [Teardown]    Close Application
 
 TC058 - Verify the user able to see the lowest price according to the destination selected, when not logged in
-    [Tags]    KLM
+    [Tags]    KLM    Nominal
     Given I've started the KLM App
     And I'm not Logged In
     And I Book a Trip
@@ -170,7 +171,7 @@ All proposed flight must be pricier
 the Default Search Type is "Return flight"
     On <Book a trip> Page, Check Search Type is:    Return flight
 
-the Default Search Origin is "Amsterdam"
+the Default Search Origin is "Paris"
     On <Book a trip> Page, Check Origin is:    Amsterdam
 
 the Default Search Passenger is "1 adult in Economy Class"
@@ -368,3 +369,7 @@ On <select departure date> Page, Choose Today
     Page Should Contain Element    ${Departure_month(TextView)_id}
     Element Attribute Should Match    ${Departure_month(TextView)_id}    text    ${current_month_as_local_abrevation}
     Click Element    ${locator_for_Day}
+
+Says Hello to
+    [Arguments]    ${arg1}
+    Log    ${arg1}

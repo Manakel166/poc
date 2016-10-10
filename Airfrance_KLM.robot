@@ -11,7 +11,7 @@ Library           ../../30_LIBRAIRIES/AppiumExtension.py
 
 *** Variables ***
 &{app_AF}         app=../../../../20_AUT/air_france_1.7.2_72.apk    # A dictionnary to provide the parameters of the App under Tests (like path to the apk....)
-&{app_KLM}        app=../../../../20_AUT/KLM_com.afklm.mobile.android.gomobile.klm_7.4.1_12744.apk
+&{app_KLM}        app=../../../../20_AUT/KLM_com.afklm.mobile.android.gomobile.klm_7.6.1_15054.apk    # ../../../../20_AUT/KLM_com.afklm.mobile.android.gomobile.klm_7.4.1_12744.apk
 ${RunFrom}        RIDE
 
 *** Test Cases ***
@@ -24,7 +24,7 @@ TC050 - Verify that the user is able to see the default values in the search mod
     [Tags]    KLM    Smoke
     Given I've started the KLM App
     When I Book A Trip
-    Then the Default Search Origin is "Amsterdam"
+    Then the Default Search Origin is "Paris"
     And the Default Search Type is "Return flight"
     And the Default Search Passenger is "1 adult in Economy Class"
 
@@ -43,6 +43,7 @@ TC0XX - Verify whether the user is able to book a one way flight without login.
     Then I Can Search for Dates
     And I Can Choose Today as Date
     And I Can Book the First available Flight
+    ${UpdateApplication_YesButton}    xpath_by_id    new_application_dialog_yes_button
 
 TC051 - Verify the message shown, when there are no entries for the given Origin and destination
     [Tags]    KLM    DEMO
@@ -65,6 +66,10 @@ TC058 - Verify the user able to see the lowest price according to the destinatio
     Then I can see the lowest price for my destination
     When I ask the flights available for Today
     Then All proposed flight must be pricier
+
+XXX-Check Icons displayed on HomePage
+    Given I've started the KLM App
+    Then i shall see the right Icons on HomePage
 
 *** Keywords ***
 -----------------------Business Steps AF --------------------------------
@@ -193,6 +198,8 @@ I'm on <select departure date> Page
 
 I've started the KLM App
     Launch Application on Local Device    &{app_KLM}
+    Sleep    10s    sync point for klm application loading
+    On <Default Country of Residence> Page, Ask to Change the settings
     On <Country of Residence> Page, Select :    France
     I'm on <KLM HomePage>
 
@@ -350,11 +357,28 @@ On <select departure date> Page, Choose Today
     Element Attribute Should Match    ${Departure_month(TextView)_id}    text    ${current_month_as_local_abrevation}
     Click Element    ${locator_for_Day}
 
-the Default Search Origin is "Amsterdam"
-    On <Book a trip> Page, Check Origin is:    Amsterdam
+the Default Search Origin is "Paris"
+    On <Book a trip> Page, Check Origin is:    Paris
 
 the Default Search Passenger is "1 adult in Economy Class"
     On <Book a trip> Page, Check Search Passenger is:    1 adult in Economy Class
 
 the Default Search Type is "Return flight"
     On <Book a trip> Page, Check Search Type is:    Return flight
+
+On <KLM HomePage>, Test Find by Image
+    I'm on <KLM HomePage>
+    ${screen}=    Get Screenshot As Base64
+    ${visual_locator}=    Find By Image    ${screen}    ${CURDIR}/Templates/login_button.png
+    Tap On Coordinates    ${visual_locator}
+
+i shall see the right Icons on HomePage
+    On <KLM HomePage>, Test Find by Image
+
+On <Default Country of Residence> Page, Ask to Change the settings
+    I'm on <Default Country of Residence> Page
+    Click Element    ${no_change_settings_id}
+
+I'm on <Default Country of Residence> Page
+    Wait Until Page Contains Element    ${default_country_of_residence_id}    5s
+    Capture Page Screenshot

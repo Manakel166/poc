@@ -1,0 +1,46 @@
+*** Settings ***
+Library           ExtendedSelenium2Library
+Library           ExtendedSelenium2Extension.py
+Library           String
+
+*** Keywords ***
+Click Element in Table Column by Displayed Text
+    [Arguments]    ${table_locator}    ${column_name}    ${displayed_text}    ${details_table_locators}=''
+    [Documentation]    xpath=//md-card//table
+    ${company_col}=    Get Column from Table Header:    ${table_locator}    ${column_name}
+    Click Element In Table Column    ${table_locator}    ${company_col}    ${displayed_text}
+
+Get Column from Table Header:
+    [Arguments]    ${table_locator}    ${header_value}    ${details_locator}=//th//span[@class='header-label']
+    Log    Looking for Column with Title:${header_value}
+    Table Header Should Contain    ${table_locator}    ${header_value}
+    @{header_cells}=    Get Webelements    //md-card//table${details_locator}
+    ${index}=    Set Variable    0
+    ${protected_header_value}=    Replace String    ${header_value}    '    _X_
+    : FOR    ${Item}    IN    @{header_cells}
+    \    ${index}=    Evaluate    ${index}+1
+    \    Comment    Log    ${index}
+    \    ${header}=    Get Text    ${Item}
+    \    Log    Column Title is: ${header}
+    \    ${protected_header}=    Replace String    ${header}    '    _X_
+    \    Return From Keyword If    '${protected_header}'=='${protected_header_value}'    ${index}
+    Log    Item iteration is over
+
+Get Row from Column Value:
+    [Arguments]    ${table_locator}    ${header_value}    ${search_value}    ${details_locator}=//th//span[@class='header-label']
+    Comment    Log    Looking for Row where Column with Title:${header_value} has value: ${search_value}
+    ${target_col}=    Get Column from Table Header:    ${table_locator}    ${header_value}    ${details_locator}
+    Comment    Log    Value shall be available in Column: ${target_col}
+    Table Column Should Contain    ${table_locator}    ${target_col}    ${search_value}
+    ${nb_rows}=    Get Element Count    ${table_locator}//tbody/tr
+    @{column_cells}=    Get Webelements    ${table_locator}//tbody//td[${target_col}]
+    ${index}=    Set Variable    0
+    ${protected_search_value}=    Replace String    ${search_value}    '    _X_
+    : FOR    ${Item}    IN    @{column_cells}
+    \    ${index}=    Evaluate    ${index}+1
+    \    Comment    Log    ${index}
+    \    ${value}=    Get Text    ${Item}
+    \    ${protected_value}=    Replace String    ${value}    '    _X_
+    \    Log    Value is: ${value}
+    \    Return From Keyword If    '${protected_value}'=='${protected_search_value}'    ${index}
+    Log    Item iteration is over

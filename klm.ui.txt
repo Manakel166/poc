@@ -37,3 +37,6 @@ ${Error_something_went_wrong(View)}    xpath=//android.view.View[@content-desc='
 ${Msg_NoAvailableFlight_id}    xpath=//*[@resource-id='com.afklm.mobile.android.gomobile.klm:id/text_brandvoice']
 ${Lowest_Price_on_Book_a_Trip_id}    xpath=//*[@resource-id='com.afklm.mobile.android.gomobile.klm:id/search_price']
 ${flight_price_locator}    xpath=//*[@resource-id='com.afklm.mobile.android.gomobile.klm:id/text_price']
+${no_change_settings_id}    xpath=//*[@resource-id='com.afklm.mobile.android.gomobile.klm:id/negative_button']
+${default_country_of_residence_id}    xpath=//*[@resource-id='com.afklm.mobile.android.gomobile.klm:id/actionable_question']
+${UpdateApplication_YesButton}    xpath=//*[@resource-id='com.airfrance.android.dinamoprd:id/new_application_dialog_yes_button']
