@@ -26,7 +26,7 @@
                  <outputDirectory>${project.basedir}/target/Execution_Logs</outputDirectory>
                  <xunitFile>${project.basedir}/target/Execution_Logs/xunit_results.xml</xunitFile>
                  <suites>
-                   <suite>Crome</suite>
+                   <suite>Airfrance_KLM</suite>
                  </suites>
                  <includes>
                     <include>smoke</include>
